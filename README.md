@@ -2,7 +2,7 @@ This repository contains all the necessary components to simulate light curves f
 
 Configuration instructions for running SNANA on the NLHPC cluster (Leftraru/Guacolda).
 
-Jupyter notebooks (step-by-step tutorials) to generate SIMLIBs from Rubin’s observing strategy, run baseline simulations (e.g. SNe Ia with SALT2), and extend SNANA with new transient families based on spectroscopic time series.
+Jupyter notebooks (step-by-step tutorials) to generate SIMLIBs from Rubin’s observing strategy, run baseline simulations, and extend SNANA with new transient families based on spectroscopic time series.
 
 SLURM job scripts for large-scale production runs.
 
