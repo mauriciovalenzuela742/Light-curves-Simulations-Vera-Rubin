@@ -1,0 +1,34 @@
+
+NGENTOT_LC: N_SAMPLES
+
+GENVERSION: MODEL_NAME
+
+GENSOURCE:  RANDOM
+INPUT_INCLUDE_FILE: MODEL_FILE
+RANSEED: N_SEED
+SIMLIB_FILE: /home/mvalenzuela/run_SNANA/WFD_SIMLIB.SIMLIB
+SIMLIB_MAXRANSTART: 50000
+SIMLIB_MSKOPT:   128 
+
+KCOR_FILE: /home/mvalenzuela/run_SNANA/kcor_LSST.fits
+SEARCHEFF_PIPELINE_FILE: /home/mvalenzuela/run_SNANA/LSST_SEARCHEFF_PIPELINE.DAT
+SEARCHEFF_PIPELINE_LOGIC_FILE: /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+APPLY_SEARCHEFF_OPT: 1
+
+GENFILTERS:   ugrizY
+SOLID_ANGLE:  0.0 
+
+GENRANGE_MJD:      60795 61890   # explicit MJD cut after 3 years
+GENRANGE_PEAKMJD:  60745 61965   # PEAKMJD cut is wider to catch rise time
+
+GENSIGMA_SEARCH_PEAKMJD:  1.0     # sigma-smearing for  SEARCH_PEAKMJD (days)
+
+OPT_MWEBV:    1                 #usar la que se indica en el archivo SIMLIB
+OPT_MWCOLORLAW: 99
+
+# smear flags: 0=off, 1=on
+SMEARFLAG_FLUX:    1  # photo-stat smearing of signal, sky, etc ...
+SMEARFLAG_ZEROPT:  1  # smear zero-point with zptsig
+
+FORMAT_MASK:   32  # 2=TEXT  32=FITS
+
