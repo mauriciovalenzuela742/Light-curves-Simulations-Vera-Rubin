@@ -1,21 +1,21 @@
 
-NGENTOT_LC: N_SAMPLES
+NGENTOT_LC: N_SAMPLES     #especificar el numero de simulaciones que se realizaran
 
-GENVERSION: MODEL_NAME
+GENVERSION: MODEL_NAME       #nombrar a la simulacion, se recomienda usar un identificador de fecha formato YYYYMMDD
 
-GENSOURCE:  RANDOM
-INPUT_INCLUDE_FILE: MODEL_FILE
-RANSEED: N_SEED
-SIMLIB_FILE: /home/mvalenzuela/run_SNANA/WFD_SIMLIB.SIMLIB
+GENSOURCE:  RANDOM    #simulaciones monte carlo
+INPUT_INCLUDE_FILE: MODEL_FILE   #archivo input para el modelo de simulacion 
+RANSEED: N_SEED   #semilla de aleatoriedad
+SIMLIB_FILE: /home/mvalenzuela/run_SNANA/WFD_SIMLIB.SIMLIB  #archivo de simlib
 SIMLIB_MAXRANSTART: 50000
 SIMLIB_MSKOPT:   128 
-
-KCOR_FILE: /home/mvalenzuela/run_SNANA/kcor_LSST.fits
-SEARCHEFF_PIPELINE_FILE: /home/mvalenzuela/run_SNANA/LSST_SEARCHEFF_PIPELINE.DAT
-SEARCHEFF_PIPELINE_LOGIC_FILE: /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+ 
+KCOR_FILE: /home/mvalenzuela/run_SNANA/kcor_LSST.fits   #archivo de kcor
+SEARCHEFF_PIPELINE_FILE: /home/mvalenzuela/run_SNANA/LSST_SEARCHEFF_PIPELINE.DAT    #archivo de eficiencia
+SEARCHEFF_PIPELINE_LOGIC_FILE: /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT   #logica de disparo
 APPLY_SEARCHEFF_OPT: 1
 
-GENFILTERS:   ugrizY
+GENFILTERS:   ugrizY   #filtros a simular
 SOLID_ANGLE:  0.0 
 
 GENRANGE_MJD:      60795 61890   # explicit MJD cut after 3 years
