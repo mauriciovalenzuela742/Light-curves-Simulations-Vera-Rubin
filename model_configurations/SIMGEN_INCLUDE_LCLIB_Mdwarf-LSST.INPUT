@@ -1,5 +1,0 @@
-GENMODEL:  LCLIB  /home/mvalenzuela/run_SNANA/plasticc_models/LCLIB_Mdwarf-LSST.TEXT 1+2+3+4
-
-# rel rate = b0 + b1*cosb + b2*cosb^2 + b3*cosb^3
-DNDB: COSBPOLY 0.1  1.0  1.0  1.0  0 0  # b0 b1 b2 b3 b4 b5
-
