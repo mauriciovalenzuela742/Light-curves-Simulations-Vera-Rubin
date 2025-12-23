@@ -1,0 +1,52 @@
+GENMODEL:  NON1ASED
+PATH_NON1ASED:  /home/mvalenzuela/OTMODEL_NON1ASED/SNtypes/Ibc/NON1ASED_VC25_SNIbc
+
+# Volumetric rate
+DNDZ: CC_S15          # rate from Strolger 2015 (HST; 1509.06574)
+DNDZ_ALLSCALE:  0.325  # 11/Nov/2021 C.Alves: Adjusted scaling
+
+GENRANGE_REDSHIFT: 0.011  3.80
+
+# GN: simulating all CC types following Strolger 2015 rate 
+# relative rates in the CC sample from Shivvers et al. 2017
+GENRANGE_TREST:  -50 300
+
+# Force min mag/day slope for late-time extrapolation.
+MINSLOPE_EXTRAPMAG_LATE: 0.01
+
+# -----------------------------------------
+# TEMPLATES: Modified List by M. Valenzuela (2025-11-30)
+# Ref: Vincenzi et al. 2019 (arXiv:1908.05228)
+#
+# II    --> 31
+# Ibc   --> 22
+# Ia   --> 13
+
+
+NON1A_KEYS: 5
+                INDEX   WGT    MAGOFF   MAGSMEAR  SNTYPE
+# ---------------------------------------------------------------------
+# Type II (Indices 32-53 from NON1A.LIST)
+# ---------------------------------------------------------------------
+NON1A:            32 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2015ap
+NON1A:            33 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2015ah
+NON1A:            34 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2014L
+NON1A:            35 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2013ge
+NON1A:            36 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2011bm
+NON1A:            37 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2009jf
+NON1A:            38 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2009iz
+NON1A:            39 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2008D
+NON1A:            40 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2007uy
+NON1A:            41 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2007gr
+NON1A:            42 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2007Y
+NON1A:            43 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2007C
+NON1A:            44 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2006lc
+NON1A:            45 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2006ep
+NON1A:            46 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2006hg
+NON1A:            47 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2005bf
+NON1A:            48 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2004gt
+NON1A:            49 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2004gq
+NON1A:            50 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2004fe
+NON1A:            51 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2004dk
+NON1A:            52 0.0455   -0.40      0.40    20    ## Ibc  OT_SN2004aw
+NON1A:            53 0.0445   -0.40      0.40    20    ## Ibc  OT_SN1994l
