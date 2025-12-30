@@ -96,15 +96,21 @@ export SNDATA_ROOT=/path/to/SNDATA_ROOT
 ### Example: DDF
 
 ```bash
-cd run_SNANA
-snlc_sim.exe input_files/DDF/Cepheid_DDF.input
+cd DATASIM_LSST
+cd DDF
+cd input_files_v6
+cd AGN
+sbatch run_AGN_20251020.sh #this is the version try to simulate
 ```
 
 ### Example: WFD
 
 ```bash
-cd run_SNANA
-snlc_sim.exe input_files/WFD/Cepheid_WFD.input
+cd DATASIM_LSST
+cd WFD
+cd input_files_v6
+cd AGN
+sbatch run_AGN_20251020.sh #this is the version try to simulate
 ```
 
 Batch execution on NLHPC is supported via SLURM scripts in `scripts/`.
