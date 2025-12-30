@@ -41,7 +41,7 @@ The infrastructure supports a wide range of classes, including:
 
 ### ELASTiCC Extensions
 
-* Cepheid, d-Scuti
+* d-Scuti
 * Dwarf nova, M-dwarf flares
 * PISN-STELLA (hydrogenic and He-core)
 
@@ -62,11 +62,8 @@ All classes are simulated under both WFD and DDF strategies when physically appr
 ```text
 Light-curves-Simulations-Vera-Rubin/
 ├── run_SNANA/          # SNANA configs, models, and inputs
-├── SIMLIBv5/           # LSST WFD and DDF SIMLIB files
-├── DATASIM_LSST/       # Reference LSST simulation inputs
-├── scripts/            # Run and SLURM submission scripts
-├── docs/               # Documentation and poster
-└── environment/        # Environment and version info
+├── SIMLIB/             # LSST WFD and DDF SIMLIB files
+└── DATASIM_LSST/       # Reference LSST simulation inputs and SLURM submission scripts
 ```
 
 The **DDF and WFD directory trees are structurally identical**, differing only in the SIMLIBs and input files used.
