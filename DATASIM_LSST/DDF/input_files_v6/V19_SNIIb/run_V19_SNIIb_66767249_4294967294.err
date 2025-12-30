@@ -1,0 +1,27 @@
+
+FITSIO status = 106: error writing to FITS file
+HIERARCH HOSTLIB_FILE = 'NONE    ' / name of HOSTLIB file
+Warning: the following keyword does not conform to the HIERARCH convention
+HIERARCH SIM_MODEL_INDEX =  10 / SIM MODEL index
+Warning: the following keyword does not conform to the HIERARCH convention
+HIERARCH SIMOPT_MWCOLORLAW = 94 / option for MW color law
+Warning: the following keyword does not conform to the HIERARCH convention
+HIERARCH SIMOPT_MWEBV =      1 / option for MWEBV_SFD
+Warning: the following keyword does not conform to the HIERARCH convention
+HIERARCH SIMOPT_FLUXERR =    0 / option for fudgeing fluxErrors
+Warning: the following keyword does not conform to the HIERARCH convention
+HIERARCH SIM_NSUBSAMPLE_MARK = 0 / Number of marked subSamples
+Warning: the following keyword does not conform to the HIERARCH convention
+HIERARCH SIM_VARNAME_SNRMON = '        ' / PHOT varName for SNR(MAGMONITOR)
+Warning: the following keyword does not conform to the HIERARCH convention
+HIERARCH SIM_SL_FLAG =       0 / Strong lens flag
+Warning: the following keyword does not conform to the HIERARCH convention
+HIERARCH SIM_BIASCOR_MASK =  0 / biasCor mask
+Warning: the following keyword does not conform to the HIERARCH convention
+HIERARCH WRITE_MASK_HEAD =  36 / Internal write for header & phot
+Warning: the following keyword does not conform to the HIERARCH convention
+HIERARCH WRITE_MASK_PHOT =  36 / Internal write for header & phot
+Error writing data buffer to file:
+/home/mvalenzuela/SNDATA_ROOT/SIM/V19_SNIIb_DDF_20251020/V19_SNIIb_DDF_20251020_
+PHOT.FITS
+Error writing elements 1 thru 1 of input data array (ffpcle).

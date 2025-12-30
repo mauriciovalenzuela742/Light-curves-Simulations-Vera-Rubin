@@ -1,0 +1,94 @@
+
+ Full command: snlc_sim.exe KN-BULLA-BNS-M2-2COMP_20251020.input 
+
+ SNANA_VERSION: NOT_FROM_GITHUB
+
+
+
+ ****************************************************************** 
+   Begin execution of snlc_sim.exe    
+ SNDATA_ROOT = /home/mvalenzuela/SNDATA_ROOT 
+ SNANA_DIR   = /home/lmod/software/SNANA/11.05p 
+
+
+   sizeof(INPUTS) =   5.043 MB 
+   sizeof(GENLC)  =  10.667 MB 
+
+  init_SNDATA_GLOBAL: 
+ --------------------------------------------------------
+  Initialize NstringMatch for sim-input file
+  Read 83 words from user input file 1: 
+	 KN-BULLA-BNS-M2-2COMP_20251020.input 
+ --------------------------------------------------------
+  Read 31 words from user input file 2: 
+	 /home/mvalenzuela/run_SNANA/elastic/model_config/SIMGEN_INCLUDE_BULLA-BNS-M2-2COMP.INPUT 
+
+ ****************************************************************** 
+   init_HzFUN_INFO  
+	 H0         = 70.00      # km/s/Mpc 
+	 OM, OL, Ok = 0.31500, 0.68500, 0.00000 
+	 w0, wa     = -1.000,  0.000 
+
+ ****************************************************************** 
+    prep_user_inputs summary   
+	 SIMLIB file        : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB   (start LIBID=0)
+	 Generation Version : KN-BULLA-BNS-M2-2COMP_DDF_20251020 
+	 Generation source  : RANDOM 
+	 Generation model   : NON1ASED.BULLA-BNS-M2-2COMP 
+	 Number of LC to Generate: 0 
+	 OMEGA_(MATTER,LAMBDA)= 0.315, 0.685,    w0= -1.00   H0= 70.0 
+	 KCOR  file : /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+	 Observer Gen-FILTERS  :  ugrizY  
+	 Random number seed: 43  (NSTREAM=2)
+	 Gen-Range for RA(deg)  : -360.000 to  360.000 
+	 Gen-Range for DEC(deg): -360.000 to  360.000 
+	 Gen-Range for ZCMB :  0.011 to  0.500  (sigma= 0.0000, bias=0.00000) 
+	 Gen-Range for PEAKMJD  :  60900.0 to  61900.0  
+	 Gen-Range for Trest    :   -100.0 to    500.0  days 
+	 Gen-Range for SHAPEPAR  :      0.0 to      0.0  
+	 Gen-Range for AV  : 0.00 to 3.00  (dN/dAv = exp(-AV/-9.00) 
+	 Gen-Mean  for RV  : 3.10  
+	 Gen-sigma for RV  : 0.00 , 0.00 (lower , upper ) 
+	 Gen-Range for RV  : 2.00 to 4.00 
+	 ZP offsets (ugrizY) :  0.000 0.000 0.000 0.000 0.000 0.000
+	 MODEL mag offsets (ugrizY) :   0.00  0.00  0.00  0.00  0.00  0.00
+
+
+ ****************************************************************** 
+    init_RANDOMsource : CIDOFF=0   
+
+ ****************************************************************** 
+   SIMLIB_readGlobalHeader_TEXT  
+	 Opened : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+
+ ****************************************************************** 
+   SIMLIB_prepGlobalHeader  
+	 SIMLIB Survey    : LSST 
+	 SIMLIB Field : VOID 
+	 SIMLIB Pixel Saturation: 100000 photoelectrons. 
+	 SIMLIB Filters   : ugrizY 
+	 SIMLIB created by: NONE 
+	 SIMLIB Solid Angle  : 0.025000 steridians 
+	 SIMLIB PSF unit:    PIXEL_SIGMA 
+	 SIMLIB SKYSIG unit: ADU_PER_SQPIXEL 
+
+  Bit-mask options for SIMLIB_MSKOPT = 128 
+	 MASK=   128 -> keep entire SIMLIB season (not just transient range) 
+
+	 SIMLIB MAXRANSTART after  326  LIBIDs  (0 seconds)
+
+ ****************************************************************** 
+   init_RateModel  
+
+   `|```````|`    
+   <| o\ /o |>    
+    | ' ; ' |     
+    |  ___  |     ABORT program on Fatal Error. 
+    | |' '| |     
+    | `---' |     
+    \_______/    
+
+ FATAL ERROR ABORT called by init_DNDZ_Rate
+   DNDZ is specified, but found no NON1A SEDs.
+   Add NON1A_KEYS and NON1A key(s) to sim-input file.
+

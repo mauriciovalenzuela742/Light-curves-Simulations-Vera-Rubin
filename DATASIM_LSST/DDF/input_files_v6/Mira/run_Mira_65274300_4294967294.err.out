@@ -1,0 +1,347 @@
+
+ Full command: snlc_sim.exe Mira_20251020.input 
+
+ SNANA_VERSION: NOT_FROM_GITHUB
+
+
+
+ ****************************************************************** 
+   Begin execution of snlc_sim.exe    
+ SNDATA_ROOT = /home/mvalenzuela/SNDATA_ROOT 
+ SNANA_DIR   = /home/lmod/software/SNANA/11.05p 
+
+
+   sizeof(INPUTS) =   5.043 MB 
+   sizeof(GENLC)  =  10.667 MB 
+
+  init_SNDATA_GLOBAL: 
+ --------------------------------------------------------
+  Initialize NstringMatch for sim-input file
+  Read 83 words from user input file 1: 
+	 Mira_20251020.input 
+ --------------------------------------------------------
+  Read 12 words from user input file 2: 
+	 /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_LCLIB_MIRA-ISW2011.INPUT 
+
+ ****************************************************************** 
+   init_HzFUN_INFO  
+	 H0         = 70.00      # km/s/Mpc 
+	 OM, OL, Ok = 0.31500, 0.68500, 0.00000 
+	 w0, wa     = -1.000,  0.000 
+
+ ****************************************************************** 
+    prep_user_inputs summary   
+	 SIMLIB file        : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB   (start LIBID=0)
+	 Generation Version : Mira_DDF_20251020 
+	 Generation source  : RANDOM 
+	 Generation model   : LCLIB 
+	 Number of LC to Generate: 0 
+	 OMEGA_(MATTER,LAMBDA)= 0.315, 0.685,    w0= -1.00   H0= 70.0 
+	 KCOR  file : /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+	 Observer Gen-FILTERS  :  ugrizY  
+	 Random number seed: 49  (NSTREAM=2)
+	 Gen-Range for RA(deg)  : -360.000 to  360.000 
+	 Gen-Range for DEC(deg): -360.000 to  360.000 
+	 Gen-Range for ZCMB :  0.000 to  0.000  (sigma= 0.0000, bias=0.00000) 
+	 Gen-Range for PEAKMJD  :  60981.0 to  60981.0  
+	 Gen-Range for Trest    :      0.0 to    851.0  days 
+	 Gen-Range for SHAPEPAR  :      0.0 to      0.0  
+	 Gen-Range for AV  : -9.00 to -9.00  (dN/dAv = exp(-AV/-9.00) 
+	 Gen-Mean  for RV  : 3.10  
+	 Gen-sigma for RV  : 0.00 , 0.00 (lower , upper ) 
+	 Gen-Range for RV  : 1.00 to 5.00 
+	 ZP offsets (ugrizY) :  0.000 0.000 0.000 0.000 0.000 0.000
+	 MODEL mag offsets (ugrizY) :   0.00  0.00  0.00  0.00  0.00  0.00
+
+
+ ****************************************************************** 
+    init_RANDOMsource : CIDOFF=0   
+
+ ****************************************************************** 
+   SIMLIB_readGlobalHeader_TEXT  
+	 Opened : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+
+ ****************************************************************** 
+   SIMLIB_prepGlobalHeader  
+	 SIMLIB Survey    : LSST 
+	 SIMLIB Field : VOID 
+	 SIMLIB Pixel Saturation: 100000 photoelectrons. 
+	 SIMLIB Filters   : ugrizY 
+	 SIMLIB created by: NONE 
+	 SIMLIB Solid Angle  : 0.025000 steridians 
+	 SIMLIB PSF unit:    PIXEL_SIGMA 
+	 SIMLIB SKYSIG unit: ADU_PER_SQPIXEL 
+
+  Bit-mask options for SIMLIB_MSKOPT = 128 
+	 MASK=   128 -> keep entire SIMLIB season (not just transient range) 
+
+	 SIMLIB MAXRANSTART after  247  LIBIDs  (1 seconds)
+
+ ****************************************************************** 
+   init_RateModel  
+   SIMULATED RATE(BPOLY)
+ dN/db = POLY(20383,-1757.7,65.293,-1.1885,0.10405E-01,-0.35119E-04)
+ Calculated Number of EVENTS per season = 2000  (NGENTOT_LC)
+
+ ****************************************************************** 
+   Initialize SEARCH EFFICIENCY for 'LSST' 
+  
+   Read Detection-efficiency curves: 
+	 EFF_DETECT(u) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(g) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(r) = 0.425 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(i) = 0.540 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(z) = 0.469 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(Y) = 0.469 at ABS(SNR) =  5.00 ()
+
+   Fetch SOFTWARE SEARCH-LOGIC from : 
+	 /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+	 Logic: 2 MJDs require filters=u+g+r+i+z+Y 
+	 Trigger epoch contains all obs within 0.007 days
+
+
+  Optional SEARCHEFF_SPEC_FILE not specified -> EFF_SPEC=1 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+ ****************************************************************** 
+   READ_CALIB_DRIVER: read calib/filters/kcor  
+	 FILTERS_SURVEY = ugrizY 
+  Opened /home/mvalenzuela/run_SNANA/kcor_LSST.fits
+   read_calib_head 
+		 Read VERSION         = 4  (kcor.exe version) 
+		 Read NPRIM           = 1  primary refs 
+		 Read PRIM001         = AB 
+		 Read NFILTERS        = 6  filters 
+		 Read NKCOR           = 0  K-COR tables 
+		 Read  991 wavelength bins (2100.00 to 12000.00)
+		 Read  106 epoch      bins (-20.00 to 85.00)
+		 Read    1 redshift   bins (0.00 to 0.00)
+		 Read    1 AV         bins (0.00 to 0.00)
+   read_calib_zpoff  
+   read_calib_snsed 
+   read_kcor_tables 
+   read_kcor_mags 
+   read_calib_filters 
+   read_calib_primarysed 
+
+   print_calib_summary 
+	  Primary Spectrum: AB 
+
+  FILTER SUMMARY (RDKCOR) : 
+   internal                   LAM  LAM   rest-lam      primary
+  index name                  AVG  RMS   kcor range    mag   ZP
+ ---------------------------------------------------------------------- 
+    1 LSST-u                 3710  163     0-    0   0.000   0.000
+    2 LSST-g                 4806  431     0-    0   0.000   0.000
+    3 LSST-r                 6221  414     0-    0   0.000   0.000
+    4 LSST-i                 7559  387     0-    0   0.000   0.000
+    5 LSST-z                 8681  311     0-    0   0.000   0.000
+    6 LSST-Y                 9757  345     0-    0   0.000   0.000
+	 NFILTDEF[SURVEY,REST] = 6 0 
+
+ READ_CALIB_DRIVER: Done 
+
+
+ ****************************************************************** 
+   init_genmag_LCLIB  
+	 Template epoch  0 : 1.000 days 
+	 Template epoch  1 : 2.000 days 
+	 Template epoch  2 : 3.000 days 
+	 Template epoch  3 : 4.000 days 
+	 Template epoch range: 3.00 days 
+
+	 Opened : /home/mvalenzuela/run_SNANA/plasticc_models/LCLIB_MIRA_ISW2011.TEXT 
+
+	 ***** DOCANA WARNING ******* 
+  Missing required 'DOCUMENTATION:'  key in 
+    /home/mvalenzuela/run_SNANA/plasticc_models/LCLIB_MIRA_ISW2011.TEXT 
+  See DOCANA examples with linux command: 
+    grep -R DOCUMENTATION_END $SNDATA_ROOT 
+  File must begin with 'DOCUMENTATION:' key
+
+	 MODEL: MIRA_ISW2011  (RECUR-PERIODIC) 
+	   ModelParam-00(TYPE)    
+	   ModelParam-01(EVENT_ID)    
+
+
+ ****************************************************************** 
+   init_modelSmear: init intrinsic SN smearing with model=NONE  
+	 Smear-mode: interpolate from central filter wavelengths.
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=1)  
+
+ ****************************************************************** 
+   clr_VERSION  
+	 LCMERGE Version Mira_DDF_20251020 does not exist. 
+	 SIM Version Mira_DDF_20251020 does not exist. 
+	 PHOTOMETRY Version Mira_DDF_20251020 does not exist. 
+
+ ****************************************************************** 
+   Init SIMGEN_DUMP file   
+	 open /home/mvalenzuela/SNDATA_ROOT/SIM/Mira_DDF_20251020/Mira_DDF_20251020.DUMP
+
+ ****************************************************************** 
+   WR_SNFITSIO_INIT  
+
+ ****************************************************************** 
+   set_TIMERS  
+	 CPUTIME_INITIALIZE   = 1.000 second
+
+ ****************************************************************** 
+    Begin Generating Lightcurves.   
+	 Finished generating        1 of 2000 (CID=0) 
+	 Finished generating      100 of 2000 (CID=91) 
+	 Finished generating      200 of 2000 (CID=198) 
+	 Finished generating      300 of 2000 (CID=300) 
+	 Finished generating      400 of 2000 (CID=394) GenRate=3/sec
+	 Finished generating      500 of 2000 (CID=499) 
+	 Finished generating      600 of 2000 (CID=596) 
+	 Finished generating      700 of 2000 (CID=700) 
+	 Finished generating      800 of 2000 (CID=800) 
+	 Finished generating      900 of 2000 (CID=900) GenRate=4/sec
+	 Finished generating     1000 of 2000 (CID=998) 
+	 Finished generating     1100 of 2000 (CID=1098) 
+	 Finished generating     1200 of 2000 (CID=1199) 
+	 Finished generating     1300 of 2000 (CID=1298) GenRate=3/sec
+	 Finished generating     1400 of 2000 (CID=1394) 
+	 Finished generating     1500 of 2000 (CID=1500) 
+	 Finished generating     1600 of 2000 (CID=1599) 
+	 Finished generating     1700 of 2000 (CID=1698) 
+	 Finished generating     1800 of 2000 (CID=1799) GenRate=4/sec
+	 Finished generating     1900 of 2000 (CID=1896) 
+	 Finished generating     2000 of 2000 (CID=1994) 
+
+ ****************************************************************** 
+    Done generating 2000 SN lightcurves from RANDOM source.  
+	 (2000 lightcurves requested => 515 were written) 
+	 CPUTIME_PROCESS_ALL  = 8.383 minute
+	 CPUTIME_PROCESS_RATE(GEN) = 3.976 evt/second
+	 CPUTIME_PROCESS_RATE(ACC) = 1.024 evt/second
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=2)  
+
+ ****************************************************************** 
+   DUMP README CONTENTS TO SCREEN
+  
+DOCUMENTATION:
+  OVERVIEW:
+    TIME_START:   2025-10-25  20:26  # UT
+    SURVEY:       LSST
+    GENMODEL:     LCLIB
+    SNIA:         False
+    HOST_MACHINE: sn014
+    USERNAME:     mvalenzuela
+    SNDATA_ROOT:  /home/mvalenzuela/SNDATA_ROOT
+    SNANA_DIR:     /home/lmod/software/SNANA/11.05p
+    SNANA_VERSION: 
+    CWD:   /home/mvalenzuela/DATASIM_LSST_1/DDF/input_files_v6/Mira
+    INPUT_FILE:
+    - Mira_20251020.input
+    - /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_LCLIB_MIRA-ISW2011.INPUT
+# 
+  INPUT_KEYS:
+# Output data
+    GENVERSION:              Mira_DDF_20251020
+    NGENTOT_LC:              2000  
+    FORMAT_MASK:             32  #  += 2,32,16 -> TEXT, FITS, randomCID
+    GENTYPE:                 0  # true type
+    SNTYPE:                  1  101  # spec Type, photID type
+    CIDRAN_MIN:              0  
+    CIDRAN_MAX:              3000000  
+# Source model
+    GENMODEL:                LCLIB /home/mvalenzuela/run_SNANA/plasticc_models/LCLIB_MIRA_ISW2011.TEXT 1+2+3+4 
+# Cosmology inputs
+    OMEGA_MATTER:            0.3150  
+    OMEGA_LAMBDA:            0.6850  
+    w0_LAMBDA:               -1.0000  
+    wa_LAMBDA:               0  
+    MUSHIFT:                 0  
+# Instrumental inputs
+    GENFILTERS:          ugrizY 
+    KCOR_FILE:           /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+    SIMLIB_FILE:             /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+    SIMLIB_MAXRANSTART:      1000 
+    SIMLIB_MSKOPT:           128 
+    SMEARFLAG_FLUX:      1  # 1->add Poisson noise
+    SMEARFLAG_ZEROPT:    1  # +=1->apply scatter, +=2->add to FLUXERRCAL
+# SEARCHEFF/detections
+    SEARCHEFF_PIPELINE_LOGIC_FILE:  /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+    NEWMJD_DIF:              7.0000e-03  # day-sep if > 1 detections required
+    SEARCHEFF_PIPELINE_EFF_FILE:  /home/mvalenzuela/run_SNANA/LSST_SEARCHEFF_PIPELINE.DAT
+    SEARCHEFF_SPEC_FILE:     NONE
+    SEARCHEFF_zHOST_FILE:    ZERO
+    APPLY_SEARCHEFF_OPT:     1  # += 1,2,4 => pipe,spec,zhost
+# Redshift inputs
+    GENRANGE_REDSHIFT:       0  0  
+    GENSIGMA_REDSHIFT:       0  
+    GENSIGMA_VPEC:           0  # true vpec scatter (km/sec)
+    VPEC_ERR:                0  # vpec error after correction (km/sec)
+    VEL_CMBAPEX:             0  # km/sec
+# Epoch & sky coverage inputs
+    GENRANGE_MJD:            60981.0000  61832.0000  
+    GENRANGE_PEAKMJD:        60981.0000  60981.0000  
+    GENSIGMA_PEAKMJD:        1.0000  
+    GENRANGE_TREST:          0  851.0000  
+    SOLID_ANGLE:             0.0250  
+# Galactic extinction
+    OPT_MWEBV:        1   
+    OPT_MWCOLORLAW:   99   
+# Population and rate-model params
+    DNDB:                    BPOLY 20383 -1757.7 65.293 -1.1885 0.10405E-01 -0.35119E-04 
+# Misc inputs
+    GENSOURCE:               RANDOM
+    RANSEED:                 49  
+    DEBUG_FLAG:              0  
+    SIMGEN_DUMPALL:          35 CID LIBID SIM_SEARCHEFF_MASK GENTYPE NON1A_INDEX ZCMB ZHELIO ZCMB_SMEAR RA DEC MWEBV GALID GALZPHOT GALZPHOTERR GALSNSEP GALSNDDLR RV AV MU LENSDMU PEAKMJD MJD_DETECT_FIRST MJD_DETECT_LAST DTSEASON_PEAK PEAKMAG_u PEAKMAG_g PEAKMAG_r PEAKMAG_i PEAKMAG_z PEAKMAG_Y SNRMAX SNRMAX2 SNRMAX3 NOBS NOBS_SATURATE 
+# 
+  FILTERS:   # mean wavelength (A)
+    u:  3710.0
+    g:  4805.8
+    r:  6221.5
+    i:  7559.2
+    z:  8680.6
+    Y:  9757.0
+# 
+  INPUT_NOTES:
+  - Poisson noise is ON 
+  - Reported flux-uncertainty includes SKY+GALAXY+SOURCE
+  - SB-dependent flux scatter is OFF
+  -    SIMULATED RATE(BPOLY)
+  -  dN/db = POLY(20383,-1757.7,65.293,-1.1885,0.10405E-01,-0.35119E-04)
+  -  Calculated Number of EVENTS per season = 2000  (NGENTOT_LC)
+  - H0 =  70.00 km/s/Mpc 
+  - Omega_{M,L} =  0.315, 0.685     w0,wa = -1.00,0.000
+  - APPLY_SEARCHEFF_OPT=1 --> Require EFF(PIPELINE) 
+  - PIPELINE requires 2 detections among u+g+r+i+z+Y (MJD dif > 0.0070 days) 
+#
+  GENTYPE_TO_NAME:  # GENTYPE:  [non]Ia   type  
+    0:  nonIa    MIRA_ISW2011
+# 
+  OUTPUT_SUMMARY:
+    RANDOM_SYNC: 
+    - List=1  FIRST=0.121386  LAST=0.508052   AVG(wrap) = 13.5 +_ 33.3 
+    - List=2  FIRST=0.218399  LAST=0.906822   AVG(wrap) = 0.1 +_ 0.1 
+    - List=3  FIRST=0.653192  LAST=0.762474   AVG(wrap) = 0.0 +_ 0.0 
+# 
+    CPU_MINUTES:       8.38  
+    NGENLC_TOT:        2000    # (4/sec)
+    NGENLC_WRITE:      515    # (1/sec)
+    NGENSPEC_WRITE:    0  
+    EFF(SEARCH+CUTS):  0.2575 +-  0.0098
+    NGEN_PER_SEASON:   2000       # NSN(GEN) in GENRANGE(z,MJD,dOmega)
+    NACC_PER_SEASON:   515 +_ 23  # NSN(ACCEPT) after trigger+cuts
+    NREJECT:  [1485,0,0,  0,0]   # [NEP<1,GENRANGE,PEAKMAG,  SEARCHEFF,CUTWIN] 
+DOCUMENTATION_END:
+
+  AUXILIARY FILES: 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/Mira_DDF_20251020/Mira_DDF_20251020.LIST 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/Mira_DDF_20251020/Mira_DDF_20251020.README 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/Mira_DDF_20251020/Mira_DDF_20251020.DUMP
+ WR_SNFITSIO_END: wrote 515 events and 0 spectra to FITS format
+
+ DONE with snlc_sim.

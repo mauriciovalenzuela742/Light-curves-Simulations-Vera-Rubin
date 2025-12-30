@@ -1,0 +1,179 @@
+
+ Full command: snlc_sim.exe KN-BULLA19_20251020.input 
+
+ SNANA_VERSION: NOT_FROM_GITHUB
+
+
+
+ ****************************************************************** 
+   Begin execution of snlc_sim.exe    
+ SNDATA_ROOT = /home/mvalenzuela/SNDATA_ROOT 
+ SNANA_DIR   = /home/lmod/software/SNANA/11.05p 
+
+
+   sizeof(INPUTS) =   5.043 MB 
+   sizeof(GENLC)  =  10.667 MB 
+
+  init_SNDATA_GLOBAL: 
+ --------------------------------------------------------
+  Initialize NstringMatch for sim-input file
+  Read 83 words from user input file 1: 
+	 KN-BULLA19_20251020.input 
+ --------------------------------------------------------
+  Read 31 words from user input file 2: 
+	 /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_KN-BULLA19.INPUT 
+
+ ****************************************************************** 
+   init_HzFUN_INFO  
+	 H0         = 70.00      # km/s/Mpc 
+	 OM, OL, Ok = 0.31500, 0.68500, 0.00000 
+	 w0, wa     = -1.000,  0.000 
+
+ ****************************************************************** 
+    prep_user_inputs summary   
+	 SIMLIB file        : /home/mvalenzuela/SIMLIBv5/WFD_SIMLIBv5.SIMLIB   (start LIBID=0)
+	 Generation Version : KN-BULLA19_WFD_20251020 
+	 Generation source  : RANDOM 
+	 Generation model   : SIMSED.BULLA-BNS-M2-2COMP 
+	 Number of LC to Generate: 0 
+	 OMEGA_(MATTER,LAMBDA)= 0.315, 0.685,    w0= -1.00   H0= 70.0 
+	 KCOR  file : /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+	 Observer Gen-FILTERS  :  ugrizY  
+	 Random number seed: 45  (NSTREAM=2)
+	 Gen-Range for RA(deg)  : -360.000 to  360.000 
+	 Gen-Range for DEC(deg): -360.000 to  360.000 
+	 Gen-Range for ZCMB :  0.011 to  0.280  (sigma= 0.0000, bias=0.00000) 
+	 Gen-Range for PEAKMJD  :  60930.0 to  62150.0  
+	 Gen-Range for Trest    :   -100.0 to    500.0  days 
+	 Gen-Range for SHAPEPAR  :     -1.0 to      1.0  
+	 Gen-Range for AV  : 0.00 to 3.00  (dN/dAv = exp(-AV/-9.00) 
+	 Gen-Mean  for RV  : 3.10  
+	 Gen-sigma for RV  : 0.00 , 0.00 (lower , upper ) 
+	 Gen-Range for RV  : 2.00 to 4.00 
+	 ZP offsets (ugrizY) :  0.000 0.000 0.000 0.000 0.000 0.000
+	 MODEL mag offsets (ugrizY) :   0.00  0.00  0.00  0.00  0.00  0.00
+
+
+ ****************************************************************** 
+    init_RANDOMsource : CIDOFF=0   
+
+ ****************************************************************** 
+   SIMLIB_readGlobalHeader_TEXT  
+	 Opened : /home/mvalenzuela/SIMLIBv5/WFD_SIMLIBv5.SIMLIB 
+
+ ****************************************************************** 
+   SIMLIB_prepGlobalHeader  
+	 SIMLIB Survey    : LSST 
+	 SIMLIB Field : VOID 
+	 SIMLIB Pixel Saturation: 100000 photoelectrons. 
+	 SIMLIB Filters   : ugrizY 
+	 SIMLIB created by: NONE 
+	 SIMLIB Solid Angle  : 6.494000 steridians 
+	 SIMLIB PSF unit:    PIXEL_SIGMA 
+	 SIMLIB SKYSIG unit: ADU_PER_SQPIXEL 
+
+  Bit-mask options for SIMLIB_MSKOPT = 128 
+	 MASK=   128 -> keep entire SIMLIB season (not just transient range) 
+
+	 SIMLIB MAXRANSTART after  3324  LIBIDs  (0 seconds)
+
+ ****************************************************************** 
+   init_RateModel  
+ POWERLAW RATE MODEL:  3.20e-07*(1+z)^0.00  (0.0 < z < 10.0) 
+    MODEL_RATE(z=0.01) = 3.200e-07/Mpc^3/yr    
+    MODEL_RATE(z=0.21) = 3.200e-07/Mpc^3/yr    
+ Calculated Number of EVENTS per season =  2680 
+
+ ****************************************************************** 
+   Initialize SEARCH EFFICIENCY for 'LSST' 
+  
+   Read Detection-efficiency curves: 
+	 EFF_DETECT(u) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(g) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(r) = 0.425 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(i) = 0.540 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(z) = 0.469 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(Y) = 0.469 at ABS(SNR) =  5.00 ()
+
+   Fetch SOFTWARE SEARCH-LOGIC from : 
+	 /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+	 Logic: 2 MJDs require filters=u+g+r+i+z+Y 
+	 Trigger epoch contains all obs within 0.007 days
+
+
+  Optional SEARCHEFF_SPEC_FILE not specified -> EFF_SPEC=1 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+ ****************************************************************** 
+   READ_CALIB_DRIVER: read calib/filters/kcor  
+	 FILTERS_SURVEY = ugrizY 
+  Opened /home/mvalenzuela/run_SNANA/kcor_LSST.fits
+   read_calib_head 
+		 Read VERSION         = 4  (kcor.exe version) 
+		 Read NPRIM           = 1  primary refs 
+		 Read PRIM001         = AB 
+		 Read NFILTERS        = 6  filters 
+		 Read NKCOR           = 0  K-COR tables 
+		 Read  991 wavelength bins (2100.00 to 12000.00)
+		 Read  106 epoch      bins (-20.00 to 85.00)
+		 Read    1 redshift   bins (0.00 to 0.00)
+		 Read    1 AV         bins (0.00 to 0.00)
+   read_calib_zpoff  
+   read_calib_snsed 
+   read_kcor_tables 
+   read_kcor_mags 
+   read_calib_filters 
+   read_calib_primarysed 
+
+   print_calib_summary 
+	  Primary Spectrum: AB 
+
+  FILTER SUMMARY (RDKCOR) : 
+   internal                   LAM  LAM   rest-lam      primary
+  index name                  AVG  RMS   kcor range    mag   ZP
+ ---------------------------------------------------------------------- 
+    1 LSST-u                 3710  163     0-    0   0.000   0.000
+    2 LSST-g                 4806  431     0-    0   0.000   0.000
+    3 LSST-r                 6221  414     0-    0   0.000   0.000
+    4 LSST-i                 7559  387     0-    0   0.000   0.000
+    5 LSST-z                 8681  311     0-    0   0.000   0.000
+    6 LSST-Y                 9757  345     0-    0   0.000   0.000
+	 NFILTDEF[SURVEY,REST] = 6 0 
+
+ READ_CALIB_DRIVER: Done 
+
+
+
+ ****************************************************************** 
+   init_genmag_SIMSED : Initialize SIMSED Light Curve Model  
+   filtdump_SEDMODEL: Read primary ref 'AB' with 991 lambda bins 
+
+   Defined                                 Lambda           AB     AB 
+   Filter                  <LAMBDA>        Range(step)      mag    ZP 
+   ----------------------------------------------------------------------
+   id=01 (      LSST-u)   ( 3710.0 + 0)   3200- 4100( 10)   0.000  12.652  
+   id=02 (      LSST-g)   ( 4805.8 + 0)   3750- 5770( 10)   0.000  14.689  
+   id=03 (      LSST-r)   ( 6221.5 + 0)   5230- 7150( 10)   0.000  14.560  
+   id=04 (      LSST-i)   ( 7559.2 + 0)   6590- 8450( 10)   0.000  14.379  
+   id=05 (      LSST-z)   ( 8680.6 + 0)   7890- 9470( 10)   0.000  13.993  
+   id=06 (      LSST-Y)   ( 9757.0 + 0)   8970-10990( 10)   0.000  13.017  
+   ----------------------------------------------------------------------
+  Read SIMSED model parameters from 
+     /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-BULLA19/SIMSED.BULLA-BNS-M2-2COMP
+
+
+   `|```````|`    
+   <| o\ /o |>    
+    | ' ; ' |     
+    |  ___  |     ABORT program on Fatal Error. 
+    | |' '| |     
+    | `---' |     
+    \_______/    
+
+ FATAL ERROR ABORT called by count_SIMSED_INFO
+   Could not open info file:
+   /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-BULLA19/SIMSED.BULLA-BNS-M2-2COMP/SED.INFO
+

@@ -1,0 +1,658 @@
+
+ Full command: snlc_sim.exe V19_SNIIb_20251020.input 
+
+ SNANA_VERSION: NOT_FROM_GITHUB
+
+
+
+ ****************************************************************** 
+   Begin execution of snlc_sim.exe    
+ SNDATA_ROOT = /home/mvalenzuela/SNDATA_ROOT 
+ SNANA_DIR   = /home/lmod/software/SNANA/11.05p 
+
+
+   sizeof(INPUTS) =   5.043 MB 
+   sizeof(GENLC)  =  10.667 MB 
+
+  init_SNDATA_GLOBAL: 
+ --------------------------------------------------------
+  Initialize NstringMatch for sim-input file
+  Read 79 words from user input file 1: 
+	 V19_SNIIb_20251020.input 
+ --------------------------------------------------------
+  Read 89 words from user input file 2: 
+	 /home/mvalenzuela/run_SNANA/elastic/model_config/SIMGEN_INCLUDE_V19_SNIIb+HostXT.INPUT 
+
+ ****************************************************************** 
+   init_HzFUN_INFO  
+	 H0         = 70.00      # km/s/Mpc 
+	 OM, OL, Ok = 0.31500, 0.68500, 0.00000 
+	 w0, wa     = -1.000,  0.000 
+
+ ****************************************************************** 
+    prep_user_inputs summary   
+	 SIMLIB file        : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB   (start LIBID=0)
+	 Generation Version : V19_SNIIb_DDF_20251020 
+	 Generation source  : RANDOM 
+	 Generation model   : NON1ASED 
+	 Number of LC to Generate: 0 
+	 OMEGA_(MATTER,LAMBDA)= 0.315, 0.685,    w0= -1.00   H0= 70.0 
+	 KCOR  file : /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+	 Observer Gen-FILTERS  :  ugrizY  
+	 Random number seed: 94  (NSTREAM=2)
+	 Gen-Range for RA(deg)  : -360.000 to  360.000 
+	 Gen-Range for DEC(deg): -360.000 to  360.000 
+	 Gen-Range for ZCMB :  0.011 to  1.800  (sigma= 0.0000, bias=0.00000) 
+	 Gen-Range for PEAKMJD  :  60900.0 to  61900.0  
+	 Gen-Range for Trest    :    -50.0 to    300.0  days 
+	 Gen-Range for SHAPEPAR  :      0.0 to      0.0  
+	 Gen-Range for AV  : -9.00 to -9.00  (dN/dAv = exp(-AV/-9.00) 
+	 Gen-Mean  for RV  : 3.10  
+	 Gen-sigma for RV  : 0.00 , 0.00 (lower , upper ) 
+	 Gen-Range for RV  : 1.00 to 5.00 
+	 ZP offsets (ugrizY) :  0.000 0.000 0.000 0.000 0.000 0.000
+	 MODEL mag offsets (ugrizY) :   0.00  0.00  0.00  0.00  0.00  0.00
+
+
+ ****************************************************************** 
+    init_RANDOMsource : CIDOFF=0   
+
+ ****************************************************************** 
+   SIMLIB_readGlobalHeader_TEXT  
+	 Opened : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+
+ ****************************************************************** 
+   SIMLIB_prepGlobalHeader  
+	 SIMLIB Survey    : LSST 
+	 SIMLIB Field : VOID 
+	 SIMLIB Pixel Saturation: 100000 photoelectrons. 
+	 SIMLIB Filters   : ugrizY 
+	 SIMLIB created by: NONE 
+	 SIMLIB Solid Angle  : 0.025000 steridians 
+	 SIMLIB PSF unit:    PIXEL_SIGMA 
+	 SIMLIB SKYSIG unit: ADU_PER_SQPIXEL 
+
+  Bit-mask options for SIMLIB_MSKOPT = 128 
+	 MASK=   128 -> keep entire SIMLIB season (not just transient range) 
+
+	 SIMLIB MAXRANSTART after  818  LIBIDs  (2 seconds)
+
+ ****************************************************************** 
+   init_RateModel  
+ dN/dz from 1.00 x Strolger15(CANDELS): 
+    MODEL_RATE(z=0.01) = 7.064e-06/Mpc^3/yr    
+    MODEL_RATE(z=0.21) = 1.494e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.41) = 2.415e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.61) = 3.108e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.81) = 3.417e-05/Mpc^3/yr    
+    MODEL_RATE(z=1.01) = 3.436e-05/Mpc^3/yr    
+    MODEL_RATE(z=1.21) = 3.303e-05/Mpc^3/yr    
+    MODEL_RATE(z=1.41) = 3.113e-05/Mpc^3/yr    
+    MODEL_RATE(z=1.61) = 2.910e-05/Mpc^3/yr    
+ Calculated Number of EVENTS per season =  3.727e+04 
+
+ ****************************************************************** 
+   Initialize SEARCH EFFICIENCY for 'LSST' 
+  
+   Read Detection-efficiency curves: 
+	 EFF_DETECT(u) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(g) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(r) = 0.425 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(i) = 0.540 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(z) = 0.469 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(Y) = 0.469 at ABS(SNR) =  5.00 ()
+
+   Fetch SOFTWARE SEARCH-LOGIC from : 
+	 /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+	 Logic: 2 MJDs require filters=u+g+r+i+z+Y 
+	 Trigger epoch contains all obs within 0.007 days
+
+
+  Optional SEARCHEFF_SPEC_FILE not specified -> EFF_SPEC=1 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+ ****************************************************************** 
+   READ_CALIB_DRIVER: read calib/filters/kcor  
+	 FILTERS_SURVEY = ugrizY 
+  Opened /home/mvalenzuela/run_SNANA/kcor_LSST.fits
+   read_calib_head 
+		 Read VERSION         = 4  (kcor.exe version) 
+		 Read NPRIM           = 1  primary refs 
+		 Read PRIM001         = AB 
+		 Read NFILTERS        = 6  filters 
+		 Read NKCOR           = 0  K-COR tables 
+		 Read  991 wavelength bins (2100.00 to 12000.00)
+		 Read  106 epoch      bins (-20.00 to 85.00)
+		 Read    1 redshift   bins (0.00 to 0.00)
+		 Read    1 AV         bins (0.00 to 0.00)
+   read_calib_zpoff  
+   read_calib_snsed 
+   read_kcor_tables 
+   read_kcor_mags 
+   read_calib_filters 
+   read_calib_primarysed 
+
+   print_calib_summary 
+	  Primary Spectrum: AB 
+
+  FILTER SUMMARY (RDKCOR) : 
+   internal                   LAM  LAM   rest-lam      primary
+  index name                  AVG  RMS   kcor range    mag   ZP
+ ---------------------------------------------------------------------- 
+    1 LSST-u                 3710  163     0-    0   0.000   0.000
+    2 LSST-g                 4806  431     0-    0   0.000   0.000
+    3 LSST-r                 6221  414     0-    0   0.000   0.000
+    4 LSST-i                 7559  387     0-    0   0.000   0.000
+    5 LSST-z                 8681  311     0-    0   0.000   0.000
+    6 LSST-Y                 9757  345     0-    0   0.000   0.000
+	 NFILTDEF[SURVEY,REST] = 6 0 
+
+ READ_CALIB_DRIVER: Done 
+
+
+ ****************************************************************** 
+    PREPARE NON1ASED TEMPLATE SELECTION   
+    MODELPATH = /home/mvalenzuela/SNDATA_ROOT/models/NON1ASED/NON1ASED.V19_CC+HostXT 
+    Read all NON1A from '/home/mvalenzuela/SNDATA_ROOT/models/NON1ASED/NON1ASED.V19_CC+HostXT/NON1A.LIST' 
+     Will generate 1818 NON1ASED (MXGEN=1818) with pycoco_SN2011ei.SED
+     Will generate 1818 NON1ASED (MXGEN=3636) with pycoco_SN2011fu.SED
+     Will generate 1818 NON1ASED (MXGEN=5454) with pycoco_SN2011hs.SED
+     Will generate 1818 NON1ASED (MXGEN=7272) with pycoco_SN2006T.SED
+     Will generate 1818 NON1ASED (MXGEN=9090) with pycoco_SN2008bo.SED
+     Will generate 1818 NON1ASED (MXGEN=10908) with pycoco_SN2011dh.SED
+     Will generate 1818 NON1ASED (MXGEN=12726) with pycoco_SN2008ax.SED
+     Will generate 1818 NON1ASED (MXGEN=14544) with pycoco_SN2008aq.SED
+     Will generate 1818 NON1ASED (MXGEN=16362) with pycoco_SN2013df.SED
+     Will generate 1818 NON1ASED (MXGEN=18180) with pycoco_SN1993J.SED
+     Will generate 1820 NON1ASED (MXGEN=20000) with pycoco_SN2016gkg.SED
+
+   filtdump_SEDMODEL: Read primary ref 'AB' with 991 lambda bins 
+
+   Defined                                 Lambda           AB     AB 
+   Filter                  <LAMBDA>        Range(step)      mag    ZP 
+   ----------------------------------------------------------------------
+   id=01 (      LSST-u)   ( 3710.0 + 0)   3200- 4100( 10)   0.000  12.652  
+   id=02 (      LSST-g)   ( 4805.8 + 0)   3750- 5770( 10)   0.000  14.689  
+   id=03 (      LSST-r)   ( 6221.5 + 0)   5230- 7150( 10)   0.000  14.560  
+   id=04 (      LSST-i)   ( 7559.2 + 0)   6590- 8450( 10)   0.000  14.379  
+   id=05 (      LSST-z)   ( 8680.6 + 0)   7890- 9470( 10)   0.000  13.993  
+   id=06 (      LSST-Y)   ( 9757.0 + 0)   8970-10990( 10)   0.000  13.017  
+   ----------------------------------------------------------------------
+	 malloc_METADATA_SEDMODEL for NSED=1 and NPAR=0
+  malloc_FLUXTABLE_SEDMODEL : allocate   2.58 Mb of memory for integral-flux tables. 
+	 Table bins include 400 DAYs. 
+	 Table bins include   6 FILTERs. 
+	 Table bins include   1 SEDs. 
+	 Table bins include 114 log10(Z): 0.00975 <= Z <= 1.80345 .
+		 ZTABLE[  1] =  0.00975   (LOGZ=-2.0109)
+		 ZTABLE[  2] =  0.01021   (LOGZ=-1.9908)
+		 ZTABLE[  3] =  0.01070   (LOGZ=-1.9707)
+		 ZTABLE[111] =  1.57007   (LOGZ=0.1959)
+		 ZTABLE[112] =  1.64430   (LOGZ=0.2160)
+		 ZTABLE[113] =  1.72204   (LOGZ=0.2360)
+		 ZTABLE[114] =  1.80345   (LOGZ=0.2561)
+		 Zero entire SEDMODEL flux table (645610 entries). 
+
+	 Allow SED Flam < 0 
+
+ ****************************************************************** 
+   init_modelSmear: init intrinsic SN smearing with model=NONE  
+	 Smear-mode: interpolate from central filter wavelengths.
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=1)  
+
+ ****************************************************************** 
+   clr_VERSION  
+	 LCMERGE Version V19_SNIIb_DDF_20251020 does not exist. 
+	 SIM Version V19_SNIIb_DDF_20251020 does not exist. 
+	 PHOTOMETRY Version V19_SNIIb_DDF_20251020 does not exist. 
+
+ ****************************************************************** 
+   Init SIMGEN_DUMP file   
+	 open /home/mvalenzuela/SNDATA_ROOT/SIM/V19_SNIIb_DDF_20251020/V19_SNIIb_DDF_20251020.DUMP
+
+ ****************************************************************** 
+   WR_SNFITSIO_INIT  
+
+ ****************************************************************** 
+   set_TIMERS  
+	 CPUTIME_INITIALIZE   = 2.000 second
+
+ ****************************************************************** 
+    Begin Generating Lightcurves.   
+  Found Max dN/dz * wgt = 4.480533e+05 at z =    1.120 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for pycoco_SN2011ei.SED (INDEX=748)  
+  Read  NON1A-748  SED  from : 
+    /home/mvalenzuela/SNDATA_ROOT/models/NON1ASED/NON1ASED.V19_CC+HostXT/pycoco_SN2011ei.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (645610 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-748): -15.84 to 133.78     LAMBDA:  1605 to 11000 A 
+    WARNING(NON1A-748): Flux(Trestmax)/Flux(peak) = 0.073 -> beware of extrapolation
+
+  SED-epoch  range: -15.84 <= Trest <= 133.78 (<STEP>=1.87 day)
+  SED-lambda range:  1605 <= LAM <= 11000 (<STEP>=   5 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for pycoco_SN2011ei.SED : 
+	 GENMAG_OFF_MODEL -> -0.39 
+	 GENMAG_SMEAR ->  0.92, 0.92 
+	 Finished generating        1 of 20000 (CID=1) 
+	 Finished generating      500 of 20000 (CID=500) 
+	 Finished generating     1000 of 20000 (CID=1000) 
+	 Finished generating     1500 of 20000 (CID=1500) GenRate=10/sec
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for pycoco_SN2011fu.SED (INDEX=749)  
+  Read  NON1A-749  SED  from : 
+    /home/mvalenzuela/SNDATA_ROOT/models/NON1ASED/NON1ASED.V19_CC+HostXT/pycoco_SN2011fu.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.85 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (645610 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-749):  -2.14 to 196.23     LAMBDA:  1605 to 11000 A 
+
+  SED-epoch  range:  -2.14 <= Trest <= 196.23 (<STEP>=1.68 day)
+  SED-lambda range:  1605 <= LAM <= 11000 (<STEP>=   5 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for pycoco_SN2011fu.SED : 
+	 GENMAG_OFF_MODEL ->  1.63 
+	 GENMAG_SMEAR ->  0.92, 0.92 
+	 Finished generating     2000 of 20000 (CID=2000) 
+	 Finished generating     2500 of 20000 (CID=2500) 
+	 Finished generating     3000 of 20000 (CID=3000) GenRate=10/sec
+	 Finished generating     3500 of 20000 (CID=3500) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for pycoco_SN2011hs.SED (INDEX=750)  
+  Read  NON1A-750  SED  from : 
+    /home/mvalenzuela/SNDATA_ROOT/models/NON1ASED/NON1ASED.V19_CC+HostXT/pycoco_SN2011hs.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.00 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (645610 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-750): -14.16 to 184.93     LAMBDA:  1605 to 11000 A 
+
+  SED-epoch  range: -14.16 <= Trest <= 184.93 (<STEP>=1.88 day)
+  SED-lambda range:  1605 <= LAM <= 11000 (<STEP>=   5 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for pycoco_SN2011hs.SED : 
+	 GENMAG_OFF_MODEL -> -1.28 
+	 GENMAG_SMEAR ->  0.92, 0.92 
+	 Finished generating     4000 of 20000 (CID=4000) GenRate=9/sec
+	 Finished generating     4500 of 20000 (CID=4500) 
+	 Finished generating     5000 of 20000 (CID=5000) GenRate=9/sec
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for pycoco_SN2006T.SED (INDEX=722)  
+  Read  NON1A-722  SED  from : 
+    /home/mvalenzuela/SNDATA_ROOT/models/NON1ASED/NON1ASED.V19_CC+HostXT/pycoco_SN2006T.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 0.05 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (645610 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-722): -17.98 to 146.82     LAMBDA:  1605 to 11000 A 
+
+  SED-epoch  range: -17.98 <= Trest <= 146.82 (<STEP>=1.87 day)
+  SED-lambda range:  1605 <= LAM <= 11000 (<STEP>=   5 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for pycoco_SN2006T.SED : 
+	 GENMAG_OFF_MODEL ->  0.73 
+	 GENMAG_SMEAR ->  0.92, 0.92 
+	 Finished generating     5500 of 20000 (CID=5500) 
+	 Finished generating     6000 of 20000 (CID=6000) GenRate=9/sec
+	 Finished generating     6500 of 20000 (CID=6500) 
+	 Finished generating     7000 of 20000 (CID=7000) GenRate=9/sec
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for pycoco_SN2008bo.SED (INDEX=732)  
+  Read  NON1A-732  SED  from : 
+    /home/mvalenzuela/SNDATA_ROOT/models/NON1ASED/NON1ASED.V19_CC+HostXT/pycoco_SN2008bo.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.50 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (645610 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-732): -16.00 to 183.50     LAMBDA:  1605 to 11000 A 
+
+  SED-epoch  range: -16.00 <= Trest <= 183.50 (<STEP>=1.88 day)
+  SED-lambda range:  1605 <= LAM <= 11000 (<STEP>=   5 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for pycoco_SN2008bo.SED : 
+	 GENMAG_OFF_MODEL -> -1.53 
+	 GENMAG_SMEAR ->  0.92, 0.92 
+	 Finished generating     7500 of 20000 (CID=7500) 
+	 Finished generating     8000 of 20000 (CID=8000) GenRate=9/sec
+	 Finished generating     8500 of 20000 (CID=8500) 
+	 Finished generating     9000 of 20000 (CID=9000) GenRate=9/sec
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for pycoco_SN2011dh.SED (INDEX=747)  
+  Read  NON1A-747  SED  from : 
+    /home/mvalenzuela/SNDATA_ROOT/models/NON1ASED/NON1ASED.V19_CC+HostXT/pycoco_SN2011dh.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.68 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (645610 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-747): -20.37 to 271.08     LAMBDA:  1605 to 11000 A 
+    WARNING(NON1A-747): Flux(Trestmin)/Flux(peak) = 0.206 -> beware of extrapolation
+
+  SED-epoch  range: -20.37 <= Trest <= 271.08 (<STEP>=2.35 day)
+  SED-lambda range:  1605 <= LAM <= 11000 (<STEP>=   5 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for pycoco_SN2011dh.SED : 
+	 GENMAG_OFF_MODEL -> -1.00 
+	 GENMAG_SMEAR ->  0.92, 0.92 
+	 Finished generating     9500 of 20000 (CID=9500) 
+	 Finished generating    10000 of 20000 (CID=10000) GenRate=9/sec
+	 Finished generating    10500 of 20000 (CID=10500) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for pycoco_SN2008ax.SED (INDEX=730)  
+  Read  NON1A-730  SED  from : 
+    /home/mvalenzuela/SNDATA_ROOT/models/NON1ASED/NON1ASED.V19_CC+HostXT/pycoco_SN2008ax.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (645610 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-730): -18.91 to 180.00     LAMBDA:  1605 to 11000 A 
+
+  SED-epoch  range: -18.91 <= Trest <= 180.00 (<STEP>=1.74 day)
+  SED-lambda range:  1605 <= LAM <= 11000 (<STEP>=   5 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for pycoco_SN2008ax.SED : 
+	 GENMAG_OFF_MODEL -> -0.34 
+	 GENMAG_SMEAR ->  0.92, 0.92 
+	 Finished generating    11000 of 20000 (CID=11000) GenRate=9/sec
+	 Finished generating    11500 of 20000 (CID=11500) 
+	 Finished generating    12000 of 20000 (CID=12000) 
+	 Finished generating    12500 of 20000 (CID=12500) GenRate=10/sec
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for pycoco_SN2008aq.SED (INDEX=729)  
+  Read  NON1A-729  SED  from : 
+    /home/mvalenzuela/SNDATA_ROOT/models/NON1ASED/NON1ASED.V19_CC+HostXT/pycoco_SN2008aq.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 0.03 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (645610 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-729): -17.75 to 180.60     LAMBDA:  1605 to 11000 A 
+
+  SED-epoch  range: -17.75 <= Trest <= 180.60 (<STEP>=1.85 day)
+  SED-lambda range:  1605 <= LAM <= 11000 (<STEP>=   5 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for pycoco_SN2008aq.SED : 
+	 GENMAG_OFF_MODEL -> -0.39 
+	 GENMAG_SMEAR ->  0.92, 0.92 
+	 Finished generating    13000 of 20000 (CID=13000) 
+	 Finished generating    13500 of 20000 (CID=13500) GenRate=9/sec
+	 Finished generating    14000 of 20000 (CID=14000) 
+	 Finished generating    14500 of 20000 (CID=14500) GenRate=9/sec
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for pycoco_SN2013df.SED (INDEX=759)  
+  Read  NON1A-759  SED  from : 
+    /home/mvalenzuela/SNDATA_ROOT/models/NON1ASED/NON1ASED.V19_CC+HostXT/pycoco_SN2013df.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (645610 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-759):  -2.50 to 197.24     LAMBDA:  1605 to 11000 A 
+    WARNING(NON1A-759): Flux(Trestmin)/Flux(peak) = 0.203 -> beware of extrapolation
+
+  SED-epoch  range:  -2.50 <= Trest <= 197.24 (<STEP>=1.72 day)
+  SED-lambda range:  1605 <= LAM <= 11000 (<STEP>=   5 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for pycoco_SN2013df.SED : 
+	 GENMAG_OFF_MODEL -> -1.09 
+	 GENMAG_SMEAR ->  0.92, 0.92 
+	 Finished generating    15000 of 20000 (CID=15000) 
+	 Finished generating    15500 of 20000 (CID=15500) GenRate=9/sec
+	 Finished generating    16000 of 20000 (CID=16000) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for pycoco_SN1993J.SED (INDEX=704)  
+  Read  NON1A-704  SED  from : 
+    /home/mvalenzuela/SNDATA_ROOT/models/NON1ASED/NON1ASED.V19_CC+HostXT/pycoco_SN1993J.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.00 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (645610 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-704):  -2.45 to 223.00     LAMBDA:  1605 to 11000 A 
+    WARNING(NON1A-704): Flux(Trestmin)/Flux(peak) = 0.066 -> beware of extrapolation
+
+  SED-epoch  range:  -2.45 <= Trest <= 223.00 (<STEP>=1.76 day)
+  SED-lambda range:  1605 <= LAM <= 11000 (<STEP>=   5 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for pycoco_SN1993J.SED : 
+	 GENMAG_OFF_MODEL -> -3.77 
+	 GENMAG_SMEAR ->  0.92, 0.92 
+	 Finished generating    16500 of 20000 (CID=16500) GenRate=9/sec
+	 Finished generating    17000 of 20000 (CID=17000) 
+	 Finished generating    17500 of 20000 (CID=17500) 
+	 Finished generating    18000 of 20000 (CID=18000) GenRate=10/sec
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for pycoco_SN2016gkg.SED (INDEX=765)  
+  Read  NON1A-765  SED  from : 
+    /home/mvalenzuela/SNDATA_ROOT/models/NON1ASED/NON1ASED.V19_CC+HostXT/pycoco_SN2016gkg.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.91 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (645610 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-765): -19.34 to 179.71     LAMBDA:  1605 to 11000 A 
+
+  SED-epoch  range: -19.34 <= Trest <= 179.71 (<STEP>=1.75 day)
+  SED-lambda range:  1605 <= LAM <= 11000 (<STEP>=   5 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for pycoco_SN2016gkg.SED : 
+	 GENMAG_OFF_MODEL -> -0.38 
+	 GENMAG_SMEAR ->  0.92, 0.92 
+	 Finished generating    18500 of 20000 (CID=18500) 
+	 Finished generating    19000 of 20000 (CID=19000) GenRate=9/sec
+	 Finished generating    19500 of 20000 (CID=19500) 
+	 Finished generating    20000 of 20000 (CID=20000) GenRate=9/sec
+
+ ****************************************************************** 
+    Done generating 20000 SN lightcurves from RANDOM source.  
+	 (20000 lightcurves requested => 645 were written) 
+	 CPUTIME_PROCESS_ALL  = 34.083 minute
+	 CPUTIME_PROCESS_RATE(GEN) = 9.780 evt/second
+	 CPUTIME_PROCESS_RATE(ACC) = 0.315 evt/second
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=2)  
+
+ ****************************************************************** 
+   DUMP README CONTENTS TO SCREEN
+  
+DOCUMENTATION:
+  OVERVIEW:
+    TIME_START:   2025-12-15  18:29  # UT
+    SURVEY:       LSST
+    GENMODEL:     NON1ASED
+    SNIA:         False
+    HOST_MACHINE: sn018
+    USERNAME:     mvalenzuela
+    SNDATA_ROOT:  /home/mvalenzuela/SNDATA_ROOT
+    SNANA_DIR:     /home/lmod/software/SNANA/11.05p
+    SNANA_VERSION: 
+    CWD:   /home/mvalenzuela/DATASIM_LSST_1/DDF/input_files_v6/V19_SNIIb
+    INPUT_FILE:
+    - V19_SNIIb_20251020.input
+    - /home/mvalenzuela/run_SNANA/elastic/model_config/SIMGEN_INCLUDE_V19_SNIIb+HostXT.INPUT
+# 
+  INPUT_KEYS:
+# Output data
+    GENVERSION:              V19_SNIIb_DDF_20251020
+    NGENTOT_LC:              20000  
+    FORMAT_MASK:             32  #  += 2,32,16 -> TEXT, FITS, randomCID
+    GENTYPE:                 0  # true type
+    SNTYPE:                  1  101  # spec Type, photID type
+    CIDRAN_MIN:              0  
+    CIDRAN_MAX:              3000000  
+# Source model
+    GENMODEL:                NON1ASED 
+    PATH_NON1ASED:           /home/mvalenzuela/SNDATA_ROOT/models/NON1ASED/NON1ASED.V19_CC+HostXT 
+    MINSLOPE_EXTRAPMAG_LATE: 0.01 
+    NON1A_KEYS:              5 INDEX WGT MAGOFF MAGSMEAR SNTYPE 
+    NON1A:                  
+    - 748 0.009919 -0.39 0.92 23 
+    - 749 0.009919 1.63 0.92 23 
+    - 750 0.009919 -1.28 0.92 23 
+    - 722 0.009919 0.73 0.92 23 
+    - 732 0.009919 -1.53 0.92 23 
+    - 747 0.009919 -1.00 0.92 23 
+    - 730 0.009919 -0.34 0.92 23 
+    - 729 0.009919 -0.39 0.92 23 
+    - 759 0.009919 -1.09 0.92 23 
+    - 704 0.009919 -3.77 0.92 23 
+    - 765 0.009919 -0.38 0.92 23 
+    GENMAG_SMEAR:            1.0000e-03  # coherent scatter (mag)
+# Cosmology inputs
+    OMEGA_MATTER:            0.3150  
+    OMEGA_LAMBDA:            0.6850  
+    w0_LAMBDA:               -1.0000  
+    wa_LAMBDA:               0  
+    MUSHIFT:                 0  
+# Instrumental inputs
+    GENFILTERS:          ugrizY 
+    KCOR_FILE:           /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+    SIMLIB_FILE:             /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+    SIMLIB_MAXRANSTART:      1000 
+    SIMLIB_MSKOPT:           128 
+    SMEARFLAG_FLUX:      1  # 1->add Poisson noise
+    SMEARFLAG_ZEROPT:    1  # +=1->apply scatter, +=2->add to FLUXERRCAL
+# SEARCHEFF/detections
+    SEARCHEFF_PIPELINE_LOGIC_FILE:  /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+    NEWMJD_DIF:              7.0000e-03  # day-sep if > 1 detections required
+    SEARCHEFF_PIPELINE_EFF_FILE:  /home/mvalenzuela/run_SNANA/LSST_SEARCHEFF_PIPELINE.DAT
+    SEARCHEFF_SPEC_FILE:     NONE
+    SEARCHEFF_zHOST_FILE:    NONE
+    APPLY_SEARCHEFF_OPT:     1  # += 1,2,4 => pipe,spec,zhost
+# Redshift inputs
+    GENRANGE_REDSHIFT:       0.0110  1.8000  
+    GENSIGMA_REDSHIFT:       0  
+    GENSIGMA_VPEC:           0  # true vpec scatter (km/sec)
+    VPEC_ERR:                0  # vpec error after correction (km/sec)
+# Epoch & sky coverage inputs
+    GENRANGE_MJD:            60981.0000  61832.0000  
+    GENRANGE_PEAKMJD:        60900.0000  61900.0000  
+    GENSIGMA_PEAKMJD:        1.0000  
+    GENRANGE_TREST:          -50.0000  300.0000  
+    SOLID_ANGLE:             0.0250  
+# Galactic extinction
+    OPT_MWEBV:        1   
+    OPT_MWCOLORLAW:   94   
+# Population and rate-model params
+    DNDZ:                    CC_S15 
+    DNDZ_ALLSCALE:           0.1090  # dN/dz *= ALLSCALE
+# Misc inputs
+    GENSOURCE:               RANDOM
+    RANSEED:                 94  
+    DEBUG_FLAG:              0  
+    SIMGEN_DUMPALL:          35 CID LIBID SIM_SEARCHEFF_MASK GENTYPE NON1A_INDEX ZCMB ZHELIO ZCMB_SMEAR RA DEC MWEBV GALID GALZPHOT GALZPHOTERR GALSNSEP GALSNDDLR RV AV MU LENSDMU PEAKMJD MJD_DETECT_FIRST MJD_DETECT_LAST DTSEASON_PEAK PEAKMAG_u PEAKMAG_g PEAKMAG_r PEAKMAG_i PEAKMAG_z PEAKMAG_Y SNRMAX SNRMAX2 SNRMAX3 NOBS NOBS_SATURATE 
+# 
+  FILTERS:   # mean wavelength (A)
+    u:  3710.0
+    g:  4805.8
+    r:  6221.5
+    i:  7559.2
+    z:  8680.6
+    Y:  9757.0
+# 
+  INPUT_NOTES:
+  - Poisson noise is ON 
+  - Reported flux-uncertainty includes SKY+GALAXY+SOURCE
+  - SB-dependent flux scatter is OFF
+  -  dN/dz from 1.00 x Strolger15(CANDELS): 
+  -     MODEL_RATE(z=0.01) = 7.064e-06/Mpc^3/yr    
+  -     MODEL_RATE(z=0.21) = 1.494e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.41) = 2.415e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.61) = 3.108e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.81) = 3.417e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=1.01) = 3.436e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=1.21) = 3.303e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=1.41) = 3.113e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=1.61) = 2.910e-05/Mpc^3/yr    
+  -  Calculated Number of EVENTS per season =  3.727e+04 
+  - H0 =  70.00 km/s/Mpc 
+  - Omega_{M,L} =  0.315, 0.685     w0,wa = -1.00,0.000
+  - APPLY_SEARCHEFF_OPT=1 --> Require EFF(PIPELINE) 
+  - PIPELINE requires 2 detections among u+g+r+i+z+Y (MJD dif > 0.0070 days) 
+#
+  GENTYPE_TO_NAME:  # GENTYPE:  [non]Ia   type  
+    23:  nonIa    IIb
+# 
+  OUTPUT_SUMMARY:
+    RANDOM_SYNC: 
+    - List=1  FIRST=0.281315  LAST=0.706271   AVG(wrap) = 26.6 +_ 39.6 
+    - List=2  FIRST=0.635114  LAST=0.523229   AVG(wrap) = 0.2 +_ 0.1 
+    - List=3  FIRST=0.315815  LAST=0.847705   AVG(wrap) = 0.0 +_ 0.0 
+# 
+    CPU_MINUTES:       34.08  
+    NGENLC_TOT:        20000    # (10/sec)
+    NGENLC_WRITE:      645    # (0/sec)
+    NGENSPEC_WRITE:    0  
+    EFF(SEARCH+CUTS):  0.0322 +-  0.0012
+    NGEN_PER_SEASON:   37275       # NSN(GEN) in GENRANGE(z,MJD,dOmega)
+    NACC_PER_SEASON:   1202 +_ 47  # NSN(ACCEPT) after trigger+cuts
+    NREJECT:  [2923,0,0,  16432,0]   # [NEP<1,GENRANGE,PEAKMAG,  SEARCHEFF,CUTWIN] 
+DOCUMENTATION_END:
+
+  AUXILIARY FILES: 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/V19_SNIIb_DDF_20251020/V19_SNIIb_DDF_20251020.LIST 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/V19_SNIIb_DDF_20251020/V19_SNIIb_DDF_20251020.README 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/V19_SNIIb_DDF_20251020/V19_SNIIb_DDF_20251020.DUMP
+ WR_SNFITSIO_END: wrote 645 events and 0 spectra to FITS format
+
+ DONE with snlc_sim.

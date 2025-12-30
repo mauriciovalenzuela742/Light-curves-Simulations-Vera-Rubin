@@ -1,0 +1,571 @@
+
+ Full command: snlc_sim.exe SNIa-91bg_20251020.input 
+
+ SNANA_VERSION: NOT_FROM_GITHUB
+
+
+
+ ****************************************************************** 
+   Begin execution of snlc_sim.exe    
+ SNDATA_ROOT = /home/mvalenzuela/SNDATA_ROOT 
+ SNANA_DIR   = /home/lmod/software/SNANA/11.05p 
+
+
+   sizeof(INPUTS) =   5.043 MB 
+   sizeof(GENLC)  =  10.667 MB 
+
+  init_SNDATA_GLOBAL: 
+ --------------------------------------------------------
+  Initialize NstringMatch for sim-input file
+  Read 83 words from user input file 1: 
+	 SNIa-91bg_20251020.input 
+ --------------------------------------------------------
+  Read 36 words from user input file 2: 
+	 /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_SNIa-91bg.INPUT 
+
+ ****************************************************************** 
+   init_HzFUN_INFO  
+	 H0         = 70.00      # km/s/Mpc 
+	 OM, OL, Ok = 0.31500, 0.68500, 0.00000 
+	 w0, wa     = -1.000,  0.000 
+
+ ****************************************************************** 
+    prep_user_inputs summary   
+	 SIMLIB file        : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB   (start LIBID=0)
+	 Generation Version : SNIa-91bg_DDF_20251020 
+	 Generation source  : RANDOM 
+	 Generation model   : SIMSED.SNIa-91bg 
+	 Number of LC to Generate: 0 
+	 OMEGA_(MATTER,LAMBDA)= 0.315, 0.685,    w0= -1.00   H0= 70.0 
+	 KCOR  file : /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+	 Observer Gen-FILTERS  :  ugrizY  
+	 Random number seed: 46  (NSTREAM=2)
+	 Gen-Range for RA(deg)  : -360.000 to  360.000 
+	 Gen-Range for DEC(deg): -360.000 to  360.000 
+	 Gen-Range for ZCMB :  0.011 to  0.600  (sigma= 0.0000, bias=0.00000) 
+	 Gen-Range for PEAKMJD  :  60900.0 to  61900.0  
+	 Gen-Range for Trest    :   -100.0 to    400.0  days 
+	 Gen-Range for SHAPEPAR  :     -1.0 to      1.0  
+	 Gen-Range for AV  : -9.00 to -9.00  (dN/dAv = exp(-AV/-9.00) 
+	 Gen-Mean  for RV  : 3.10  
+	 Gen-sigma for RV  : 0.00 , 0.00 (lower , upper ) 
+	 Gen-Range for RV  : 1.00 to 5.00 
+	 ZP offsets (ugrizY) :  0.000 0.000 0.000 0.000 0.000 0.000
+	 MODEL mag offsets (ugrizY) :   0.00  0.00  0.00  0.00  0.00  0.00
+
+
+ ****************************************************************** 
+    init_RANDOMsource : CIDOFF=0   
+
+ ****************************************************************** 
+   SIMLIB_readGlobalHeader_TEXT  
+	 Opened : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+
+ ****************************************************************** 
+   SIMLIB_prepGlobalHeader  
+	 SIMLIB Survey    : LSST 
+	 SIMLIB Field : VOID 
+	 SIMLIB Pixel Saturation: 100000 photoelectrons. 
+	 SIMLIB Filters   : ugrizY 
+	 SIMLIB created by: NONE 
+	 SIMLIB Solid Angle  : 0.025000 steridians 
+	 SIMLIB PSF unit:    PIXEL_SIGMA 
+	 SIMLIB SKYSIG unit: ADU_PER_SQPIXEL 
+
+  Bit-mask options for SIMLIB_MSKOPT = 128 
+	 MASK=   128 -> keep entire SIMLIB season (not just transient range) 
+
+	 SIMLIB MAXRANSTART after  233  LIBIDs  (0 seconds)
+
+ ****************************************************************** 
+   init_RateModel  
+ POWERLAW RATE MODEL:  3.00e-06*(1+z)^1.50  (0.0 < z < 10.0) 
+    MODEL_RATE(z=0.01) = 3.050e-06/Mpc^3/yr    
+    MODEL_RATE(z=0.21) = 3.998e-06/Mpc^3/yr    
+    MODEL_RATE(z=0.41) = 5.028e-06/Mpc^3/yr    
+ Calculated Number of EVENTS per season =   864 
+
+ ****************************************************************** 
+   Initialize SEARCH EFFICIENCY for 'LSST' 
+  
+   Read Detection-efficiency curves: 
+	 EFF_DETECT(u) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(g) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(r) = 0.425 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(i) = 0.540 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(z) = 0.469 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(Y) = 0.469 at ABS(SNR) =  5.00 ()
+
+   Fetch SOFTWARE SEARCH-LOGIC from : 
+	 /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+	 Logic: 2 MJDs require filters=u+g+r+i+z+Y 
+	 Trigger epoch contains all obs within 0.007 days
+
+
+  Optional SEARCHEFF_SPEC_FILE not specified -> EFF_SPEC=1 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+ ****************************************************************** 
+   READ_CALIB_DRIVER: read calib/filters/kcor  
+	 FILTERS_SURVEY = ugrizY 
+  Opened /home/mvalenzuela/run_SNANA/kcor_LSST.fits
+   read_calib_head 
+		 Read VERSION         = 4  (kcor.exe version) 
+		 Read NPRIM           = 1  primary refs 
+		 Read PRIM001         = AB 
+		 Read NFILTERS        = 6  filters 
+		 Read NKCOR           = 0  K-COR tables 
+		 Read  991 wavelength bins (2100.00 to 12000.00)
+		 Read  106 epoch      bins (-20.00 to 85.00)
+		 Read    1 redshift   bins (0.00 to 0.00)
+		 Read    1 AV         bins (0.00 to 0.00)
+   read_calib_zpoff  
+   read_calib_snsed 
+   read_kcor_tables 
+   read_kcor_mags 
+   read_calib_filters 
+   read_calib_primarysed 
+
+   print_calib_summary 
+	  Primary Spectrum: AB 
+
+  FILTER SUMMARY (RDKCOR) : 
+   internal                   LAM  LAM   rest-lam      primary
+  index name                  AVG  RMS   kcor range    mag   ZP
+ ---------------------------------------------------------------------- 
+    1 LSST-u                 3710  163     0-    0   0.000   0.000
+    2 LSST-g                 4806  431     0-    0   0.000   0.000
+    3 LSST-r                 6221  414     0-    0   0.000   0.000
+    4 LSST-i                 7559  387     0-    0   0.000   0.000
+    5 LSST-z                 8681  311     0-    0   0.000   0.000
+    6 LSST-Y                 9757  345     0-    0   0.000   0.000
+	 NFILTDEF[SURVEY,REST] = 6 0 
+
+ READ_CALIB_DRIVER: Done 
+
+
+
+ ****************************************************************** 
+   init_genmag_SIMSED : Initialize SIMSED Light Curve Model  
+   filtdump_SEDMODEL: Read primary ref 'AB' with 991 lambda bins 
+
+   Defined                                 Lambda           AB     AB 
+   Filter                  <LAMBDA>        Range(step)      mag    ZP 
+   ----------------------------------------------------------------------
+   id=01 (      LSST-u)   ( 3710.0 + 0)   3200- 4100( 10)   0.000  12.652  
+   id=02 (      LSST-g)   ( 4805.8 + 0)   3750- 5770( 10)   0.000  14.689  
+   id=03 (      LSST-r)   ( 6221.5 + 0)   5230- 7150( 10)   0.000  14.560  
+   id=04 (      LSST-i)   ( 7559.2 + 0)   6590- 8450( 10)   0.000  14.379  
+   id=05 (      LSST-z)   ( 8680.6 + 0)   7890- 9470( 10)   0.000  13.993  
+   id=06 (      LSST-Y)   ( 9757.0 + 0)   8970-10990( 10)   0.000  13.017  
+   ----------------------------------------------------------------------
+  Read SIMSED model parameters from 
+     /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg
+
+
+ Read number of SEDs  from 
+  /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/SED.INFO 
+
+ Read list of SEDs and parameters from 
+  /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/SED.INFO 
+	 malloc_METADATA_SEDMODEL for NSED=35 and NPAR=2
+    Found '         stretch' with  7 bins from    0.650 to    1.250
+    Found '           color' with  5 bins from    0.000 to    1.000
+
+ Finished reading parameters for 35 SEDs 
+   SED FLUX_SCALE = 1.000000e+00 
+   SED MAG_ERR    =  0.10 
+   Read Flux errors :  NO 
+   Shift T=0 to time of peak  :  YES 
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  NDAY from largest file  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST6_C0.SED 
+  malloc_FLUXTABLE_SEDMODEL : allocate  11.47 Mb of memory for integral-flux tables. 
+	 Table bins include 124 DAYs. 
+	 Table bins include   6 FILTERs. 
+	 Table bins include  35 SEDs. 
+	 Table bins include  90 log10(Z): 0.00975 <= Z <= 0.60197 .
+		 ZTABLE[  1] =  0.00975   (LOGZ=-2.0109)
+		 ZTABLE[  2] =  0.01022   (LOGZ=-1.9908)
+		 ZTABLE[  3] =  0.01070   (LOGZ=-1.9706)
+		 ZTABLE[ 87] =  0.52387   (LOGZ=-0.2808)
+		 ZTABLE[ 88] =  0.54871   (LOGZ=-0.2607)
+		 ZTABLE[ 89] =  0.57473   (LOGZ=-0.2405)
+		 ZTABLE[ 90] =  0.60197   (LOGZ=-0.2204)
+		 Zero entire SEDMODEL flux table (2866500 entries). 
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=1/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST0_C0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=2/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST0_C1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=3/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST0_C2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=4/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST0_C3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=5/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST0_C4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=6/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST1_C0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=7/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST1_C1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=8/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST1_C2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=9/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST1_C3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=10/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST1_C4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=11/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST2_C0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=12/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST2_C1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=13/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST2_C2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=14/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST2_C3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=15/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST2_C4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=16/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST3_C0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=17/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST3_C1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=18/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST3_C2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=19/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST3_C3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=20/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST3_C4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=21/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST4_C0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=22/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST4_C1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=23/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST4_C2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=24/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST4_C3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=25/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST4_C4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=26/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST5_C0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=27/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST5_C1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=28/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST5_C2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=29/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST5_C3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=30/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST5_C4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=31/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST6_C0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.00 to  99.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=32/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST6_C1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=33/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST6_C2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.041 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=34/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST6_C3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.043 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=35/35)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg/91BG_ST6_C4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.00 to  98.00     LAMBDA:  1000 to 12000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.045 -> beware of extrapolation
+
+ Global DAY range: -20.00 to 99.00 
+  init_genmag_SIMSED : Done. 
+
+ ****************************************************************** 
+   init_modelSmear: init intrinsic SN smearing with model=NONE  
+	 Smear-mode: interpolate from central filter wavelengths.
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=1)  
+
+ ****************************************************************** 
+   clr_VERSION  
+	 LCMERGE Version SNIa-91bg_DDF_20251020 does not exist. 
+	 SIM Version SNIa-91bg_DDF_20251020 does not exist. 
+	 PHOTOMETRY Version SNIa-91bg_DDF_20251020 does not exist. 
+
+ ****************************************************************** 
+   Init SIMGEN_DUMP file   
+	 open /home/mvalenzuela/SNDATA_ROOT/SIM/SNIa-91bg_DDF_20251020/SNIa-91bg_DDF_20251020.DUMP
+
+ ****************************************************************** 
+   WR_SNFITSIO_INIT  
+
+ ****************************************************************** 
+   set_TIMERS  
+	 CPUTIME_INITIALIZE   = 17.000 second
+
+ ****************************************************************** 
+    Begin Generating Lightcurves.   
+  Found Max dN/dz * wgt = 5.561965e+04 at z =    0.600 
+	 Finished generating        1 of 2000 (CID=1) 
+	 Finished generating      100 of 2000 (CID=100) 
+	 Finished generating      200 of 2000 (CID=199) 
+	 Finished generating      300 of 2000 (CID=300) 
+	 Finished generating      400 of 2000 (CID=400) 
+	 Finished generating      500 of 2000 (CID=500) 
+	 Finished generating      600 of 2000 (CID=600) 
+	 Finished generating      700 of 2000 (CID=700) 
+	 Finished generating      800 of 2000 (CID=800) 
+	 Finished generating      900 of 2000 (CID=900) 
+	 Finished generating     1000 of 2000 (CID=1000) 
+	 Finished generating     1100 of 2000 (CID=1100) 
+	 Finished generating     1200 of 2000 (CID=1199) GenRate=11/sec
+	 Finished generating     1300 of 2000 (CID=1300) 
+	 Finished generating     1400 of 2000 (CID=1400) 
+	 Finished generating     1500 of 2000 (CID=1500) 
+	 Finished generating     1600 of 2000 (CID=1600) 
+	 Finished generating     1700 of 2000 (CID=1700) 
+	 Finished generating     1800 of 2000 (CID=1800) 
+	 Finished generating     1900 of 2000 (CID=1900) 
+	 Finished generating     2000 of 2000 (CID=2000) 
+
+ ****************************************************************** 
+    Done generating 2000 SN lightcurves from RANDOM source.  
+	 (2000 lightcurves requested => 731 were written) 
+	 CPUTIME_PROCESS_ALL  = 2.783 minute
+	 CPUTIME_PROCESS_RATE(GEN) = 11.976 evt/second
+	 CPUTIME_PROCESS_RATE(ACC) = 4.377 evt/second
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=2)  
+
+ ****************************************************************** 
+   DUMP README CONTENTS TO SCREEN
+  
+DOCUMENTATION:
+  OVERVIEW:
+    TIME_START:   2025-10-25  20:27  # UT
+    SURVEY:       LSST
+    GENMODEL:     /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg
+    SNIA:         False
+    HOST_MACHINE: sn014
+    USERNAME:     mvalenzuela
+    SNDATA_ROOT:  /home/mvalenzuela/SNDATA_ROOT
+    SNANA_DIR:     /home/lmod/software/SNANA/11.05p
+    SNANA_VERSION: 
+    CWD:   /home/mvalenzuela/DATASIM_LSST_1/DDF/input_files_v6/SNIa-91bg
+    INPUT_FILE:
+    - SNIa-91bg_20251020.input
+    - /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_SNIa-91bg.INPUT
+# 
+  INPUT_KEYS:
+# Output data
+    GENVERSION:              SNIa-91bg_DDF_20251020
+    NGENTOT_LC:              2000  
+    FORMAT_MASK:             32  #  += 2,32,16 -> TEXT, FITS, randomCID
+    GENTYPE:                 0  # true type
+    SNTYPE:                  1  101  # spec Type, photID type
+    CIDRAN_MIN:              0  
+    CIDRAN_MAX:              3000000  
+# Source model
+    GENMODEL:                /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNIa-91bg 
+    SIMSED_USE_BINARY:       0 
+    SIMSED_PARAM:            stretch 
+    GENPEAK_stretch:         0.975 
+    GENSIGMA_stretch:        0.096 0.096 
+    GENRANGE_stretch:        0.65 1.25 
+    SIMSED_PARAM:            color 
+    GENPEAK_color:           0.557 
+    GENSIGMA_color:          0.175 0.175 
+    GENRANGE_color:          0.0 1.0 
+# Cosmology inputs
+    OMEGA_MATTER:            0.3150  
+    OMEGA_LAMBDA:            0.6850  
+    w0_LAMBDA:               -1.0000  
+    wa_LAMBDA:               0  
+    MUSHIFT:                 0  
+# Instrumental inputs
+    GENFILTERS:          ugrizY 
+    KCOR_FILE:           /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+    SIMLIB_FILE:             /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+    SIMLIB_MAXRANSTART:      1000 
+    SIMLIB_MSKOPT:           128 
+    SMEARFLAG_FLUX:      1  # 1->add Poisson noise
+    SMEARFLAG_ZEROPT:    1  # +=1->apply scatter, +=2->add to FLUXERRCAL
+# SEARCHEFF/detections
+    SEARCHEFF_PIPELINE_LOGIC_FILE:  /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+    NEWMJD_DIF:              7.0000e-03  # day-sep if > 1 detections required
+    SEARCHEFF_PIPELINE_EFF_FILE:  /home/mvalenzuela/run_SNANA/LSST_SEARCHEFF_PIPELINE.DAT
+    SEARCHEFF_SPEC_FILE:     NONE
+    SEARCHEFF_zHOST_FILE:    NONE
+    APPLY_SEARCHEFF_OPT:     1  # += 1,2,4 => pipe,spec,zhost
+# Redshift inputs
+    GENRANGE_REDSHIFT:       0.0110  0.6000  
+    GENSIGMA_REDSHIFT:       0  
+    GENSIGMA_VPEC:           0  # true vpec scatter (km/sec)
+    VPEC_ERR:                0  # vpec error after correction (km/sec)
+# Epoch & sky coverage inputs
+    GENRANGE_MJD:            60981.0000  61832.0000  
+    GENRANGE_PEAKMJD:        60900.0000  61900.0000  
+    GENSIGMA_PEAKMJD:        1.0000  
+    GENRANGE_TREST:          -100.0000  400.0000  
+    SOLID_ANGLE:             0.0250  
+# Galactic extinction
+    OPT_MWEBV:        1   
+    OPT_MWCOLORLAW:   99   
+# Population and rate-model params
+    DNDZ:                    POWERLAW 3.0E-6 1.5 
+# Misc inputs
+    GENSOURCE:               RANDOM
+    RANSEED:                 46  
+    DEBUG_FLAG:              0  
+    SIMGEN_DUMPALL:          35 CID LIBID SIM_SEARCHEFF_MASK GENTYPE NON1A_INDEX ZCMB ZHELIO ZCMB_SMEAR RA DEC MWEBV GALID GALZPHOT GALZPHOTERR GALSNSEP GALSNDDLR RV AV MU LENSDMU PEAKMJD MJD_DETECT_FIRST MJD_DETECT_LAST DTSEASON_PEAK PEAKMAG_u PEAKMAG_g PEAKMAG_r PEAKMAG_i PEAKMAG_z PEAKMAG_Y SNRMAX SNRMAX2 SNRMAX3 NOBS NOBS_SATURATE 
+# 
+  FILTERS:   # mean wavelength (A)
+    u:  3710.0
+    g:  4805.8
+    r:  6221.5
+    i:  7559.2
+    z:  8680.6
+    Y:  9757.0
+# 
+  INPUT_NOTES:
+  - Poisson noise is ON 
+  - Reported flux-uncertainty includes SKY+GALAXY+SOURCE
+  - SB-dependent flux scatter is OFF
+  -  POWERLAW RATE MODEL:  3.00e-06*(1+z)^1.50  (0.0 < z < 10.0) 
+  -     MODEL_RATE(z=0.01) = 3.050e-06/Mpc^3/yr    
+  -     MODEL_RATE(z=0.21) = 3.998e-06/Mpc^3/yr    
+  -     MODEL_RATE(z=0.41) = 5.028e-06/Mpc^3/yr    
+  -  Calculated Number of EVENTS per season =   864 
+  - H0 =  70.00 km/s/Mpc 
+  - Omega_{M,L} =  0.315, 0.685     w0,wa = -1.00,0.000
+  - APPLY_SEARCHEFF_OPT=1 --> Require EFF(PIPELINE) 
+  - PIPELINE requires 2 detections among u+g+r+i+z+Y (MJD dif > 0.0070 days) 
+#
+  GENTYPE_TO_NAME:  # GENTYPE:  [non]Ia   type  
+    0:  nonIa    SNIa-91bg
+# 
+  OUTPUT_SUMMARY:
+    RANDOM_SYNC: 
+    - List=1  FIRST=0.564777  LAST=0.251917   AVG(wrap) = 28.8 +_ 41.2 
+    - List=2  FIRST=0.232632  LAST=0.547983   AVG(wrap) = 0.2 +_ 0.1 
+    - List=3  FIRST=0.607421  LAST=0.599400   AVG(wrap) = 0.0 +_ 0.0 
+# 
+    CPU_MINUTES:       2.78  
+    NGENLC_TOT:        2000    # (12/sec)
+    NGENLC_WRITE:      731    # (4/sec)
+    NGENSPEC_WRITE:    0  
+    EFF(SEARCH+CUTS):  0.3655 +-  0.0108
+    NGEN_PER_SEASON:   864       # NSN(GEN) in GENRANGE(z,MJD,dOmega)
+    NACC_PER_SEASON:   316 +_ 12  # NSN(ACCEPT) after trigger+cuts
+    NREJECT:  [290,0,0,  979,0]   # [NEP<1,GENRANGE,PEAKMAG,  SEARCHEFF,CUTWIN] 
+DOCUMENTATION_END:
+
+  AUXILIARY FILES: 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/SNIa-91bg_DDF_20251020/SNIa-91bg_DDF_20251020.LIST 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/SNIa-91bg_DDF_20251020/SNIa-91bg_DDF_20251020.README 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/SNIa-91bg_DDF_20251020/SNIa-91bg_DDF_20251020.DUMP
+ WR_SNFITSIO_END: wrote 731 events and 0 spectra to FITS format
+
+ DONE with snlc_sim.

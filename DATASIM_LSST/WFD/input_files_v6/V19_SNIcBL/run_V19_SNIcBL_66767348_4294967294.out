@@ -1,0 +1,34 @@
+
+ Full command: snlc_sim.exe V19_SNIcBL_20251020.input 
+
+ SNANA_VERSION: NOT_FROM_GITHUB
+
+
+
+ ****************************************************************** 
+   Begin execution of snlc_sim.exe    
+ SNDATA_ROOT = /home/mvalenzuela/SNDATA_ROOT 
+ SNANA_DIR   = /home/lmod/software/SNANA/11.05p 
+
+
+   sizeof(INPUTS) =   5.043 MB 
+   sizeof(GENLC)  =  10.667 MB 
+
+  init_SNDATA_GLOBAL: 
+ --------------------------------------------------------
+  Initialize NstringMatch for sim-input file
+  Read 79 words from user input file 1: 
+	 V19_SNIcBL_20251020.input 
+
+   `|```````|`    
+   <| o\ /o |>    
+    | ' ; ' |     
+    |  ___  |     ABORT program on Fatal Error. 
+    | |' '| |     
+    | `---' |     
+    \_______/    
+
+ FATAL ERROR ABORT called by read_input_file
+   Cannot open input file :
+    '/home/mvalenzuela/run_SNANA/elastic/model_config/SIMGEN_INCLUDE_V19_SNIbcBLHostXT.INPUT' 
+

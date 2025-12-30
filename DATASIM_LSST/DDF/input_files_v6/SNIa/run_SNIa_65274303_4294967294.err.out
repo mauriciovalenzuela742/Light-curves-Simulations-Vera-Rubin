@@ -1,0 +1,537 @@
+
+ Full command: snlc_sim.exe SNIa_20251020.input 
+
+ SNANA_VERSION: NOT_FROM_GITHUB
+
+
+
+ ****************************************************************** 
+   Begin execution of snlc_sim.exe    
+ SNDATA_ROOT = /home/mvalenzuela/SNDATA_ROOT 
+ SNANA_DIR   = /home/lmod/software/SNANA/11.05p 
+
+
+   sizeof(INPUTS) =   5.043 MB 
+   sizeof(GENLC)  =  10.667 MB 
+
+  init_SNDATA_GLOBAL: 
+ --------------------------------------------------------
+  Initialize NstringMatch for sim-input file
+  Read 83 words from user input file 1: 
+	 SNIa_20251020.input 
+ --------------------------------------------------------
+  Read 44 words from user input file 2: 
+	 /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_SNIa-SALT2.INPUT 
+
+ ****************************************************************** 
+   init_HzFUN_INFO  
+	 H0         = 70.00      # km/s/Mpc 
+	 OM, OL, Ok = 0.31500, 0.68500, 0.00000 
+	 w0, wa     = -1.000,  0.000 
+
+ ****************************************************************** 
+    prep_user_inputs summary   
+	 SIMLIB file        : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB   (start LIBID=0)
+	 Generation Version : SNIa_DDF_20251020 
+	 Generation source  : RANDOM 
+	 Generation model   : SALT2.WFIRST-H17 
+	 Number of LC to Generate: 0 
+	 OMEGA_(MATTER,LAMBDA)= 0.315, 0.685,    w0= -1.00   H0= 70.0 
+	 KCOR  file : /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+	 Observer Gen-FILTERS  :  ugrizY  
+	 Random number seed: 23  (NSTREAM=2)
+	 Gen-Range for RA(deg)  : -360.000 to  360.000 
+	 Gen-Range for DEC(deg): -360.000 to  360.000 
+	 Gen-Range for ZCMB :  0.011 to  1.200  (sigma= 0.0000, bias=0.00000) 
+	 Gen-Range for PEAKMJD  :  60900.0 to  61900.0  
+	 Gen-Range for Trest    :   -100.0 to    300.0  days 
+	 Gen-Range for SHAPEPAR  :     -3.0 to      2.0  
+	 Gen-Range for AV  : -9.00 to -9.00  (dN/dAv = exp(-AV/-9.00) 
+	 Gen-Mean  for RV  : 3.10  
+	 Gen-sigma for RV  : 0.00 , 0.00 (lower , upper ) 
+	 Gen-Range for RV  : 1.00 to 5.00 
+	 ZP offsets (ugrizY) :  0.000 0.000 0.000 0.000 0.000 0.000
+	 MODEL mag offsets (ugrizY) :   0.00  0.00  0.00  0.00  0.00  0.00
+
+
+ ****************************************************************** 
+    init_RANDOMsource : CIDOFF=0   
+
+ ****************************************************************** 
+   SIMLIB_readGlobalHeader_TEXT  
+	 Opened : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+
+ ****************************************************************** 
+   SIMLIB_prepGlobalHeader  
+	 SIMLIB Survey    : LSST 
+	 SIMLIB Field : VOID 
+	 SIMLIB Pixel Saturation: 100000 photoelectrons. 
+	 SIMLIB Filters   : ugrizY 
+	 SIMLIB created by: NONE 
+	 SIMLIB Solid Angle  : 0.025000 steridians 
+	 SIMLIB PSF unit:    PIXEL_SIGMA 
+	 SIMLIB SKYSIG unit: ADU_PER_SQPIXEL 
+
+  Bit-mask options for SIMLIB_MSKOPT = 128 
+	 MASK=   128 -> keep entire SIMLIB season (not just transient range) 
+
+	 SIMLIB MAXRANSTART after  910  LIBIDs  (1 seconds)
+
+ ****************************************************************** 
+   init_RateModel  
+ POWERLAW RATE MODEL:  2.50e-05*(1+z)^1.50  (0.0 < z < 1.0) 
+ POWERLAW RATE MODEL:  9.70e-05*(1+z)^-0.50  (1.0 < z < 3.0) 
+    MODEL_RATE(z=0.01) = 2.541e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.21) = 3.332e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.41) = 4.190e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.61) = 5.112e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.81) = 6.093e-05/Mpc^3/yr    
+    MODEL_RATE(z=1.01) = 6.840e-05/Mpc^3/yr    
+ Calculated Number of EVENTS per season =  3.820e+04 
+
+ ****************************************************************** 
+   Initialize SEARCH EFFICIENCY for 'LSST' 
+  
+   Read Detection-efficiency curves: 
+	 EFF_DETECT(u) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(g) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(r) = 0.425 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(i) = 0.540 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(z) = 0.469 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(Y) = 0.469 at ABS(SNR) =  5.00 ()
+
+   Fetch SOFTWARE SEARCH-LOGIC from : 
+	 /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+	 Logic: 2 MJDs require filters=u+g+r+i+z+Y 
+	 Trigger epoch contains all obs within 0.007 days
+
+
+  Optional SEARCHEFF_SPEC_FILE not specified -> EFF_SPEC=1 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+ ****************************************************************** 
+   READ_CALIB_DRIVER: read calib/filters/kcor  
+	 FILTERS_SURVEY = ugrizY 
+  Opened /home/mvalenzuela/run_SNANA/kcor_LSST.fits
+   read_calib_head 
+		 Read VERSION         = 4  (kcor.exe version) 
+		 Read NPRIM           = 1  primary refs 
+		 Read PRIM001         = AB 
+		 Read NFILTERS        = 6  filters 
+		 Read NKCOR           = 0  K-COR tables 
+		 Read  991 wavelength bins (2100.00 to 12000.00)
+		 Read  106 epoch      bins (-20.00 to 85.00)
+		 Read    1 redshift   bins (0.00 to 0.00)
+		 Read    1 AV         bins (0.00 to 0.00)
+   read_calib_zpoff  
+   read_calib_snsed 
+   read_kcor_tables 
+   read_kcor_mags 
+   read_calib_filters 
+   read_calib_primarysed 
+
+   print_calib_summary 
+	  Primary Spectrum: AB 
+
+  FILTER SUMMARY (RDKCOR) : 
+   internal                   LAM  LAM   rest-lam      primary
+  index name                  AVG  RMS   kcor range    mag   ZP
+ ---------------------------------------------------------------------- 
+    1 LSST-u                 3710  163     0-    0   0.000   0.000
+    2 LSST-g                 4806  431     0-    0   0.000   0.000
+    3 LSST-r                 6221  414     0-    0   0.000   0.000
+    4 LSST-i                 7559  387     0-    0   0.000   0.000
+    5 LSST-z                 8681  311     0-    0   0.000   0.000
+    6 LSST-Y                 9757  345     0-    0   0.000   0.000
+	 NFILTDEF[SURVEY,REST] = 6 0 
+
+ READ_CALIB_DRIVER: Done 
+
+
+
+ ****************************************************************** 
+   init_genmag_SALT2 : Initialize /home/mvalenzuela/run_SNANA/plasticc_models/SALT2.WFIRST-H17  
+	 Allow SED Flam < 0 
+   filtdump_SEDMODEL: Read primary ref 'AB' with 991 lambda bins 
+
+   Defined                                 Lambda           AB     AB 
+   Filter                  <LAMBDA>        Range(step)      mag    ZP 
+   ----------------------------------------------------------------------
+   id=01 (      LSST-u)   ( 3710.0 + 0)   3200- 4100( 10)   0.000  12.652  
+   id=02 (      LSST-g)   ( 4805.8 + 0)   3750- 5770( 10)   0.000  14.689  
+   id=03 (      LSST-r)   ( 6221.5 + 0)   5230- 7150( 10)   0.000  14.560  
+   id=04 (      LSST-i)   ( 7559.2 + 0)   6590- 8450( 10)   0.000  14.379  
+   id=05 (      LSST-z)   ( 8680.6 + 0)   7890- 9470( 10)   0.000  13.993  
+   id=06 (      LSST-Y)   ( 9757.0 + 0)   8970-10990( 10)   0.000  13.017  
+   ----------------------------------------------------------------------
+	 ISMODEL = SALT2
+  Read SALT2 model parameters from  
+	  /home/mvalenzuela/run_SNANA/plasticc_models/SALT2.WFIRST-H17
+	 OPTMASK = 0  
+
+  SALT2.INFO 
+	 RESTLAMBDA_RANGE:    2900 -   7000 A
+	 Global MAG OFFSET:   0.270 mag  
+	 COLOR OFFSET:   0.000 mag  
+	 COLOR DISP_MAX:    2.0 mag  
+	 COLORLAW PARAMS:  
+	    B,V_WAVELENGTH = 4302.6 , 5428.6 
+	    INTERP LAMBDA RANGE:  2800.0 -  9500.0 
+	    CL-polynomial params: -1.332  0.612 -0.121  0.008 
+	 MAGERR_FLOOR:   0.005 mag  
+	 MAGERR(OBS)  +=  0.100 mag for   2000  < LAMOBS <   4000 
+	 MAGERR(REST) =  0.100 mag for    100 < LAMREST <    200 
+	 SEDFLUX_INTERP_OPT:  1  (Linear) 
+	 ERRMAP_INTERP_OPT:   1  (Linear) 
+	 ERRMAP_KCOR_OPT:     1  (ON) 
+	 ERRMAP_BADVAL_ABORT: 1  (ON) 
+
+	 malloc_METADATA_SEDMODEL for NSED=2 and NPAR=0
+  Read  SALT2-0  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SALT2.WFIRST-H17/salt2_template_0.dat 
+  Store SED-0  LAM(MIN,MAX,STEP)=2000,24990,10  DAY(MIN,MAX,STEP)=-20,50,1.0 
+
+  Read  SALT2-1  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SALT2.WFIRST-H17/salt2_template_1.dat 
+  Store SED-1  LAM(MIN,MAX,STEP)=2000,24990,10  DAY(MIN,MAX,STEP)=-20,50,1.0 
+
+	 mB = 10.6350 - 2.5*log10(x0)  
+
+ Read SALT2 ERROR MAPS: 
+  Define error map  0(VAR0): salt2_lc_relative_variance_0.dat 
+  Define error map  1(VAR1): salt2_lc_relative_variance_1.dat 
+  Define error map  2(COVAR01): salt2_lc_relative_covariance_01.dat 
+  Define error map  3(ERRSCALE): salt2_lc_dispersion_scaling.dat 
+  Define error map  4(COLOR-DISP): salt2_color_dispersion.dat 
+  Read  SALT2-VAR0  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SALT2.WFIRST-H17/salt2_lc_relative_variance_0.dat 
+
+ERRMAP: WARNING for ERRMAP file 0: salt2_lc_relative_variance_0.dat
+ERRMAP:     SED_LAMRANGE:    2000.0 to 24990.0 A
+ERRMAP:     ERRMAP_LAMRANGE: 2100.0 to 24900.0 A does not cover SED_LAMRANGE
+  Read  SALT2-VAR1  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SALT2.WFIRST-H17/salt2_lc_relative_variance_1.dat 
+
+ERRMAP: WARNING for ERRMAP file 1: salt2_lc_relative_variance_1.dat
+ERRMAP:     SED_LAMRANGE:    2000.0 to 24990.0 A
+ERRMAP:     ERRMAP_LAMRANGE: 2100.0 to 24900.0 A does not cover SED_LAMRANGE
+  Read  SALT2-COVAR01  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SALT2.WFIRST-H17/salt2_lc_relative_covariance_01.dat 
+
+ERRMAP: WARNING for ERRMAP file 2: salt2_lc_relative_covariance_01.dat
+ERRMAP:     SED_LAMRANGE:    2000.0 to 24990.0 A
+ERRMAP:     ERRMAP_LAMRANGE: 2100.0 to 24900.0 A does not cover SED_LAMRANGE
+  Read  SALT2-ERRSCALE  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SALT2.WFIRST-H17/salt2_lc_dispersion_scaling.dat 
+ WARNING called by rd_sedFlux
+   lamstep[ilam=64] = (8500.0000) - (8350.0000) = 1.500000e+02
+   lamstep_last   = (8350.0000) - (8250.0000) = 1.000000e+02
+
+ WARNING called by rd_sedFlux
+   lamstep[ilam=65] = (8600.0000) - (8500.0000) = 1.000000e+02
+   lamstep_last   = (8500.0000) - (8350.0000) = 1.500000e+02
+
+
+ERRMAP: WARNING for ERRMAP file 3: salt2_lc_dispersion_scaling.dat
+ERRMAP:     SED_LAMRANGE:    2000.0 to 24990.0 A
+ERRMAP:     ERRMAP_LAMRANGE: 2050.0 to 24900.0 A does not cover SED_LAMRANGE
+
+  Read color-dispersion vs. lambda from salt2_color_dispersion.dat 
+
+              NBADVAL NBADVAL       ERRMAP-value    ERRMAP-value
+    ERRMAP     (NaN)  (crazy^)      actual-range^   [valid-range]
+# -----------------------------------------------------------------------
+       VAR0      0        0         0.0 -     30.1  [   -30.0 -    100.0]
+       VAR1      0        0         0.0 -     20.3  [   -10.0 -    500.0]
+    COVAR01      0        0        -3.4 -     22.0  [   -30.0 -    100.0]
+   ERRSCALE      0        0         1.0 -      8.7  [     0.0 -    200.0]
+ COLOR-DISP      0        0         0.0 -      1.4  [     0.0 -      5.0]
+# -----------------------------------------------------------------------
+#         ^restricted to -10.5 < DAY < 40.5 days
+
+  Create ColorLaw Table: COLOR(MIN,MAX,STEP) = -2.0,2.0,0.01
+
+                       e^CL     peak     color  
+            LAMBDA(A)  (c=1)    dS0/S0   disp   
+  --------------------------------------------- 
+  LAMINFO:    2000     0.000   0.1110   1.309  
+  LAMINFO:    2500     0.000   0.1110   0.435  
+  LAMINFO:    3000     0.009   0.0291   0.170  
+  LAMINFO:    3500     0.127   0.0065   0.078  
+  LAMINFO:    3560     0.160   0.0059   0.072  
+  LAMINFO:    3900     0.455   0.0045   0.047  
+  LAMINFO:    4302     1.000   0.0007   0.031  
+  LAMINFO:    4720     1.622   0.0045   0.023  
+  LAMINFO:    5428     2.512   0.0051   0.017  
+  LAMINFO:    6185     3.517   0.0136   0.018  
+  LAMINFO:    6500     4.112   0.0167   0.020  
+  LAMINFO:    7500     7.298   0.0541   0.044  
+  LAMINFO:    8030     9.765   0.0670   0.061  
+  LAMINFO:    8500    11.965   0.0760   0.075  
+  LAMINFO:    9210    14.173   0.0717   0.096  
+  LAMINFO:    9940    15.054   0.0675   0.114  
+
+   Read EXTRAP_LATETIME(SNIa) parameters from :
+	 /home/mvalenzuela/run_SNANA/plasticc_models/SNIa_Extrap_LateTime_2expon.TEXT 
+	 DAYMIN_EXTRAP = 45.0 
+
+	 FLUX_EXTRAP(t) ~ [ exp(t/TAU1) + RATIO*exp(t/TAU2) ] 
+                                TAU1     TAU2     DAY when
+   LAM    TAU1   TAU2   RATIO  mag/day  mag/day    F1=F2 
+   --------------------------------------------------------
+  3590.0  33.00  59.90 1.0100   0.033    0.018     -1 
+  4380.0  57.10  91.70 0.3000   0.019    0.012     182 
+  5490.0  31.00  84.00 0.3100   0.035    0.013     58 
+  6520.0  28.60  56.20 0.3500   0.038    0.019     61 
+  8030.0  20.60  84.00 0.2500   0.053    0.013     38 
+ 11000.0  18.30 147.00 0.0600   0.059    0.007     59 
+ 12500.0  16.90 100.00 0.1400   0.064    0.011     40 
+   --------------------------------------------------------
+
+ PHASE-EXTRAP METHOD: FLAM-extrap in each wave bin; based on user-input model
+
+  init_genmag_SALT2 : Done. 
+
+ ****************************************************************** 
+   init_modelSmear: init intrinsic SN smearing with model=G10  
+	 Smear-mode: complete wavelength dependence. 
+	 ISMODEL = SALT2
+  Read SALT2-smear file: 
+  '/home/mvalenzuela/run_SNANA/plasticc_models/SALT2.WFIRST-H17/salt2_color_dispersion.dat' 
+    Read 635 SALT2-Smear values from lambda=  1000 to  25000 
+    SIGCOH = 0.090
+    SMEAR *= [ 1 +  0.000000*(LAM-2157)]   LAM < 2157 
+    SMEAR *= [ 1 +  0.000108*(LAM-2157)]   LAM > 2157 
+	 Set LAM-node  0 at  1000.0 A : SIGMA= 1.400 
+	 Set LAM-node  1 at  1800.0 A : SIGMA= 1.327 
+	 Set LAM-node  2 at  2600.0 A : SIGMA= 0.373 
+	 Set LAM-node  3 at  3400.0 A : SIGMA= 0.102 
+	 Set LAM-node  4 at  4200.0 A : SIGMA= 0.042 
+	 Set LAM-node  5 at  5000.0 A : SIGMA= 0.025 
+	 Set LAM-node  6 at  5800.0 A : SIGMA= 0.023 
+	 Set LAM-node  7 at  6600.0 A : SIGMA= 0.032 
+	 Set LAM-node  8 at  7400.0 A : SIGMA= 0.066 
+	 Set LAM-node  9 at  8200.0 A : SIGMA= 0.110 
+	 Set LAM-node 10 at  9000.0 A : SIGMA= 0.157 
+	 Set LAM-node 11 at  9800.0 A : SIGMA= 0.203 
+	 Set LAM-node 12 at 10600.0 A : SIGMA= 0.241 
+	 Set LAM-node 13 at 11400.0 A : SIGMA= 0.261 
+	 Set LAM-node 14 at 12200.0 A : SIGMA= 0.276 
+	 Set LAM-node 15 at 13000.0 A : SIGMA= 0.289 
+	 Set LAM-node 16 at 13800.0 A : SIGMA= 0.298 
+	 Set LAM-node 17 at 14600.0 A : SIGMA= 0.307 
+	 Set LAM-node 18 at 15400.0 A : SIGMA= 0.312 
+	 Set LAM-node 19 at 16200.0 A : SIGMA= 0.315 
+	 Set LAM-node 20 at 17000.0 A : SIGMA= 0.318 
+	 Set LAM-node 21 at 17800.0 A : SIGMA= 0.303 
+	 Set LAM-node 22 at 18600.0 A : SIGMA= 0.299 
+	 Set LAM-node 23 at 19400.0 A : SIGMA= 0.304 
+	 Set LAM-node 24 at 20200.0 A : SIGMA= 0.308 
+	 Set LAM-node 25 at 21000.0 A : SIGMA= 0.313 
+	 Set LAM-node 26 at 21800.0 A : SIGMA= 0.316 
+	 Set LAM-node 27 at 22600.0 A : SIGMA= 0.320 
+	 Set LAM-node 28 at 23400.0 A : SIGMA= 0.323 
+	 Set LAM-node 29 at 24200.0 A : SIGMA= 0.327 
+	 Set LAM-node 30 at 25000.0 A : SIGMA= 0.329 
+   Number of Gaussian  randoms per SN: 32 
+   Number of Flat(0-1) randoms per SN: 0 
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=1)  
+
+ ****************************************************************** 
+   clr_VERSION  
+	 LCMERGE Version SNIa_DDF_20251020 does not exist. 
+	 SIM Version SNIa_DDF_20251020 does not exist. 
+	 PHOTOMETRY Version SNIa_DDF_20251020 does not exist. 
+
+ ****************************************************************** 
+   Init SIMGEN_DUMP file   
+	 open /home/mvalenzuela/SNDATA_ROOT/SIM/SNIa_DDF_20251020/SNIa_DDF_20251020.DUMP
+
+ ****************************************************************** 
+   WR_SNFITSIO_INIT  
+
+ ****************************************************************** 
+   set_TIMERS  
+	 CPUTIME_INITIALIZE   = 2.000 second
+
+ ****************************************************************** 
+    Begin Generating Lightcurves.   
+  Found Max dN/dz * wgt = 8.971045e+05 at z =    0.990 
+	 Finished generating        1 of 2000 (CID=1) 
+	 Finished generating      100 of 2000 (CID=100) 
+	 Finished generating      200 of 2000 (CID=200) 
+	 Finished generating      300 of 2000 (CID=300) 
+	 Finished generating      400 of 2000 (CID=400) GenRate=3/sec
+	 Finished generating      500 of 2000 (CID=500) 
+	 Finished generating      600 of 2000 (CID=600) 
+	 Finished generating      700 of 2000 (CID=699) 
+	 Finished generating      800 of 2000 (CID=800) GenRate=3/sec
+	 Finished generating      900 of 2000 (CID=900) 
+	 Finished generating     1000 of 2000 (CID=999) 
+	 Finished generating     1100 of 2000 (CID=1100) 
+	 Finished generating     1200 of 2000 (CID=1200) GenRate=3/sec
+	 Finished generating     1300 of 2000 (CID=1300) 
+	 Finished generating     1400 of 2000 (CID=1400) 
+	 Finished generating     1500 of 2000 (CID=1500) 
+	 Finished generating     1600 of 2000 (CID=1600) GenRate=3/sec
+	 Finished generating     1700 of 2000 (CID=1699) 
+	 Finished generating     1800 of 2000 (CID=1800) 
+	 Finished generating     1900 of 2000 (CID=1900) 
+	 Finished generating     2000 of 2000 (CID=1999) GenRate=3/sec
+
+ ****************************************************************** 
+    Done generating 2000 SN lightcurves from RANDOM source.  
+	 (2000 lightcurves requested => 610 were written) 
+	 CPUTIME_PROCESS_ALL  = 9.700 minute
+	 CPUTIME_PROCESS_RATE(GEN) = 3.436 evt/second
+	 CPUTIME_PROCESS_RATE(ACC) = 1.048 evt/second
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=2)  
+
+ ****************************************************************** 
+   DUMP README CONTENTS TO SCREEN
+  
+DOCUMENTATION:
+  OVERVIEW:
+    TIME_START:   2025-10-25  20:27  # UT
+    SURVEY:       LSST
+    GENMODEL:     /home/mvalenzuela/run_SNANA/plasticc_models/SALT2.WFIRST-H17
+    SNIA:         True
+    HOST_MACHINE: sn014
+    USERNAME:     mvalenzuela
+    SNDATA_ROOT:  /home/mvalenzuela/SNDATA_ROOT
+    SNANA_DIR:     /home/lmod/software/SNANA/11.05p
+    SNANA_VERSION: 
+    CWD:   /home/mvalenzuela/DATASIM_LSST_1/DDF/input_files_v6/SNIa
+    INPUT_FILE:
+    - SNIa_20251020.input
+    - /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_SNIa-SALT2.INPUT
+# 
+  INPUT_KEYS:
+# Output data
+    GENVERSION:              SNIa_DDF_20251020
+    NGENTOT_LC:              2000  
+    FORMAT_MASK:             32  #  += 2,32,16 -> TEXT, FITS, randomCID
+    GENTYPE:                 1  # true type
+    SNTYPE:                  1  101  # spec Type, photID type
+    CIDRAN_MIN:              0  
+    CIDRAN_MAX:              3000000  
+# Source model
+    GENMODEL:                /home/mvalenzuela/run_SNANA/plasticc_models/SALT2.WFIRST-H17 
+    GENMODEL_EXTRAP_LATETIME: /home/mvalenzuela/run_SNANA/plasticc_models/SNIa_Extrap_LateTime_2expon.TEXT 
+    GENMAG_SMEAR_MODELNAME:  G10 
+# Cosmology inputs
+    OMEGA_MATTER:            0.3150  
+    OMEGA_LAMBDA:            0.6850  
+    w0_LAMBDA:               -1.0000  
+    wa_LAMBDA:               0  
+    MUSHIFT:                 0  
+# Instrumental inputs
+    GENFILTERS:          ugrizY 
+    KCOR_FILE:           /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+    SIMLIB_FILE:             /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+    SIMLIB_MAXRANSTART:      1000 
+    SIMLIB_MSKOPT:           128 
+    SMEARFLAG_FLUX:      1  # 1->add Poisson noise
+    SMEARFLAG_ZEROPT:    1  # +=1->apply scatter, +=2->add to FLUXERRCAL
+# SEARCHEFF/detections
+    SEARCHEFF_PIPELINE_LOGIC_FILE:  /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+    NEWMJD_DIF:              7.0000e-03  # day-sep if > 1 detections required
+    SEARCHEFF_PIPELINE_EFF_FILE:  /home/mvalenzuela/run_SNANA/LSST_SEARCHEFF_PIPELINE.DAT
+    SEARCHEFF_SPEC_FILE:     NONE
+    SEARCHEFF_zHOST_FILE:    NONE
+    APPLY_SEARCHEFF_OPT:     1  # += 1,2,4 => pipe,spec,zhost
+# Redshift inputs
+    GENRANGE_REDSHIFT:       0.0110  1.2000  
+    GENSIGMA_REDSHIFT:       0  
+    GENSIGMA_VPEC:           0  # true vpec scatter (km/sec)
+    VPEC_ERR:                0  # vpec error after correction (km/sec)
+# Epoch & sky coverage inputs
+    GENRANGE_MJD:            60981.0000  61832.0000  
+    GENRANGE_PEAKMJD:        60900.0000  61900.0000  
+    GENSIGMA_PEAKMJD:        1.0000  
+    GENRANGE_TREST:          -100.0000  300.0000  
+    SOLID_ANGLE:             0.0250  
+# Galactic extinction
+    OPT_MWEBV:        1   
+    OPT_MWCOLORLAW:   99   
+# Population and rate-model params
+    GENPEAK_SALT2x1:         0.9730  
+    GENSIGMA_SALT2x1:        1.4720  0.2220  
+    GENRANGE_SALT2x1:        -3.0000  2.0000  
+    GENPEAK_SALT2c:          -0.0540  
+    GENSIGMA_SALT2c:         0.0430  0.1010  
+    GENRANGE_SALT2c:         -0.3000  0.5000  
+    GENPEAK_SALT2ALPHA:      0.1400  
+    GENSIGMA_SALT2ALPHA:     0  0  
+    GENRANGE_SALT2ALPHA:     1.0000e-03  0.4000  
+    GENPEAK_SALT2BETA:       3.1000  
+    GENSIGMA_SALT2BETA:      0  0  
+    GENRANGE_SALT2BETA:      0.5000  9.9000  
+    DNDZ:                   
+    - POWERLAW2 2.5E-5 1.5 0.0 1.0 
+    - POWERLAW2 9.7E-5 -0.5 1.0 3.0 
+# Misc inputs
+    GENSOURCE:               RANDOM
+    RANSEED:                 23  
+    DEBUG_FLAG:              0  
+    SIMGEN_DUMPALL:          35 CID LIBID SIM_SEARCHEFF_MASK GENTYPE NON1A_INDEX ZCMB ZHELIO ZCMB_SMEAR RA DEC MWEBV GALID GALZPHOT GALZPHOTERR GALSNSEP GALSNDDLR RV AV MU LENSDMU PEAKMJD MJD_DETECT_FIRST MJD_DETECT_LAST DTSEASON_PEAK PEAKMAG_u PEAKMAG_g PEAKMAG_r PEAKMAG_i PEAKMAG_z PEAKMAG_Y SNRMAX SNRMAX2 SNRMAX3 NOBS NOBS_SATURATE 
+# 
+  FILTERS:   # mean wavelength (A)
+    u:  3710.0
+    g:  4805.8
+    r:  6221.5
+    i:  7559.2
+    z:  8680.6
+    Y:  9757.0
+# 
+  INPUT_NOTES:
+  - Poisson noise is ON 
+  - Reported flux-uncertainty includes SKY+GALAXY+SOURCE
+  - SB-dependent flux scatter is OFF
+  -  POWERLAW RATE MODEL:  2.50e-05*(1+z)^1.50  (0.0 < z < 1.0) 
+  -  POWERLAW RATE MODEL:  9.70e-05*(1+z)^-0.50  (1.0 < z < 3.0) 
+  -     MODEL_RATE(z=0.01) = 2.541e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.21) = 3.332e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.41) = 4.190e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.61) = 5.112e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.81) = 6.093e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=1.01) = 6.840e-05/Mpc^3/yr    
+  -  Calculated Number of EVENTS per season =  3.820e+04 
+  - H0 =  70.00 km/s/Mpc 
+  - Omega_{M,L} =  0.315, 0.685     w0,wa = -1.00,0.000
+  - APPLY_SEARCHEFF_OPT=1 --> Require EFF(PIPELINE) 
+  - PIPELINE requires 2 detections among u+g+r+i+z+Y (MJD dif > 0.0070 days) 
+#
+  GENTYPE_TO_NAME:  # GENTYPE:  [non]Ia   type  
+    1:  Ia       SALT2.WFIRST-H17
+# 
+  OUTPUT_SUMMARY:
+    RANDOM_SYNC: 
+    - List=1  FIRST=0.046189  LAST=0.755575   AVG(wrap) = 25.8 +_ 38.0 
+    - List=2  FIRST=0.747609  LAST=0.458486   AVG(wrap) = 0.5 +_ 0.2 
+    - List=3  FIRST=0.353025  LAST=0.953940   AVG(wrap) = 0.0 +_ 0.0 
+# 
+    CPU_MINUTES:       9.70  
+    NGENLC_TOT:        2000    # (3/sec)
+    NGENLC_WRITE:      610    # (1/sec)
+    NGENSPEC_WRITE:    0  
+    EFF(SEARCH+CUTS):  0.3050 +-  0.0103
+    NGEN_PER_SEASON:   38204       # NSN(GEN) in GENRANGE(z,MJD,dOmega)
+    NACC_PER_SEASON:   11652 +_ 472  # NSN(ACCEPT) after trigger+cuts
+    NREJECT:  [290,0,0,  1100,0]   # [NEP<1,GENRANGE,PEAKMAG,  SEARCHEFF,CUTWIN] 
+DOCUMENTATION_END:
+
+  AUXILIARY FILES: 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/SNIa_DDF_20251020/SNIa_DDF_20251020.LIST 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/SNIa_DDF_20251020/SNIa_DDF_20251020.README 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/SNIa_DDF_20251020/SNIa_DDF_20251020.DUMP
+ WR_SNFITSIO_END: wrote 610 events and 0 spectra to FITS format
+
+ DONE with snlc_sim.

@@ -1,0 +1,2054 @@
+
+ Full command: snlc_sim.exe KN-K17_20251020.input 
+
+ SNANA_VERSION: NOT_FROM_GITHUB
+
+
+
+ ****************************************************************** 
+   Begin execution of snlc_sim.exe    
+ SNDATA_ROOT = /home/mvalenzuela/SNDATA_ROOT 
+ SNANA_DIR   = /home/lmod/software/SNANA/11.05p 
+
+
+   sizeof(INPUTS) =   5.043 MB 
+   sizeof(GENLC)  =  10.667 MB 
+
+  init_SNDATA_GLOBAL: 
+ --------------------------------------------------------
+  Initialize NstringMatch for sim-input file
+  Read 83 words from user input file 1: 
+	 KN-K17_20251020.input 
+ --------------------------------------------------------
+  Read 31 words from user input file 2: 
+	 /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_KN-K17.INPUT 
+
+ ****************************************************************** 
+   init_HzFUN_INFO  
+	 H0         = 70.00      # km/s/Mpc 
+	 OM, OL, Ok = 0.31500, 0.68500, 0.00000 
+	 w0, wa     = -1.000,  0.000 
+
+ ****************************************************************** 
+    prep_user_inputs summary   
+	 SIMLIB file        : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB   (start LIBID=0)
+	 Generation Version : KN-K17_DDF_20251020 
+	 Generation source  : RANDOM 
+	 Generation model   : SIMSED.KN-K17 
+	 Number of LC to Generate: 0 
+	 OMEGA_(MATTER,LAMBDA)= 0.315, 0.685,    w0= -1.00   H0= 70.0 
+	 KCOR  file : /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+	 Observer Gen-FILTERS  :  ugrizY  
+	 Random number seed: 93  (NSTREAM=2)
+	 Gen-Range for RA(deg)  : -360.000 to  360.000 
+	 Gen-Range for DEC(deg): -360.000 to  360.000 
+	 Gen-Range for ZCMB :  0.011 to  0.280  (sigma= 0.0000, bias=0.00000) 
+	 Gen-Range for PEAKMJD  :  60900.0 to  61900.0  
+	 Gen-Range for Trest    :   -100.0 to    300.0  days 
+	 Gen-Range for SHAPEPAR  :     -1.0 to      1.0  
+	 Gen-Range for AV  : 0.00 to 3.00  (dN/dAv = exp(-AV/-9.00) 
+	 Gen-Mean  for RV  : 3.10  
+	 Gen-sigma for RV  : 0.00 , 0.00 (lower , upper ) 
+	 Gen-Range for RV  : 2.00 to 4.00 
+	 ZP offsets (ugrizY) :  0.000 0.000 0.000 0.000 0.000 0.000
+	 MODEL mag offsets (ugrizY) :   0.00  0.00  0.00  0.00  0.00  0.00
+
+
+ ****************************************************************** 
+    init_RANDOMsource : CIDOFF=0   
+
+ ****************************************************************** 
+   SIMLIB_readGlobalHeader_TEXT  
+	 Opened : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+
+ ****************************************************************** 
+   SIMLIB_prepGlobalHeader  
+	 SIMLIB Survey    : LSST 
+	 SIMLIB Field : VOID 
+	 SIMLIB Pixel Saturation: 100000 photoelectrons. 
+	 SIMLIB Filters   : ugrizY 
+	 SIMLIB created by: NONE 
+	 SIMLIB Solid Angle  : 0.025000 steridians 
+	 SIMLIB PSF unit:    PIXEL_SIGMA 
+	 SIMLIB SKYSIG unit: ADU_PER_SQPIXEL 
+
+  Bit-mask options for SIMLIB_MSKOPT = 128 
+	 MASK=   128 -> keep entire SIMLIB season (not just transient range) 
+
+	 SIMLIB MAXRANSTART after  218  LIBIDs  (0 seconds)
+
+ ****************************************************************** 
+   init_RateModel  
+ POWERLAW RATE MODEL:  3.20e-07*(1+z)^0.00  (0.0 < z < 10.0) 
+    MODEL_RATE(z=0.01) = 3.200e-07/Mpc^3/yr    
+    MODEL_RATE(z=0.21) = 3.200e-07/Mpc^3/yr    
+ Calculated Number of EVENTS per season =     8 
+
+ ****************************************************************** 
+   Initialize SEARCH EFFICIENCY for 'LSST' 
+  
+   Read Detection-efficiency curves: 
+	 EFF_DETECT(u) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(g) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(r) = 0.425 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(i) = 0.540 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(z) = 0.469 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(Y) = 0.469 at ABS(SNR) =  5.00 ()
+
+   Fetch SOFTWARE SEARCH-LOGIC from : 
+	 /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+	 Logic: 2 MJDs require filters=u+g+r+i+z+Y 
+	 Trigger epoch contains all obs within 0.007 days
+
+
+  Optional SEARCHEFF_SPEC_FILE not specified -> EFF_SPEC=1 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+ ****************************************************************** 
+   READ_CALIB_DRIVER: read calib/filters/kcor  
+	 FILTERS_SURVEY = ugrizY 
+  Opened /home/mvalenzuela/run_SNANA/kcor_LSST.fits
+   read_calib_head 
+		 Read VERSION         = 4  (kcor.exe version) 
+		 Read NPRIM           = 1  primary refs 
+		 Read PRIM001         = AB 
+		 Read NFILTERS        = 6  filters 
+		 Read NKCOR           = 0  K-COR tables 
+		 Read  991 wavelength bins (2100.00 to 12000.00)
+		 Read  106 epoch      bins (-20.00 to 85.00)
+		 Read    1 redshift   bins (0.00 to 0.00)
+		 Read    1 AV         bins (0.00 to 0.00)
+   read_calib_zpoff  
+   read_calib_snsed 
+   read_kcor_tables 
+   read_kcor_mags 
+   read_calib_filters 
+   read_calib_primarysed 
+
+   print_calib_summary 
+	  Primary Spectrum: AB 
+
+  FILTER SUMMARY (RDKCOR) : 
+   internal                   LAM  LAM   rest-lam      primary
+  index name                  AVG  RMS   kcor range    mag   ZP
+ ---------------------------------------------------------------------- 
+    1 LSST-u                 3710  163     0-    0   0.000   0.000
+    2 LSST-g                 4806  431     0-    0   0.000   0.000
+    3 LSST-r                 6221  414     0-    0   0.000   0.000
+    4 LSST-i                 7559  387     0-    0   0.000   0.000
+    5 LSST-z                 8681  311     0-    0   0.000   0.000
+    6 LSST-Y                 9757  345     0-    0   0.000   0.000
+	 NFILTDEF[SURVEY,REST] = 6 0 
+
+ READ_CALIB_DRIVER: Done 
+
+
+
+ ****************************************************************** 
+   init_genmag_SIMSED : Initialize SIMSED Light Curve Model  
+   filtdump_SEDMODEL: Read primary ref 'AB' with 991 lambda bins 
+
+   Defined                                 Lambda           AB     AB 
+   Filter                  <LAMBDA>        Range(step)      mag    ZP 
+   ----------------------------------------------------------------------
+   id=01 (      LSST-u)   ( 3710.0 + 0)   3200- 4100( 10)   0.000  12.652  
+   id=02 (      LSST-g)   ( 4805.8 + 0)   3750- 5770( 10)   0.000  14.689  
+   id=03 (      LSST-r)   ( 6221.5 + 0)   5230- 7150( 10)   0.000  14.560  
+   id=04 (      LSST-i)   ( 7559.2 + 0)   6590- 8450( 10)   0.000  14.379  
+   id=05 (      LSST-z)   ( 8680.6 + 0)   7890- 9470( 10)   0.000  13.993  
+   id=06 (      LSST-Y)   ( 9757.0 + 0)   8970-10990( 10)   0.000  13.017  
+   ----------------------------------------------------------------------
+  Read SIMSED model parameters from 
+     /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17
+
+
+ Read number of SEDs  from 
+  /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/SED.INFO 
+
+ Read list of SEDs and parameters from 
+  /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/SED.INFO 
+	 malloc_METADATA_SEDMODEL for NSED=329 and NPAR=4
+    Found '        KN_INDEX' with 329 bins from    1.000 to  329.000
+    Found '              VK' with  5 bins from    0.030 to    0.300
+    Found '         LOGXLAN' with  6 bins from   -9.000 to   -1.000
+    Found '         LOGMASS' with 11 bins from   -3.000 to   -1.000
+
+ Finished reading parameters for 329 SEDs 
+   SED FLUX_SCALE = 1.050300e-39 
+   SED MAG_ERR    =  0.10 
+   Force late-time extrap >= 0.10 mag/day 
+   Read Flux errors :  NO 
+   Shift T=0 to time of peak  :  YES 
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  NDAY from largest file  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.03_fd1.0_Xlan1e-9.0.txt 
+  malloc_FLUXTABLE_SEDMODEL : allocate  79.06 Mb of memory for integral-flux tables. 
+	 Table bins include 275 DAYs. 
+	 Table bins include   6 FILTERs. 
+	 Table bins include 329 SEDs. 
+	 Table bins include  30 log10(Z): 0.00975 <= Z <= 0.28158 .
+		 ZTABLE[  1] =  0.00975   (LOGZ=-2.0109)
+		 ZTABLE[  2] =  0.01095   (LOGZ=-1.9605)
+		 ZTABLE[  3] =  0.01230   (LOGZ=-1.9101)
+		 ZTABLE[ 27] =  0.19885   (LOGZ=-0.7015)
+		 ZTABLE[ 28] =  0.22329   (LOGZ=-0.6511)
+		 ZTABLE[ 29] =  0.25075   (LOGZ=-0.6008)
+		 ZTABLE[ 30] =  0.28158   (LOGZ=-0.5504)
+		 Zero entire SEDMODEL flux table (19764360 entries). 
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=1/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.03_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.00 to  23.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=2/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.03_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=3/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.03_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=4/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.03_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=5/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.03_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=6/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.03_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=7/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.05_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.10 to  23.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=8/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.05_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=9/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.05_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=10/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.05_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=11/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.05_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=12/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.05_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=13/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.10_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.80 to  24.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=14/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.10_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=15/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.10_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=16/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.10_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=17/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.10_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=18/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.10_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=19/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.20_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.80 to  24.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=20/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.20_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=21/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.20_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=22/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.20_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=23/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.20_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.10 to  24.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=24/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.20_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.10 to  24.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=25/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.30_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=26/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.30_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=27/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.30_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.10 to  24.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=28/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.30_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.10 to  24.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=29/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.30_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=30/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.001_vk0.30_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=31/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.03_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.10 to  22.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=32/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.03_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=33/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.03_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=34/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.03_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=35/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.03_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=36/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.03_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=37/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.05_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.50 to  23.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=38/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.05_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.80 to  24.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=39/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.05_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=40/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.05_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=41/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.05_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=42/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.05_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=43/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.10_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=44/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.10_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.70 to  24.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=45/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.10_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=46/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.10_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=47/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.10_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=48/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.10_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=49/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.20_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.10 to  23.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=50/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.20_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=51/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.20_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=52/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.20_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=53/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.20_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=54/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.20_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=55/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.30_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.70 to  24.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=56/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.30_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=57/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.30_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=58/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.30_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.10 to  24.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=59/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.30_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.10 to  24.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=60/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.0025_vk0.30_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.10 to  24.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=61/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.03_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.30 to  22.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=62/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.03_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=63/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.03_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=64/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.03_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=65/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.03_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=66/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.03_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=67/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.05_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.50 to  22.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=68/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.05_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.00 to  23.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=69/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.05_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.70 to  24.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=70/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.05_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=71/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.05_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=72/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.05_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=73/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.10_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.90 to  23.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=74/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.10_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=75/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.10_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=76/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.10_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=77/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.10_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=78/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.10_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=79/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.20_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.50 to  23.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=80/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.20_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=81/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.20_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=82/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.20_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=83/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.20_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=84/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.20_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=85/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.30_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=86/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.30_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=87/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.30_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=88/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.30_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=89/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.30_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.10 to  24.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=90/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.005_vk0.30_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.10 to  24.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=91/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.03_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.40 to  21.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=92/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.03_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.10 to  22.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=93/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.03_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=94/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.03_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=95/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.03_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=96/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.03_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=97/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.05_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.00 to  21.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=98/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.05_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.60 to  23.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=99/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.05_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.10 to  23.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=100/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.05_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=101/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.05_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=102/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.05_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=103/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.10_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.50 to  21.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=104/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.10_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.20 to  23.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=105/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.10_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=106/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.10_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=107/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.10_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=108/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.10_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=109/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.20_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.00 to  22.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=110/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.20_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.70 to  24.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=111/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.20_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=112/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.20_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=113/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.20_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=114/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.20_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=115/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.30_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=116/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.30_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=117/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.30_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=118/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.30_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=119/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.30_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=120/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.010_vk0.30_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=121/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.03_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.60 to  20.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=122/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.03_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.60 to  22.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=123/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.03_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.90 to  23.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=124/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.03_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=125/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.03_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.00 to  23.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=126/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.03_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=127/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.05_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.00 to  20.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=128/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.05_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.40 to  22.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=129/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.05_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.40 to  23.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=130/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.05_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.80 to  24.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=131/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.05_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.70 to  24.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=132/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.05_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=133/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.10_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.80 to  21.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=134/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.10_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.80 to  23.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=135/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.10_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.10 to  23.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=136/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.10_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=137/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.10_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=138/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.10_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=139/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.20_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.70 to  22.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=140/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.20_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=141/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.20_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.70 to  24.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=142/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.20_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=143/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.20_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=144/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.20_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=145/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.30_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.70 to  23.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=146/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.30_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=147/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.30_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=148/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.30_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=149/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.30_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=150/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.020_vk0.30_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=151/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.03_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.00 to  19.90     LAMBDA:  1100 to 25000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.043 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=152/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.03_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.10 to  21.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=153/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.03_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.10 to  22.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=154/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.03_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=155/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.03_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=156/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.03_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.00 to  23.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=157/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.05_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.90 to  20.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=158/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.05_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.40 to  22.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=159/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.05_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.70 to  23.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=160/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.05_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=161/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.05_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.80 to  24.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=162/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.05_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.80 to  24.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=163/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.10_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.60 to  20.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=164/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.10_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.00 to  22.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=165/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.10_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.40 to  23.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=166/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.10_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=167/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.10_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=168/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.10_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=169/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.20_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.30 to  21.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=170/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.20_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.00 to  23.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=171/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.20_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.80 to  24.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=172/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.20_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=173/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.20_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=174/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.20_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=175/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.30_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.00 to  22.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=176/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.30_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.70 to  24.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=177/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.30_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=178/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.30_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=179/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.30_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=180/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.025_vk0.30_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=181/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.03_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.00 to  19.90     LAMBDA:  1100 to 25000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.049 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=182/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.03_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.10 to  21.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=183/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.03_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.10 to  22.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=184/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.03_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=185/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.03_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=186/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.03_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=187/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.05_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.90 to  20.00     LAMBDA:  1100 to 25000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.041 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=188/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.05_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.40 to  22.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=189/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.05_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.90 to  23.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=190/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.05_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=191/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.05_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=192/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.05_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=193/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.10_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.10 to  19.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=194/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.10_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.00 to  22.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=195/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.10_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=196/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.10_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.70 to  24.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=197/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.10_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=198/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.10_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=199/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.20_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.30 to  21.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=200/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.20_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.10 to  23.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=201/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.20_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=202/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.20_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=203/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.20_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=204/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.20_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=205/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.30_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.90 to  23.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=206/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.30_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.00 to  23.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=207/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.30_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=208/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.30_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=209/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.30_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=210/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.030_vk0.30_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.20 to  24.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=211/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.03_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.10 to  18.80     LAMBDA:  1100 to 25000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.109 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=212/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.03_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.40 to  21.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=213/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.03_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.80 to  22.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=214/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.03_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.60 to  23.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=215/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.03_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=216/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.03_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=217/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.05_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.40 to  19.50     LAMBDA:  1100 to 25000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.052 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=218/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.05_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.60 to  21.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=219/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.05_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.10 to  22.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=220/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.05_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.20 to  23.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=221/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.05_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.00 to  23.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=222/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.05_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.00 to  23.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=223/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.10_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.20 to  18.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=224/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.10_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.20 to  22.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=225/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.10_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.70 to  23.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=226/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.10_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.80 to  24.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=227/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.10_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=228/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.10_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=229/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.20_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.60 to  21.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=230/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.20_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=231/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.20_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.00 to  23.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=232/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.20_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=233/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.20_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=234/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.20_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=235/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.30_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.10 to  22.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=236/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.30_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=237/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.30_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=238/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.30_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=239/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.30_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=240/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.040_vk0.30_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=241/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.03_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.10 to  18.80     LAMBDA:  1100 to 25000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.198 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=242/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.03_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.80 to  21.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=243/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.03_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.10 to  21.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=244/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.03_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.10 to  22.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=245/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.03_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.60 to  23.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=246/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.03_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.60 to  23.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=247/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.05_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.90 to  19.00     LAMBDA:  1100 to 25000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.061 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=248/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.05_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.20 to  21.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=249/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.05_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.50 to  22.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=250/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.05_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.40 to  23.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=251/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.05_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=252/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.05_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=253/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.10_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.60 to  19.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=254/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.10_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.70 to  22.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=255/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.10_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.90 to  23.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=256/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.10_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=257/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.10_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=258/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.10_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=259/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.20_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.10 to  20.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=260/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.20_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.50 to  23.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=261/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.20_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.10 to  23.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=262/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.20_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=263/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.20_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=264/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.20_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=265/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.30_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.60 to  22.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=266/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.30_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=267/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.30_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.70 to  24.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=268/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.30_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=269/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.30_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=270/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.050_vk0.30_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=271/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.03_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.40 to  17.50     LAMBDA:  1100 to 25000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.341 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=272/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.03_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.00 to  19.90     LAMBDA:  1100 to 25000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.043 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=273/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.03_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.10 to  21.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=274/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.03_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.10 to  22.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=275/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.03_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.10 to  22.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=276/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.03_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.10 to  22.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=277/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.05_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.90 to  19.00     LAMBDA:  1100 to 25000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.138 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=278/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.05_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.90 to  21.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=279/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.05_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.80 to  22.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=280/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.05_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.70 to  23.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=281/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.05_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.40 to  23.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=282/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.05_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.40 to  23.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=283/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.10_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.20 to  18.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=284/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.10_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.00 to  21.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=285/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.10_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.10 to  22.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=286/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.10_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.20 to  23.70     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=287/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.10_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.80 to  24.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=288/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.10_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.80 to  24.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=289/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.20_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.40 to  20.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=290/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.20_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.05 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.00 to  22.90     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=291/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.20_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.30 to  23.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=292/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.20_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.80 to  24.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=293/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.20_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=294/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.20_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=295/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.30_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.80 to  22.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=296/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.30_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.60 to  23.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=297/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.30_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.80 to  24.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=298/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.30_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=299/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.30_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=300/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.075_vk0.30_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.30 to  24.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=301/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.03_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.40 to  17.50     LAMBDA:  1100 to 25000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.436 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=302/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.03_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.50 to  19.40     LAMBDA:  1100 to 25000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.079 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=303/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.03_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.80 to  21.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=304/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.03_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.60 to  22.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=305/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.03_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.10 to  22.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=306/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.03_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.60 to  22.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=307/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.05_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.25 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.20 to  17.70     LAMBDA:  1100 to 25000 A 
+    WARNING(SED-BINARY): Flux(Trestmax)/Flux(peak) = 0.285 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=308/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.05_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.90 to  21.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=309/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.05_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.10 to  21.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=310/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.05_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.90 to  23.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=311/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.05_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.70 to  23.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=312/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.05_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.75 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.70 to  23.20     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=313/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.10_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.30 to  16.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=314/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.10_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.30 to  21.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=315/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.10_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.35 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.30 to  22.60     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=316/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.10_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.60 to  23.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=317/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.10_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=318/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.10_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=319/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.20_fd1.0_Xlan1e-1.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.80 to  20.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=320/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.20_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.15 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.10 to  22.80     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=321/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.20_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.50 to  23.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=322/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.20_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=323/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.20_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=324/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.20_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.55 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.50 to  24.40     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=325/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.30_fd1.0_Xlan1e-2.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.85 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.80 to  23.10     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=326/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.30_fd1.0_Xlan1e-3.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.95 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.90 to  24.00     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=327/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.30_fd1.0_Xlan1e-4.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.65 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.60 to  24.30     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=328/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.30_fd1.0_Xlan1e-5.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=329/329)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17/knova_d1_n10_m0.1_vk0.30_fd1.0_Xlan1e-9.0.txt 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.45 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -2.40 to  24.50     LAMBDA:  1100 to 25000 A 
+
+ Global DAY range: -10.30 to 24.80 
+  init_genmag_SIMSED : Done. 
+	 Load baggage parameter 'VK' 
+	 Load baggage parameter 'LOGXLAN' 
+	 Load baggage parameter 'LOGMASS' 
+
+ ****************************************************************** 
+   init_modelSmear: init intrinsic SN smearing with model=NONE  
+	 Smear-mode: interpolate from central filter wavelengths.
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=1)  
+
+ ****************************************************************** 
+   clr_VERSION  
+	 LCMERGE Version KN-K17_DDF_20251020 does not exist. 
+	 SIM Version KN-K17_DDF_20251020 does not exist. 
+	 PHOTOMETRY Version KN-K17_DDF_20251020 does not exist. 
+
+ ****************************************************************** 
+   Init SIMGEN_DUMP file   
+	 open /home/mvalenzuela/SNDATA_ROOT/SIM/KN-K17_DDF_20251020/KN-K17_DDF_20251020.DUMP
+
+ ****************************************************************** 
+   WR_SNFITSIO_INIT  
+
+ ****************************************************************** 
+   set_TIMERS  
+	 CPUTIME_INITIALIZE   = 542.000 second
+
+ ****************************************************************** 
+    Begin Generating Lightcurves.   
+  Found Max dN/dz * wgt = 1.151836e+03 at z =    0.280 
+	 Finished generating        1 of 2000 (CID=1) 
+	 Finished generating      100 of 2000 (CID=100) 
+	 Finished generating      200 of 2000 (CID=200) 
+	 Finished generating      300 of 2000 (CID=299) 
+	 Finished generating      400 of 2000 (CID=399) 
+	 Finished generating      500 of 2000 (CID=500) 
+	 Finished generating      600 of 2000 (CID=600) 
+	 Finished generating      700 of 2000 (CID=700) 
+	 Finished generating      800 of 2000 (CID=800) 
+	 Finished generating      900 of 2000 (CID=900) 
+	 Finished generating     1000 of 2000 (CID=998) 
+	 Finished generating     1100 of 2000 (CID=1100) 
+	 Finished generating     1200 of 2000 (CID=1200) 
+	 Finished generating     1300 of 2000 (CID=1299) 
+	 Finished generating     1400 of 2000 (CID=1399) 
+	 Finished generating     1500 of 2000 (CID=1500) 
+	 Finished generating     1600 of 2000 (CID=1600) 
+	 Finished generating     1700 of 2000 (CID=1700) 
+	 Finished generating     1800 of 2000 (CID=1800) 
+	 Finished generating     1900 of 2000 (CID=1900) GenRate=18/sec
+	 Finished generating     2000 of 2000 (CID=1998) 
+
+ ****************************************************************** 
+    Done generating 2000 SN lightcurves from RANDOM source.  
+	 (2000 lightcurves requested => 99 were written) 
+	 CPUTIME_PROCESS_ALL  = 1.867 minute
+	 CPUTIME_PROCESS_RATE(GEN) = 17.857 evt/second
+	 CPUTIME_PROCESS_RATE(ACC) = 0.884 evt/second
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=2)  
+
+ ****************************************************************** 
+   DUMP README CONTENTS TO SCREEN
+  
+DOCUMENTATION:
+  OVERVIEW:
+    TIME_START:   2025-11-06  20:51  # UT
+    SURVEY:       LSST
+    GENMODEL:     /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17
+    SNIA:         False
+    HOST_MACHINE: sn002
+    USERNAME:     mvalenzuela
+    SNDATA_ROOT:  /home/mvalenzuela/SNDATA_ROOT
+    SNANA_DIR:     /home/lmod/software/SNANA/11.05p
+    SNANA_VERSION: 
+    CWD:   /home/mvalenzuela/DATASIM_LSST_1/DDF/input_files_v6/KN-K17
+    INPUT_FILE:
+    - KN-K17_20251020.input
+    - /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_KN-K17.INPUT
+# 
+  INPUT_KEYS:
+# Output data
+    GENVERSION:              KN-K17_DDF_20251020
+    NGENTOT_LC:              2000  
+    FORMAT_MASK:             32  #  += 2,32,16 -> TEXT, FITS, randomCID
+    GENTYPE:                 0  # true type
+    SNTYPE:                  1  101  # spec Type, photID type
+    CIDRAN_MIN:              0  
+    CIDRAN_MAX:              3000000  
+# Source model
+    GENMODEL:                /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.KN-K17 
+    MINSLOPE_EXTRAPMAG_LATE: 0.1 
+    SIMSED_USE_BINARY:       0 
+    SIMSED_GRIDONLY:         KN_INDEX 
+# Cosmology inputs
+    OMEGA_MATTER:            0.3150  
+    OMEGA_LAMBDA:            0.6850  
+    w0_LAMBDA:               -1.0000  
+    wa_LAMBDA:               0  
+    MUSHIFT:                 0  
+# Instrumental inputs
+    GENFILTERS:          ugrizY 
+    KCOR_FILE:           /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+    SIMLIB_FILE:             /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+    SIMLIB_MAXRANSTART:      1000 
+    SIMLIB_MSKOPT:           128 
+    SMEARFLAG_FLUX:      1  # 1->add Poisson noise
+    SMEARFLAG_ZEROPT:    1  # +=1->apply scatter, +=2->add to FLUXERRCAL
+# SEARCHEFF/detections
+    SEARCHEFF_PIPELINE_LOGIC_FILE:  /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+    NEWMJD_DIF:              7.0000e-03  # day-sep if > 1 detections required
+    SEARCHEFF_PIPELINE_EFF_FILE:  /home/mvalenzuela/run_SNANA/LSST_SEARCHEFF_PIPELINE.DAT
+    SEARCHEFF_SPEC_FILE:     NONE
+    SEARCHEFF_zHOST_FILE:    NONE
+    APPLY_SEARCHEFF_OPT:     1  # += 1,2,4 => pipe,spec,zhost
+# Redshift inputs
+    GENRANGE_REDSHIFT:       0.0110  0.2800  
+    GENSIGMA_REDSHIFT:       0  
+    GENSIGMA_VPEC:           0  # true vpec scatter (km/sec)
+    VPEC_ERR:                0  # vpec error after correction (km/sec)
+# Epoch & sky coverage inputs
+    GENRANGE_MJD:            60981.0000  61832.0000  
+    GENRANGE_PEAKMJD:        60900.0000  61900.0000  
+    GENSIGMA_PEAKMJD:        1.0000  
+    GENRANGE_TREST:          -100.0000  300.0000  
+    SOLID_ANGLE:             0.0250  
+# Galactic extinction
+    OPT_MWEBV:        1   
+    OPT_MWCOLORLAW:   99   
+# Population and rate-model params
+    GENAV_WV07:  1 
+    GENRANGE_AV:             0  3.0000  
+    GENPEAK_RV:              3.1000  
+    GENSIGMA_RV:             0  0  
+    GENRANGE_RV:             2.0000  4.0000  
+    DNDZ:                    POWERLAW 320E-9 0.0 
+# Misc inputs
+    GENSOURCE:               RANDOM
+    RANSEED:                 93  
+    DEBUG_FLAG:              0  
+    SIMGEN_DUMPALL:          35 CID LIBID SIM_SEARCHEFF_MASK GENTYPE NON1A_INDEX ZCMB ZHELIO ZCMB_SMEAR RA DEC MWEBV GALID GALZPHOT GALZPHOTERR GALSNSEP GALSNDDLR RV AV MU LENSDMU PEAKMJD MJD_DETECT_FIRST MJD_DETECT_LAST DTSEASON_PEAK PEAKMAG_u PEAKMAG_g PEAKMAG_r PEAKMAG_i PEAKMAG_z PEAKMAG_Y SNRMAX SNRMAX2 SNRMAX3 NOBS NOBS_SATURATE 
+# 
+  FILTERS:   # mean wavelength (A)
+    u:  3710.0
+    g:  4805.8
+    r:  6221.5
+    i:  7559.2
+    z:  8680.6
+    Y:  9757.0
+# 
+  INPUT_NOTES:
+  - Poisson noise is ON 
+  - Reported flux-uncertainty includes SKY+GALAXY+SOURCE
+  - SB-dependent flux scatter is OFF
+  -  POWERLAW RATE MODEL:  3.20e-07*(1+z)^0.00  (0.0 < z < 10.0) 
+  -     MODEL_RATE(z=0.01) = 3.200e-07/Mpc^3/yr    
+  -     MODEL_RATE(z=0.21) = 3.200e-07/Mpc^3/yr    
+  -  Calculated Number of EVENTS per season =     8 
+  - H0 =  70.00 km/s/Mpc 
+  - Omega_{M,L} =  0.315, 0.685     w0,wa = -1.00,0.000
+  - APPLY_SEARCHEFF_OPT=1 --> Require EFF(PIPELINE) 
+  - PIPELINE requires 2 detections among u+g+r+i+z+Y (MJD dif > 0.0070 days) 
+#
+  GENTYPE_TO_NAME:  # GENTYPE:  [non]Ia   type  
+    0:  nonIa    KN-K17
+# 
+  OUTPUT_SUMMARY:
+    RANDOM_SYNC: 
+    - List=1  FIRST=0.768521  LAST=0.281503   AVG(wrap) = 26.1 +_ 38.1 
+    - List=2  FIRST=0.826672  LAST=0.850070   AVG(wrap) = 0.2 +_ 0.1 
+    - List=3  FIRST=0.248854  LAST=0.106792   AVG(wrap) = 0.0 +_ 0.0 
+# 
+    CPU_MINUTES:       1.87  
+    NGENLC_TOT:        2000    # (18/sec)
+    NGENLC_WRITE:      99    # (1/sec)
+    NGENSPEC_WRITE:    0  
+    EFF(SEARCH+CUTS):  0.0495 +-  0.0049
+    NGEN_PER_SEASON:   8       # NSN(GEN) in GENRANGE(z,MJD,dOmega)
+    NACC_PER_SEASON:   0 +_ 0  # NSN(ACCEPT) after trigger+cuts
+    NREJECT:  [291,0,0,  1610,0]   # [NEP<1,GENRANGE,PEAKMAG,  SEARCHEFF,CUTWIN] 
+DOCUMENTATION_END:
+
+  AUXILIARY FILES: 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/KN-K17_DDF_20251020/KN-K17_DDF_20251020.LIST 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/KN-K17_DDF_20251020/KN-K17_DDF_20251020.README 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/KN-K17_DDF_20251020/KN-K17_DDF_20251020.DUMP
+ WR_SNFITSIO_END: wrote 99 events and 0 spectra to FITS format
+
+ DONE with snlc_sim.

@@ -1,0 +1,854 @@
+
+ Full command: snlc_sim.exe SNII-templates_20251020.input 
+
+ SNANA_VERSION: NOT_FROM_GITHUB
+
+
+
+ ****************************************************************** 
+   Begin execution of snlc_sim.exe    
+ SNDATA_ROOT = /home/mvalenzuela/SNDATA_ROOT 
+ SNANA_DIR   = /home/lmod/software/SNANA/11.05p 
+
+
+   sizeof(INPUTS) =   5.043 MB 
+   sizeof(GENLC)  =  10.667 MB 
+
+  init_SNDATA_GLOBAL: 
+ --------------------------------------------------------
+  Initialize NstringMatch for sim-input file
+  Read 83 words from user input file 1: 
+	 SNII-templates_20251020.input 
+ --------------------------------------------------------
+  Read 143 words from user input file 2: 
+	 /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_SNII-Templates.INPUT 
+
+ ****************************************************************** 
+   init_HzFUN_INFO  
+	 H0         = 70.00      # km/s/Mpc 
+	 OM, OL, Ok = 0.31500, 0.68500, 0.00000 
+	 w0, wa     = -1.000,  0.000 
+
+ ****************************************************************** 
+    prep_user_inputs summary   
+	 SIMLIB file        : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB   (start LIBID=0)
+	 Generation Version : SNII-templates_DDF_20251020 
+	 Generation source  : RANDOM 
+	 Generation model   : NON1ASED 
+	 Number of LC to Generate: 0 
+	 OMEGA_(MATTER,LAMBDA)= 0.315, 0.685,    w0= -1.00   H0= 70.0 
+	 KCOR  file : /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+	 Observer Gen-FILTERS  :  ugrizY  
+	 Random number seed: 46  (NSTREAM=2)
+	 Gen-Range for RA(deg)  : -360.000 to  360.000 
+	 Gen-Range for DEC(deg): -360.000 to  360.000 
+	 Gen-Range for ZCMB :  0.011 to  1.200  (sigma= 0.0000, bias=0.00000) 
+	 Gen-Range for PEAKMJD  :  60900.0 to  61900.0  
+	 Gen-Range for Trest    :    -50.0 to    300.0  days 
+	 Gen-Range for SHAPEPAR  :      0.0 to      0.0  
+	 Gen-Range for AV  : -9.00 to -9.00  (dN/dAv = exp(-AV/-9.00) 
+	 Gen-Mean  for RV  : 3.10  
+	 Gen-sigma for RV  : 0.00 , 0.00 (lower , upper ) 
+	 Gen-Range for RV  : 1.00 to 5.00 
+	 ZP offsets (ugrizY) :  0.000 0.000 0.000 0.000 0.000 0.000
+	 MODEL mag offsets (ugrizY) :   0.00  0.00  0.00  0.00  0.00  0.00
+
+
+ ****************************************************************** 
+    init_RANDOMsource : CIDOFF=0   
+
+ ****************************************************************** 
+   SIMLIB_readGlobalHeader_TEXT  
+	 Opened : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+
+ ****************************************************************** 
+   SIMLIB_prepGlobalHeader  
+	 SIMLIB Survey    : LSST 
+	 SIMLIB Field : VOID 
+	 SIMLIB Pixel Saturation: 100000 photoelectrons. 
+	 SIMLIB Filters   : ugrizY 
+	 SIMLIB created by: NONE 
+	 SIMLIB Solid Angle  : 0.025000 steridians 
+	 SIMLIB PSF unit:    PIXEL_SIGMA 
+	 SIMLIB SKYSIG unit: ADU_PER_SQPIXEL 
+
+  Bit-mask options for SIMLIB_MSKOPT = 128 
+	 MASK=   128 -> keep entire SIMLIB season (not just transient range) 
+
+	 SIMLIB MAXRANSTART after  233  LIBIDs  (0 seconds)
+
+ ****************************************************************** 
+   init_RateModel  
+ dN/dz from 1.00 x Strolger15(CANDELS): 
+    MODEL_RATE(z=0.01) = 1.050e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.21) = 2.220e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.41) = 3.589e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.61) = 4.619e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.81) = 5.079e-05/Mpc^3/yr    
+    MODEL_RATE(z=1.01) = 5.106e-05/Mpc^3/yr    
+ Calculated Number of EVENTS per season =  3.070e+04 
+
+ ****************************************************************** 
+   Initialize SEARCH EFFICIENCY for 'LSST' 
+  
+   Read Detection-efficiency curves: 
+	 EFF_DETECT(u) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(g) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(r) = 0.425 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(i) = 0.540 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(z) = 0.469 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(Y) = 0.469 at ABS(SNR) =  5.00 ()
+
+   Fetch SOFTWARE SEARCH-LOGIC from : 
+	 /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+	 Logic: 2 MJDs require filters=u+g+r+i+z+Y 
+	 Trigger epoch contains all obs within 0.007 days
+
+
+  Optional SEARCHEFF_SPEC_FILE not specified -> EFF_SPEC=1 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+ ****************************************************************** 
+   READ_CALIB_DRIVER: read calib/filters/kcor  
+	 FILTERS_SURVEY = ugrizY 
+  Opened /home/mvalenzuela/run_SNANA/kcor_LSST.fits
+   read_calib_head 
+		 Read VERSION         = 4  (kcor.exe version) 
+		 Read NPRIM           = 1  primary refs 
+		 Read PRIM001         = AB 
+		 Read NFILTERS        = 6  filters 
+		 Read NKCOR           = 0  K-COR tables 
+		 Read  991 wavelength bins (2100.00 to 12000.00)
+		 Read  106 epoch      bins (-20.00 to 85.00)
+		 Read    1 redshift   bins (0.00 to 0.00)
+		 Read    1 AV         bins (0.00 to 0.00)
+   read_calib_zpoff  
+   read_calib_snsed 
+   read_kcor_tables 
+   read_kcor_mags 
+   read_calib_filters 
+   read_calib_primarysed 
+
+   print_calib_summary 
+	  Primary Spectrum: AB 
+
+  FILTER SUMMARY (RDKCOR) : 
+   internal                   LAM  LAM   rest-lam      primary
+  index name                  AVG  RMS   kcor range    mag   ZP
+ ---------------------------------------------------------------------- 
+    1 LSST-u                 3710  163     0-    0   0.000   0.000
+    2 LSST-g                 4806  431     0-    0   0.000   0.000
+    3 LSST-r                 6221  414     0-    0   0.000   0.000
+    4 LSST-i                 7559  387     0-    0   0.000   0.000
+    5 LSST-z                 8681  311     0-    0   0.000   0.000
+    6 LSST-Y                 9757  345     0-    0   0.000   0.000
+	 NFILTDEF[SURVEY,REST] = 6 0 
+
+ READ_CALIB_DRIVER: Done 
+
+
+ ****************************************************************** 
+    PREPARE NON1ASED TEMPLATE SELECTION   
+    MODELPATH = /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates 
+    Read all NON1A from '/home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/NON1A.LIST' 
+     Will generate  100 NON1ASED (MXGEN= 100) with SDSS-000018.SED
+     Will generate  100 NON1ASED (MXGEN= 200) with SDSS-003818.SED
+     Will generate  100 NON1ASED (MXGEN= 300) with SDSS-013376.SED
+     Will generate  100 NON1ASED (MXGEN= 400) with SDSS-014450.SED
+     Will generate  100 NON1ASED (MXGEN= 500) with SDSS-014599.SED
+     Will generate  100 NON1ASED (MXGEN= 600) with SDSS-015031.SED
+     Will generate  100 NON1ASED (MXGEN= 700) with SDSS-015320.SED
+     Will generate  100 NON1ASED (MXGEN= 800) with SDSS-015339.SED
+     Will generate  100 NON1ASED (MXGEN= 900) with SDSS-017862.SED
+     Will generate  100 NON1ASED (MXGEN=1000) with SDSS-018109.SED
+     Will generate  100 NON1ASED (MXGEN=1100) with SDSS-018297.SED
+     Will generate  100 NON1ASED (MXGEN=1200) with SDSS-018408.SED
+     Will generate  100 NON1ASED (MXGEN=1300) with SDSS-018441.SED
+     Will generate  100 NON1ASED (MXGEN=1400) with SDSS-018457.SED
+     Will generate  100 NON1ASED (MXGEN=1500) with SDSS-018590.SED
+     Will generate  100 NON1ASED (MXGEN=1600) with SDSS-018596.SED
+     Will generate  100 NON1ASED (MXGEN=1700) with SDSS-018700.SED
+     Will generate  100 NON1ASED (MXGEN=1800) with SDSS-018713.SED
+     Will generate  100 NON1ASED (MXGEN=1900) with SDSS-018734.SED
+     Will generate  100 NON1ASED (MXGEN=2000) with SDSS-020038.SED
+
+   filtdump_SEDMODEL: Read primary ref 'AB' with 991 lambda bins 
+
+   Defined                                 Lambda           AB     AB 
+   Filter                  <LAMBDA>        Range(step)      mag    ZP 
+   ----------------------------------------------------------------------
+   id=01 (      LSST-u)   ( 3710.0 + 0)   3200- 4100( 10)   0.000  12.652  
+   id=02 (      LSST-g)   ( 4805.8 + 0)   3750- 5770( 10)   0.000  14.689  
+   id=03 (      LSST-r)   ( 6221.5 + 0)   5230- 7150( 10)   0.000  14.560  
+   id=04 (      LSST-i)   ( 7559.2 + 0)   6590- 8450( 10)   0.000  14.379  
+   id=05 (      LSST-z)   ( 8680.6 + 0)   7890- 9470( 10)   0.000  13.993  
+   id=06 (      LSST-Y)   ( 9757.0 + 0)   8970-10990( 10)   0.000  13.017  
+   ----------------------------------------------------------------------
+	 malloc_METADATA_SEDMODEL for NSED=1 and NPAR=0
+  malloc_FLUXTABLE_SEDMODEL : allocate   2.38 Mb of memory for integral-flux tables. 
+	 Table bins include 400 DAYs. 
+	 Table bins include   6 FILTERs. 
+	 Table bins include   1 SEDs. 
+	 Table bins include 105 log10(Z): 0.00975 <= Z <= 1.20271 .
+		 ZTABLE[  1] =  0.00975   (LOGZ=-2.0109)
+		 ZTABLE[  2] =  0.01021   (LOGZ=-1.9908)
+		 ZTABLE[  3] =  0.01070   (LOGZ=-1.9707)
+		 ZTABLE[102] =  1.04675   (LOGZ=0.0198)
+		 ZTABLE[103] =  1.09635   (LOGZ=0.0400)
+		 ZTABLE[104] =  1.14830   (LOGZ=0.0601)
+		 ZTABLE[105] =  1.20271   (LOGZ=0.0802)
+		 Zero entire SEDMODEL flux table (595084 entries). 
+
+	 Allow SED Flam < 0 
+
+ ****************************************************************** 
+   init_modelSmear: init intrinsic SN smearing with model=NONE  
+	 Smear-mode: interpolate from central filter wavelengths.
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=1)  
+
+ ****************************************************************** 
+   clr_VERSION  
+	 LCMERGE Version SNII-templates_DDF_20251020 does not exist. 
+	 SIM Version SNII-templates_DDF_20251020 does not exist. 
+	 PHOTOMETRY Version SNII-templates_DDF_20251020 does not exist. 
+
+ ****************************************************************** 
+   Init SIMGEN_DUMP file   
+	 open /home/mvalenzuela/SNDATA_ROOT/SIM/SNII-templates_DDF_20251020/SNII-templates_DDF_20251020.DUMP
+
+ ****************************************************************** 
+   WR_SNFITSIO_INIT  
+
+ ****************************************************************** 
+   set_TIMERS  
+	 CPUTIME_INITIALIZE   = 0.000 second
+
+ ****************************************************************** 
+    Begin Generating Lightcurves.   
+  Found Max dN/dz * wgt = 6.659141e+05 at z =    1.120 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-000018.SED (INDEX=201)  
+  Read  NON1A-201  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-000018.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-201): -30.90 to  78.90     LAMBDA:  2410 to 11990 A 
+    WARNING(NON1A-201): Flux(Trestmax)/Flux(peak) = 0.082 -> beware of extrapolation
+
+  SED-epoch  range: -30.90 <= Trest <=  78.90 (<STEP>=1.93 day)
+  SED-lambda range:  2410 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-000018.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating        1 of 2000 (CID=1) 
+	 Finished generating      100 of 2000 (CID=100) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-003818.SED (INDEX=204)  
+  Read  NON1A-204  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-003818.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.90 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-204): -26.60 to  81.90     LAMBDA:  2380 to 11990 A 
+    WARNING(NON1A-204): Flux(Trestmax)/Flux(peak) = 0.369 -> beware of extrapolation
+
+  SED-epoch  range: -26.60 <= Trest <=  81.90 (<STEP>=1.90 day)
+  SED-lambda range:  2380 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-003818.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating      200 of 2000 (CID=199) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-013376.SED (INDEX=208)  
+  Read  NON1A-208  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-013376.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.90 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-208): -29.90 to  78.60     LAMBDA:  2340 to 11990 A 
+    WARNING(NON1A-208): Flux(Trestmax)/Flux(peak) = 0.319 -> beware of extrapolation
+
+  SED-epoch  range: -29.90 <= Trest <=  78.60 (<STEP>=1.87 day)
+  SED-lambda range:  2340 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-013376.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating      300 of 2000 (CID=300) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-014450.SED (INDEX=210)  
+  Read  NON1A-210  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-014450.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.90 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-210): -26.80 to  78.50     LAMBDA:  2230 to 11990 A 
+    WARNING(NON1A-210): Flux(Trestmax)/Flux(peak) = 0.094 -> beware of extrapolation
+
+  SED-epoch  range: -26.80 <= Trest <=  78.50 (<STEP>=1.78 day)
+  SED-lambda range:  2230 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-014450.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating      400 of 2000 (CID=400) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-014599.SED (INDEX=213)  
+  Read  NON1A-213  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-014599.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 0.90 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-213): -28.50 to  79.50     LAMBDA:  2370 to 11990 A 
+    WARNING(NON1A-213): Flux(Trestmax)/Flux(peak) = 0.163 -> beware of extrapolation
+
+  SED-epoch  range: -28.50 <= Trest <=  79.50 (<STEP>=1.89 day)
+  SED-lambda range:  2370 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-014599.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating      500 of 2000 (CID=500) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-015031.SED (INDEX=214)  
+  Read  NON1A-214  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-015031.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-214): -27.10 to  79.60     LAMBDA:  2420 to 11990 A 
+    WARNING(NON1A-214): Flux(Trestmax)/Flux(peak) = 0.277 -> beware of extrapolation
+
+  SED-epoch  range: -27.10 <= Trest <=  79.60 (<STEP>=1.94 day)
+  SED-lambda range:  2420 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-015031.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating      600 of 2000 (CID=600) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-015320.SED (INDEX=215)  
+  Read  NON1A-215  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-015320.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 0.90 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-215): -28.30 to  79.10     LAMBDA:  2350 to 11990 A 
+    WARNING(NON1A-215): Flux(Trestmax)/Flux(peak) = 0.111 -> beware of extrapolation
+
+  SED-epoch  range: -28.30 <= Trest <=  79.10 (<STEP>=1.88 day)
+  SED-lambda range:  2350 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-015320.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating      700 of 2000 (CID=700) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-015339.SED (INDEX=216)  
+  Read  NON1A-216  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-015339.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 0.90 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-216): -28.60 to  80.40     LAMBDA:  2230 to 11990 A 
+    WARNING(NON1A-216): Flux(Trestmax)/Flux(peak) = 0.094 -> beware of extrapolation
+
+  SED-epoch  range: -28.60 <= Trest <=  80.40 (<STEP>=1.79 day)
+  SED-lambda range:  2230 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-015339.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating      800 of 2000 (CID=800) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-017862.SED (INDEX=220)  
+  Read  NON1A-220  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-017862.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.60 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-220): -36.70 to  71.60     LAMBDA:  2180 to 11990 A 
+    WARNING(NON1A-220): Flux(Trestmax)/Flux(peak) = 0.150 -> beware of extrapolation
+
+  SED-epoch  range: -36.70 <= Trest <=  71.60 (<STEP>=1.75 day)
+  SED-lambda range:  2180 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-017862.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating      900 of 2000 (CID=900) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-018109.SED (INDEX=221)  
+  Read  NON1A-221  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-018109.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 0.90 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-221): -20.60 to  88.00     LAMBDA:  2340 to 11990 A 
+    WARNING(NON1A-221): Flux(Trestmax)/Flux(peak) = 0.118 -> beware of extrapolation
+
+  SED-epoch  range: -20.60 <= Trest <=  88.00 (<STEP>=1.87 day)
+  SED-lambda range:  2340 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-018109.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating     1000 of 2000 (CID=1000) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-018297.SED (INDEX=222)  
+  Read  NON1A-222  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-018297.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 0.90 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-222): -22.40 to  85.70     LAMBDA:  2330 to 11990 A 
+    WARNING(NON1A-222): Flux(Trestmax)/Flux(peak) = 0.137 -> beware of extrapolation
+
+  SED-epoch  range: -22.40 <= Trest <=  85.70 (<STEP>=1.86 day)
+  SED-lambda range:  2330 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-018297.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating     1100 of 2000 (CID=1100) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-018408.SED (INDEX=223)  
+  Read  NON1A-223  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-018408.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.90 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-223): -32.40 to  76.10     LAMBDA:  2380 to 11990 A 
+    WARNING(NON1A-223): Flux(Trestmax)/Flux(peak) = 0.205 -> beware of extrapolation
+
+  SED-epoch  range: -32.40 <= Trest <=  76.10 (<STEP>=1.90 day)
+  SED-lambda range:  2380 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-018408.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating     1200 of 2000 (CID=1199) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-018441.SED (INDEX=224)  
+  Read  NON1A-224  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-018441.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.90 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-224): -19.40 to  87.10     LAMBDA:  2420 to 11990 A 
+    WARNING(NON1A-224): Flux(Trestmax)/Flux(peak) = 0.184 -> beware of extrapolation
+
+  SED-epoch  range: -19.40 <= Trest <=  87.10 (<STEP>=1.94 day)
+  SED-lambda range:  2420 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-018441.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating     1300 of 2000 (CID=1300) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-018457.SED (INDEX=225)  
+  Read  NON1A-225  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-018457.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.90 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-225): -29.60 to  77.70     LAMBDA:  2310 to 11990 A 
+    WARNING(NON1A-225): Flux(Trestmin)/Flux(peak) = 0.065 -> beware of extrapolation
+
+  SED-epoch  range: -29.60 <= Trest <=  77.70 (<STEP>=1.85 day)
+  SED-lambda range:  2310 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-018457.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating     1400 of 2000 (CID=1400) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-018590.SED (INDEX=226)  
+  Read  NON1A-226  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-018590.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -2.80 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-226): -32.10 to  75.70     LAMBDA:  2360 to 11990 A 
+    WARNING(NON1A-226): Flux(Trestmax)/Flux(peak) = 0.287 -> beware of extrapolation
+
+  SED-epoch  range: -32.10 <= Trest <=  75.70 (<STEP>=1.89 day)
+  SED-lambda range:  2360 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-018590.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating     1500 of 2000 (CID=1500) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-018596.SED (INDEX=227)  
+  Read  NON1A-227  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-018596.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-227): -23.30 to  72.10     LAMBDA:  2430 to 11990 A 
+    WARNING(NON1A-227): Flux(Trestmax)/Flux(peak) = 0.247 -> beware of extrapolation
+
+  SED-epoch  range: -23.30 <= Trest <=  72.10 (<STEP>=1.95 day)
+  SED-lambda range:  2430 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-018596.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating     1600 of 2000 (CID=1600) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-018700.SED (INDEX=228)  
+  Read  NON1A-228  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-018700.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.90 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-228): -26.50 to  81.60     LAMBDA:  2370 to 11990 A 
+    WARNING(NON1A-228): Flux(Trestmax)/Flux(peak) = 0.269 -> beware of extrapolation
+
+  SED-epoch  range: -26.50 <= Trest <=  81.60 (<STEP>=1.90 day)
+  SED-lambda range:  2370 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-018700.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating     1700 of 2000 (CID=1700) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-018713.SED (INDEX=229)  
+  Read  NON1A-229  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-018713.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 0.90 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-229): -27.40 to  80.40     LAMBDA:  2280 to 11990 A 
+    WARNING(NON1A-229): Flux(Trestmax)/Flux(peak) = 0.100 -> beware of extrapolation
+
+  SED-epoch  range: -27.40 <= Trest <=  80.40 (<STEP>=1.83 day)
+  SED-lambda range:  2280 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-018713.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating     1800 of 2000 (CID=1800) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-018734.SED (INDEX=230)  
+  Read  NON1A-230  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-018734.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.60 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-230): -30.30 to  77.60     LAMBDA:  2360 to 11990 A 
+    WARNING(NON1A-230): Flux(Trestmax)/Flux(peak) = 0.344 -> beware of extrapolation
+
+  SED-epoch  range: -30.30 <= Trest <=  77.60 (<STEP>=1.89 day)
+  SED-lambda range:  2360 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-018734.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating     1900 of 2000 (CID=1900) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for SDSS-020038.SED (INDEX=235)  
+  Read  NON1A-235  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates/SDSS-020038.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 0.90 days so that maxFlux is at DAY=0
+		 Zero entire SEDMODEL flux table (595084 entries). 
+  Initialize SED flux-integrals for  LSST-u  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-g  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-r  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-i  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-z  and  ISED=1 
+  Initialize SED flux-integrals for  LSST-Y  and  ISED=1 
+    Trest(NON1A-235): -32.20 to  76.90     LAMBDA:  2230 to 11990 A 
+
+  SED-epoch  range: -32.20 <= Trest <=  76.90 (<STEP>=1.79 day)
+  SED-lambda range:  2230 <= LAM <= 11990 (<STEP>=  10 A) 
+  FILTER-lambda range:   100 <= LAM <= 30000  
+   Changes for SDSS-020038.SED : 
+	 GENMAG_OFF_MODEL ->  1.50 
+	 GENMAG_SMEAR ->  1.05, 1.05 
+	 Finished generating     2000 of 2000 (CID=2000) GenRate=19/sec
+
+ ****************************************************************** 
+    Done generating 2000 SN lightcurves from RANDOM source.  
+	 (2000 lightcurves requested => 103 were written) 
+	 CPUTIME_PROCESS_ALL  = 1.700 minute
+	 CPUTIME_PROCESS_RATE(GEN) = 19.608 evt/second
+	 CPUTIME_PROCESS_RATE(ACC) = 1.010 evt/second
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=2)  
+
+ ****************************************************************** 
+   DUMP README CONTENTS TO SCREEN
+  
+DOCUMENTATION:
+  OVERVIEW:
+    TIME_START:   2025-10-25  20:28  # UT
+    SURVEY:       LSST
+    GENMODEL:     NON1ASED
+    SNIA:         False
+    HOST_MACHINE: sn014
+    USERNAME:     mvalenzuela
+    SNDATA_ROOT:  /home/mvalenzuela/SNDATA_ROOT
+    SNANA_DIR:     /home/lmod/software/SNANA/11.05p
+    SNANA_VERSION: 
+    CWD:   /home/mvalenzuela/DATASIM_LSST_1/DDF/input_files_v6/SNII-templates
+    INPUT_FILE:
+    - SNII-templates_20251020.input
+    - /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_SNII-Templates.INPUT
+# 
+  INPUT_KEYS:
+# Output data
+    GENVERSION:              SNII-templates_DDF_20251020
+    NGENTOT_LC:              2000  
+    FORMAT_MASK:             32  #  += 2,32,16 -> TEXT, FITS, randomCID
+    GENTYPE:                 0  # true type
+    SNTYPE:                  1  101  # spec Type, photID type
+    CIDRAN_MIN:              0  
+    CIDRAN_MAX:              3000000  
+# Source model
+    GENMODEL:                NON1ASED 
+    PATH_NON1ASED:           /home/mvalenzuela/run_SNANA/plasticc_models/NON1ASED.SNII-Templates 
+    MINSLOPE_EXTRAPMAG_LATE: 0.01 
+    NON1A_KEYS:              5 INDEX WGT MAGOFF MAGSMEAR SNTYPE 
+    NON1A:                  
+    - 201 0.0246 1.500 1.050 2 
+    - 204 0.0246 1.500 1.050 2 
+    - 208 0.0246 1.500 1.050 2 
+    - 210 0.0246 1.500 1.050 2 
+    - 213 0.0246 1.500 1.050 2 
+    - 214 0.0246 1.500 1.050 2 
+    - 215 0.0246 1.500 1.050 2 
+    - 216 0.0246 1.500 1.050 2 
+    - 220 0.0246 1.500 1.050 2 
+    - 221 0.0246 1.500 1.050 2 
+    - 222 0.0246 1.500 1.050 2 
+    - 223 0.0246 1.500 1.050 2 
+    - 224 0.0246 1.500 1.050 2 
+    - 225 0.0246 1.500 1.050 2 
+    - 226 0.0246 1.500 1.050 2 
+    - 227 0.0246 1.500 1.050 2 
+    - 228 0.0246 1.500 1.050 2 
+    - 229 0.0246 1.500 1.050 2 
+    - 230 0.0246 1.500 1.050 2 
+    - 235 0.0246 1.500 1.050 2 
+    GENMAG_SMEAR:            1.0000e-03  # coherent scatter (mag)
+# Cosmology inputs
+    OMEGA_MATTER:            0.3150  
+    OMEGA_LAMBDA:            0.6850  
+    w0_LAMBDA:               -1.0000  
+    wa_LAMBDA:               0  
+    MUSHIFT:                 0  
+# Instrumental inputs
+    GENFILTERS:          ugrizY 
+    KCOR_FILE:           /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+    SIMLIB_FILE:             /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+    SIMLIB_MAXRANSTART:      1000 
+    SIMLIB_MSKOPT:           128 
+    SMEARFLAG_FLUX:      1  # 1->add Poisson noise
+    SMEARFLAG_ZEROPT:    1  # +=1->apply scatter, +=2->add to FLUXERRCAL
+# SEARCHEFF/detections
+    SEARCHEFF_PIPELINE_LOGIC_FILE:  /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+    NEWMJD_DIF:              7.0000e-03  # day-sep if > 1 detections required
+    SEARCHEFF_PIPELINE_EFF_FILE:  /home/mvalenzuela/run_SNANA/LSST_SEARCHEFF_PIPELINE.DAT
+    SEARCHEFF_SPEC_FILE:     NONE
+    SEARCHEFF_zHOST_FILE:    NONE
+    APPLY_SEARCHEFF_OPT:     1  # += 1,2,4 => pipe,spec,zhost
+# Redshift inputs
+    GENRANGE_REDSHIFT:       0.0110  1.2000  
+    GENSIGMA_REDSHIFT:       0  
+    GENSIGMA_VPEC:           0  # true vpec scatter (km/sec)
+    VPEC_ERR:                0  # vpec error after correction (km/sec)
+# Epoch & sky coverage inputs
+    GENRANGE_MJD:            60981.0000  61832.0000  
+    GENRANGE_PEAKMJD:        60900.0000  61900.0000  
+    GENSIGMA_PEAKMJD:        1.0000  
+    GENRANGE_TREST:          -50.0000  300.0000  
+    SOLID_ANGLE:             0.0250  
+# Galactic extinction
+    OPT_MWEBV:        1   
+    OPT_MWCOLORLAW:   99   
+# Population and rate-model params
+    DNDZ:                    CC_S15 
+    DNDZ_ALLSCALE:           0.1620  # dN/dz *= ALLSCALE
+# Misc inputs
+    GENSOURCE:               RANDOM
+    RANSEED:                 46  
+    DEBUG_FLAG:              0  
+    SIMGEN_DUMPALL:          35 CID LIBID SIM_SEARCHEFF_MASK GENTYPE NON1A_INDEX ZCMB ZHELIO ZCMB_SMEAR RA DEC MWEBV GALID GALZPHOT GALZPHOTERR GALSNSEP GALSNDDLR RV AV MU LENSDMU PEAKMJD MJD_DETECT_FIRST MJD_DETECT_LAST DTSEASON_PEAK PEAKMAG_u PEAKMAG_g PEAKMAG_r PEAKMAG_i PEAKMAG_z PEAKMAG_Y SNRMAX SNRMAX2 SNRMAX3 NOBS NOBS_SATURATE 
+# 
+  FILTERS:   # mean wavelength (A)
+    u:  3710.0
+    g:  4805.8
+    r:  6221.5
+    i:  7559.2
+    z:  8680.6
+    Y:  9757.0
+# 
+  INPUT_NOTES:
+  - Poisson noise is ON 
+  - Reported flux-uncertainty includes SKY+GALAXY+SOURCE
+  - SB-dependent flux scatter is OFF
+  -  dN/dz from 1.00 x Strolger15(CANDELS): 
+  -     MODEL_RATE(z=0.01) = 1.050e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.21) = 2.220e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.41) = 3.589e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.61) = 4.619e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.81) = 5.079e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=1.01) = 5.106e-05/Mpc^3/yr    
+  -  Calculated Number of EVENTS per season =  3.070e+04 
+  - H0 =  70.00 km/s/Mpc 
+  - Omega_{M,L} =  0.315, 0.685     w0,wa = -1.00,0.000
+  - APPLY_SEARCHEFF_OPT=1 --> Require EFF(PIPELINE) 
+  - PIPELINE requires 2 detections among u+g+r+i+z+Y (MJD dif > 0.0070 days) 
+#
+  GENTYPE_TO_NAME:  # GENTYPE:  [non]Ia   type  
+    2:  nonIa    IIP
+# 
+  OUTPUT_SUMMARY:
+    RANDOM_SYNC: 
+    - List=1  FIRST=0.564777  LAST=0.681468   AVG(wrap) = 23.9 +_ 37.2 
+    - List=2  FIRST=0.232632  LAST=0.547983   AVG(wrap) = 0.2 +_ 0.1 
+    - List=3  FIRST=0.607421  LAST=0.599400   AVG(wrap) = 0.0 +_ 0.0 
+# 
+    CPU_MINUTES:       1.70  
+    NGENLC_TOT:        2000    # (20/sec)
+    NGENLC_WRITE:      103    # (1/sec)
+    NGENSPEC_WRITE:    0  
+    EFF(SEARCH+CUTS):  0.0515 +-  0.0049
+    NGEN_PER_SEASON:   30697       # NSN(GEN) in GENRANGE(z,MJD,dOmega)
+    NACC_PER_SEASON:   1581 +_ 156  # NSN(ACCEPT) after trigger+cuts
+    NREJECT:  [294,0,0,  1603,0]   # [NEP<1,GENRANGE,PEAKMAG,  SEARCHEFF,CUTWIN] 
+DOCUMENTATION_END:
+
+  AUXILIARY FILES: 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/SNII-templates_DDF_20251020/SNII-templates_DDF_20251020.LIST 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/SNII-templates_DDF_20251020/SNII-templates_DDF_20251020.README 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/SNII-templates_DDF_20251020/SNII-templates_DDF_20251020.DUMP
+ WR_SNFITSIO_END: wrote 103 events and 0 spectra to FITS format
+
+ DONE with snlc_sim.

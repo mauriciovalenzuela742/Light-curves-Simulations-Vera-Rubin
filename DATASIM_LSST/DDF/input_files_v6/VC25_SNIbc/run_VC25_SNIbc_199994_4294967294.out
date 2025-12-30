@@ -1,0 +1,274 @@
+
+ Full command: snlc_sim.exe VC25_SNIbc_20251130.input 
+
+ SNANA_VERSION: NOT_FROM_GITHUB
+
+
+
+ ****************************************************************** 
+   Begin execution of snlc_sim.exe    
+ SNDATA_ROOT = /home/mvalenzuela/SNDATA_ROOT 
+ SNANA_DIR   = /home/lmod/software/SNANA/11.05p 
+
+
+   sizeof(INPUTS) =   5.043 MB 
+   sizeof(GENLC)  =  10.667 MB 
+
+  init_SNDATA_GLOBAL: 
+ --------------------------------------------------------
+  Initialize NstringMatch for sim-input file
+  Read 79 words from user input file 1: 
+	 VC25_SNIbc_20251130.input 
+ --------------------------------------------------------
+  Read 155 words from user input file 2: 
+	 /home/mvalenzuela/OTMODEL_NON1ASED/SNtypes/Ibc/SIMGEN_INCLUDE_VC25_SNIbc.INPUT 
+
+ ****************************************************************** 
+   init_HzFUN_INFO  
+	 H0         = 70.00      # km/s/Mpc 
+	 OM, OL, Ok = 0.31500, 0.68500, 0.00000 
+	 w0, wa     = -1.000,  0.000 
+
+ ****************************************************************** 
+    prep_user_inputs summary   
+	 SIMLIB file        : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB   (start LIBID=0)
+	 Generation Version : VC25_SNIbc_DDF_20251130 
+	 Generation source  : RANDOM 
+	 Generation model   : NON1ASED 
+	 Number of LC to Generate: 0 
+	 OMEGA_(MATTER,LAMBDA)= 0.315, 0.685,    w0= -1.00   H0= 70.0 
+	 KCOR  file : /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+	 Observer Gen-FILTERS  :  ugrizY  
+	 Random number seed: 9695  (NSTREAM=2)
+	 Gen-Range for RA(deg)  : -360.000 to  360.000 
+	 Gen-Range for DEC(deg): -360.000 to  360.000 
+	 Gen-Range for ZCMB :  0.011 to  3.800  (sigma= 0.0000, bias=0.00000) 
+	 Gen-Range for PEAKMJD  :  60900.0 to  61900.0  
+	 Gen-Range for Trest    :    -50.0 to    300.0  days 
+	 Gen-Range for SHAPEPAR  :      0.0 to      0.0  
+	 Gen-Range for AV  : -9.00 to -9.00  (dN/dAv = exp(-AV/-9.00) 
+	 Gen-Mean  for RV  : 3.10  
+	 Gen-sigma for RV  : 0.00 , 0.00 (lower , upper ) 
+	 Gen-Range for RV  : 1.00 to 5.00 
+	 ZP offsets (ugrizY) :  0.000 0.000 0.000 0.000 0.000 0.000
+	 MODEL mag offsets (ugrizY) :   0.00  0.00  0.00  0.00  0.00  0.00
+
+
+ ****************************************************************** 
+    init_RANDOMsource : CIDOFF=0   
+
+ ****************************************************************** 
+   SIMLIB_readGlobalHeader_TEXT  
+	 Opened : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+
+ ****************************************************************** 
+   SIMLIB_prepGlobalHeader  
+	 SIMLIB Survey    : LSST 
+	 SIMLIB Field : VOID 
+	 SIMLIB Pixel Saturation: 100000 photoelectrons. 
+	 SIMLIB Filters   : ugrizY 
+	 SIMLIB created by: NONE 
+	 SIMLIB Solid Angle  : 0.025000 steridians 
+	 SIMLIB PSF unit:    PIXEL_SIGMA 
+	 SIMLIB SKYSIG unit: ADU_PER_SQPIXEL 
+
+  Bit-mask options for SIMLIB_MSKOPT = 128 
+	 MASK=   128 -> keep entire SIMLIB season (not just transient range) 
+
+	 SIMLIB MAXRANSTART after  20  LIBIDs  (0 seconds)
+
+ ****************************************************************** 
+   init_RateModel  
+ dN/dz from 1.00 x Strolger15(CANDELS): 
+    MODEL_RATE(z=0.01) = 2.106e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.21) = 4.454e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.41) = 7.200e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.61) = 9.266e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.81) = 1.019e-04/Mpc^3/yr    
+    MODEL_RATE(z=1.01) = 1.024e-04/Mpc^3/yr    
+    MODEL_RATE(z=1.21) = 9.849e-05/Mpc^3/yr    
+    MODEL_RATE(z=1.41) = 9.281e-05/Mpc^3/yr    
+    MODEL_RATE(z=1.61) = 8.677e-05/Mpc^3/yr    
+    MODEL_RATE(z=1.81) = 8.097e-05/Mpc^3/yr    
+    MODEL_RATE(z=2.01) = 7.562e-05/Mpc^3/yr    
+    MODEL_RATE(z=2.21) = 7.078e-05/Mpc^3/yr    
+    MODEL_RATE(z=2.41) = 6.642e-05/Mpc^3/yr    
+    MODEL_RATE(z=2.61) = 6.251e-05/Mpc^3/yr    
+    MODEL_RATE(z=2.81) = 5.899e-05/Mpc^3/yr    
+    MODEL_RATE(z=3.01) = 5.581e-05/Mpc^3/yr    
+    MODEL_RATE(z=3.21) = 5.294e-05/Mpc^3/yr    
+    MODEL_RATE(z=3.41) = 5.032e-05/Mpc^3/yr    
+    MODEL_RATE(z=3.61) = 4.794e-05/Mpc^3/yr    
+ Calculated Number of EVENTS per season =  1.956e+05 
+
+ ****************************************************************** 
+   Initialize SEARCH EFFICIENCY for 'LSST' 
+  
+   Read Detection-efficiency curves: 
+	 EFF_DETECT(u) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(g) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(r) = 0.425 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(i) = 0.540 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(z) = 0.469 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(Y) = 0.469 at ABS(SNR) =  5.00 ()
+
+   Fetch SOFTWARE SEARCH-LOGIC from : 
+	 /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+	 Logic: 2 MJDs require filters=u+g+r+i+z+Y 
+	 Trigger epoch contains all obs within 0.007 days
+
+
+  Optional SEARCHEFF_SPEC_FILE not specified -> EFF_SPEC=1 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+ ****************************************************************** 
+   READ_CALIB_DRIVER: read calib/filters/kcor  
+	 FILTERS_SURVEY = ugrizY 
+  Opened /home/mvalenzuela/run_SNANA/kcor_LSST.fits
+   read_calib_head 
+		 Read VERSION         = 4  (kcor.exe version) 
+		 Read NPRIM           = 1  primary refs 
+		 Read PRIM001         = AB 
+		 Read NFILTERS        = 6  filters 
+		 Read NKCOR           = 0  K-COR tables 
+		 Read  991 wavelength bins (2100.00 to 12000.00)
+		 Read  106 epoch      bins (-20.00 to 85.00)
+		 Read    1 redshift   bins (0.00 to 0.00)
+		 Read    1 AV         bins (0.00 to 0.00)
+   read_calib_zpoff  
+   read_calib_snsed 
+   read_kcor_tables 
+   read_kcor_mags 
+   read_calib_filters 
+   read_calib_primarysed 
+
+   print_calib_summary 
+	  Primary Spectrum: AB 
+
+  FILTER SUMMARY (RDKCOR) : 
+   internal                   LAM  LAM   rest-lam      primary
+  index name                  AVG  RMS   kcor range    mag   ZP
+ ---------------------------------------------------------------------- 
+    1 LSST-u                 3710  163     0-    0   0.000   0.000
+    2 LSST-g                 4806  431     0-    0   0.000   0.000
+    3 LSST-r                 6221  414     0-    0   0.000   0.000
+    4 LSST-i                 7559  387     0-    0   0.000   0.000
+    5 LSST-z                 8681  311     0-    0   0.000   0.000
+    6 LSST-Y                 9757  345     0-    0   0.000   0.000
+	 NFILTDEF[SURVEY,REST] = 6 0 
+
+ READ_CALIB_DRIVER: Done 
+
+
+ ****************************************************************** 
+    PREPARE NON1ASED TEMPLATE SELECTION   
+    MODELPATH = /home/mvalenzuela/OTMODEL_NON1ASED/SNtypes/Ibc/NON1ASED_VC25_SNIbc 
+    Read all NON1A from '/home/mvalenzuela/OTMODEL_NON1ASED/SNtypes/Ibc/NON1ASED_VC25_SNIbc/NON1A.LIST' 
+     Will generate  910 NON1ASED (MXGEN= 910) with OT_SN2015ap.SED.gz
+     Will generate  910 NON1ASED (MXGEN=1820) with OT_SN2015ah.SED.gz
+     Will generate  910 NON1ASED (MXGEN=2730) with OT_SN2014L.SED.gz
+     Will generate  910 NON1ASED (MXGEN=3640) with OT_SN2013ge.SED.gz
+     Will generate  910 NON1ASED (MXGEN=4550) with OT_SN2011bm.SED.gz
+     Will generate  910 NON1ASED (MXGEN=5460) with OT_SN2009jf.SED.gz
+     Will generate  910 NON1ASED (MXGEN=6370) with OT_SN2009iz.SED.gz
+     Will generate  910 NON1ASED (MXGEN=7280) with OT_SN2008D.SED.gz
+     Will generate  910 NON1ASED (MXGEN=8190) with OT_SN2007uy.SED.gz
+     Will generate  910 NON1ASED (MXGEN=9100) with OT_SN2007gr.SED.gz
+     Will generate  910 NON1ASED (MXGEN=10010) with OT_SN2007Y.SED.gz
+     Will generate  910 NON1ASED (MXGEN=10920) with OT_SN2007C.SED.gz
+     Will generate  910 NON1ASED (MXGEN=11830) with OT_SN2006lc.SED.gz
+     Will generate  910 NON1ASED (MXGEN=12740) with OT_SN2006ep.SED.gz
+     Will generate  910 NON1ASED (MXGEN=13650) with OT_SN2005hg.SED.gz
+     Will generate  910 NON1ASED (MXGEN=14560) with OT_SN2005bf.SED.gz
+     Will generate  910 NON1ASED (MXGEN=15470) with OT_SN2004gt.SED.gz
+     Will generate  910 NON1ASED (MXGEN=16380) with OT_SN2004gq.SED.gz
+     Will generate  910 NON1ASED (MXGEN=17290) with OT_SN2004fe.SED.gz
+     Will generate  910 NON1ASED (MXGEN=18200) with OT_SN2004dk.SED.gz
+     Will generate  910 NON1ASED (MXGEN=19110) with OT_SN2004aw.SED.gz
+     Will generate  890 NON1ASED (MXGEN=20000) with OT_SN1994l.SED.gz
+
+   filtdump_SEDMODEL: Read primary ref 'AB' with 991 lambda bins 
+
+   Defined                                 Lambda           AB     AB 
+   Filter                  <LAMBDA>        Range(step)      mag    ZP 
+   ----------------------------------------------------------------------
+   id=01 (      LSST-u)   ( 3710.0 + 0)   3200- 4100( 10)   0.000  12.652  
+   id=02 (      LSST-g)   ( 4805.8 + 0)   3750- 5770( 10)   0.000  14.689  
+   id=03 (      LSST-r)   ( 6221.5 + 0)   5230- 7150( 10)   0.000  14.560  
+   id=04 (      LSST-i)   ( 7559.2 + 0)   6590- 8450( 10)   0.000  14.379  
+   id=05 (      LSST-z)   ( 8680.6 + 0)   7890- 9470( 10)   0.000  13.993  
+   id=06 (      LSST-Y)   ( 9757.0 + 0)   8970-10990( 10)   0.000  13.017  
+   ----------------------------------------------------------------------
+	 malloc_METADATA_SEDMODEL for NSED=1 and NPAR=0
+  malloc_FLUXTABLE_SEDMODEL : allocate   2.94 Mb of memory for integral-flux tables. 
+	 Table bins include 400 DAYs. 
+	 Table bins include   6 FILTERs. 
+	 Table bins include   1 SEDs. 
+	 Table bins include 130 log10(Z): 0.00975 <= Z <= 3.80592 .
+		 ZTABLE[  1] =  0.00975   (LOGZ=-2.0109)
+		 ZTABLE[  2] =  0.01021   (LOGZ=-1.9908)
+		 ZTABLE[  3] =  0.01070   (LOGZ=-1.9707)
+		 ZTABLE[127] =  3.31281   (LOGZ=0.5202)
+		 ZTABLE[128] =  3.46964   (LOGZ=0.5403)
+		 ZTABLE[129] =  3.63389   (LOGZ=0.5604)
+		 ZTABLE[130] =  3.80592   (LOGZ=0.5805)
+		 Zero entire SEDMODEL flux table (735434 entries). 
+
+	 Allow SED Flam < 0 
+
+ ****************************************************************** 
+   init_modelSmear: init intrinsic SN smearing with model=NONE  
+	 Smear-mode: interpolate from central filter wavelengths.
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=1)  
+
+ ****************************************************************** 
+   clr_VERSION  
+	 LCMERGE Version VC25_SNIbc_DDF_20251130 does not exist. 
+	 SIM Version VC25_SNIbc_DDF_20251130 does not exist. 
+	 PHOTOMETRY Version VC25_SNIbc_DDF_20251130 does not exist. 
+
+ ****************************************************************** 
+   Init SIMGEN_DUMP file   
+	 open /home/mvalenzuela/SNDATA_ROOT/SIM/VC25_SNIbc_DDF_20251130/VC25_SNIbc_DDF_20251130.DUMP
+
+ ****************************************************************** 
+   WR_SNFITSIO_INIT  
+
+ ****************************************************************** 
+   set_TIMERS  
+	 CPUTIME_INITIALIZE   = 0.000 second
+
+ ****************************************************************** 
+    Begin Generating Lightcurves.   
+  Found Max dN/dz * wgt = 1.335939e+06 at z =    1.121 
+	 Finished generating        1 of 20000 (CID=0) 
+
+ ****************************************************************** 
+   Prepare 'NON1ASED' Simulation for OT_SN2015ap.SED.gz (INDEX=032)  
+  Read  NON1A-032  SED  from : 
+    /home/mvalenzuela/OTMODEL_NON1ASED/SNtypes/Ibc/NON1ASED_VC25_SNIbc/OT_SN2015ap.SED.gz 
+
+
+# ================================================ 
+  PRE-ABORT DUMP from function rd_sedFlux : 
+	 DAYrange = -150.00 to  500.00  (NBIN=8) 
+	 LAMrange =   100.0 to 30000.0  (NBIN=5446) 
+	 iep=8  ilam=0 
+
+   `|```````|`    
+   <| o\ /o |>    
+    | ' ; ' |     
+    |  ___  |     ABORT program on Fatal Error. 
+    | |' '| |     
+    | `---' |     
+    \_______/    
+
+ FATAL ERROR ABORT called by rd_sedFlux
+   Found LAM=3317.0 at day = -3.000000 
+   But expected LAM=3355.00 (ilam=0)
+

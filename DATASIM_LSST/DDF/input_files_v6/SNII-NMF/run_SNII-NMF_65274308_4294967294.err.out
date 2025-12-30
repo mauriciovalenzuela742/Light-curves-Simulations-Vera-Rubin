@@ -1,0 +1,2325 @@
+
+ Full command: snlc_sim.exe SNII-NMF_20251020.input 
+
+ SNANA_VERSION: NOT_FROM_GITHUB
+
+
+
+ ****************************************************************** 
+   Begin execution of snlc_sim.exe    
+ SNDATA_ROOT = /home/mvalenzuela/SNDATA_ROOT 
+ SNANA_DIR   = /home/lmod/software/SNANA/11.05p 
+
+
+   sizeof(INPUTS) =   5.043 MB 
+   sizeof(GENLC)  =  10.667 MB 
+
+  init_SNDATA_GLOBAL: 
+ --------------------------------------------------------
+  Initialize NstringMatch for sim-input file
+  Read 83 words from user input file 1: 
+	 SNII-NMF_20251020.input 
+ --------------------------------------------------------
+  Read 50 words from user input file 2: 
+	 /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_SNII-NMF.INPUT 
+
+ ****************************************************************** 
+   init_HzFUN_INFO  
+	 H0         = 70.00      # km/s/Mpc 
+	 OM, OL, Ok = 0.31500, 0.68500, 0.00000 
+	 w0, wa     = -1.000,  0.000 
+
+ ****************************************************************** 
+    prep_user_inputs summary   
+	 SIMLIB file        : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB   (start LIBID=0)
+	 Generation Version : SNII-NMF_DDF_20251020 
+	 Generation source  : RANDOM 
+	 Generation model   : SIMSED.SNII-NMF 
+	 Number of LC to Generate: 0 
+	 OMEGA_(MATTER,LAMBDA)= 0.315, 0.685,    w0= -1.00   H0= 70.0 
+	 KCOR  file : /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+	 Observer Gen-FILTERS  :  ugrizY  
+	 Random number seed: 64  (NSTREAM=2)
+	 Gen-Range for RA(deg)  : -360.000 to  360.000 
+	 Gen-Range for DEC(deg): -360.000 to  360.000 
+	 Gen-Range for ZCMB :  0.011 to  1.000  (sigma= 0.0000, bias=0.00000) 
+	 Gen-Range for PEAKMJD  :  60900.0 to  61900.0  
+	 Gen-Range for Trest    :   -100.0 to    400.0  days 
+	 Gen-Range for SHAPEPAR  :     -1.0 to      1.0  
+	 Gen-Range for AV  : -9.00 to -9.00  (dN/dAv = exp(-AV/-9.00) 
+	 Gen-Mean  for RV  : 3.10  
+	 Gen-sigma for RV  : 0.00 , 0.00 (lower , upper ) 
+	 Gen-Range for RV  : 1.00 to 5.00 
+	 ZP offsets (ugrizY) :  0.000 0.000 0.000 0.000 0.000 0.000
+	 MODEL mag offsets (ugrizY) :   0.00  0.00  0.00  0.00  0.00  0.00
+
+
+ ****************************************************************** 
+    init_RANDOMsource : CIDOFF=0   
+
+ ****************************************************************** 
+   SIMLIB_readGlobalHeader_TEXT  
+	 Opened : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+
+ ****************************************************************** 
+   SIMLIB_prepGlobalHeader  
+	 SIMLIB Survey    : LSST 
+	 SIMLIB Field : VOID 
+	 SIMLIB Pixel Saturation: 100000 photoelectrons. 
+	 SIMLIB Filters   : ugrizY 
+	 SIMLIB created by: NONE 
+	 SIMLIB Solid Angle  : 0.025000 steridians 
+	 SIMLIB PSF unit:    PIXEL_SIGMA 
+	 SIMLIB SKYSIG unit: ADU_PER_SQPIXEL 
+
+  Bit-mask options for SIMLIB_MSKOPT = 128 
+	 MASK=   128 -> keep entire SIMLIB season (not just transient range) 
+
+	 SIMLIB MAXRANSTART after  121  LIBIDs  (0 seconds)
+
+ ****************************************************************** 
+   init_RateModel  
+ dN/dz from 1.00 x Strolger15(CANDELS): 
+    MODEL_RATE(z=0.01) = 1.050e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.21) = 2.220e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.41) = 3.589e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.61) = 4.619e-05/Mpc^3/yr    
+    MODEL_RATE(z=0.81) = 5.079e-05/Mpc^3/yr    
+ Calculated Number of EVENTS per season =  2.161e+04 
+
+ ****************************************************************** 
+   Initialize SEARCH EFFICIENCY for 'LSST' 
+  
+   Read Detection-efficiency curves: 
+	 EFF_DETECT(u) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(g) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(r) = 0.425 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(i) = 0.540 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(z) = 0.469 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(Y) = 0.469 at ABS(SNR) =  5.00 ()
+
+   Fetch SOFTWARE SEARCH-LOGIC from : 
+	 /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+	 Logic: 2 MJDs require filters=u+g+r+i+z+Y 
+	 Trigger epoch contains all obs within 0.007 days
+
+
+  Optional SEARCHEFF_SPEC_FILE not specified -> EFF_SPEC=1 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+ ****************************************************************** 
+   READ_CALIB_DRIVER: read calib/filters/kcor  
+	 FILTERS_SURVEY = ugrizY 
+  Opened /home/mvalenzuela/run_SNANA/kcor_LSST.fits
+   read_calib_head 
+		 Read VERSION         = 4  (kcor.exe version) 
+		 Read NPRIM           = 1  primary refs 
+		 Read PRIM001         = AB 
+		 Read NFILTERS        = 6  filters 
+		 Read NKCOR           = 0  K-COR tables 
+		 Read  991 wavelength bins (2100.00 to 12000.00)
+		 Read  106 epoch      bins (-20.00 to 85.00)
+		 Read    1 redshift   bins (0.00 to 0.00)
+		 Read    1 AV         bins (0.00 to 0.00)
+   read_calib_zpoff  
+   read_calib_snsed 
+   read_kcor_tables 
+   read_kcor_mags 
+   read_calib_filters 
+   read_calib_primarysed 
+
+   print_calib_summary 
+	  Primary Spectrum: AB 
+
+  FILTER SUMMARY (RDKCOR) : 
+   internal                   LAM  LAM   rest-lam      primary
+  index name                  AVG  RMS   kcor range    mag   ZP
+ ---------------------------------------------------------------------- 
+    1 LSST-u                 3710  163     0-    0   0.000   0.000
+    2 LSST-g                 4806  431     0-    0   0.000   0.000
+    3 LSST-r                 6221  414     0-    0   0.000   0.000
+    4 LSST-i                 7559  387     0-    0   0.000   0.000
+    5 LSST-z                 8681  311     0-    0   0.000   0.000
+    6 LSST-Y                 9757  345     0-    0   0.000   0.000
+	 NFILTDEF[SURVEY,REST] = 6 0 
+
+ READ_CALIB_DRIVER: Done 
+
+
+
+ ****************************************************************** 
+   init_genmag_SIMSED : Initialize SIMSED Light Curve Model  
+   filtdump_SEDMODEL: Read primary ref 'AB' with 991 lambda bins 
+
+   Defined                                 Lambda           AB     AB 
+   Filter                  <LAMBDA>        Range(step)      mag    ZP 
+   ----------------------------------------------------------------------
+   id=01 (      LSST-u)   ( 3710.0 + 0)   3200- 4100( 10)   0.000  12.652  
+   id=02 (      LSST-g)   ( 4805.8 + 0)   3750- 5770( 10)   0.000  14.689  
+   id=03 (      LSST-r)   ( 6221.5 + 0)   5230- 7150( 10)   0.000  14.560  
+   id=04 (      LSST-i)   ( 7559.2 + 0)   6590- 8450( 10)   0.000  14.379  
+   id=05 (      LSST-z)   ( 8680.6 + 0)   7890- 9470( 10)   0.000  13.993  
+   id=06 (      LSST-Y)   ( 9757.0 + 0)   8970-10990( 10)   0.000  13.017  
+   ----------------------------------------------------------------------
+  Read SIMSED model parameters from 
+     /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF
+
+
+ Read number of SEDs  from 
+  /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/SED.INFO 
+
+ Read list of SEDs and parameters from 
+  /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/SED.INFO 
+	 malloc_METADATA_SEDMODEL for NSED=384 and NPAR=4
+    Found '        II_INDEX' with 384 bins from    0.000 to  383.000
+    Found '             pc1' with  6 bins from    0.000 to    0.500
+    Found '             pc2' with  8 bins from    0.000 to    0.070
+    Found '             pc3' with  8 bins from    0.000 to    0.070
+
+ Finished reading parameters for 384 SEDs 
+   SED FLUX_SCALE = 2.625606e+02 
+   SED MAG_ERR    =  0.10 
+   Read Flux errors :  NO 
+   Shift T=0 to time of peak  :  YES 
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  NDAY from largest file  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-1_PC3-3.SED 
+  malloc_FLUXTABLE_SEDMODEL : allocate  53.88 Mb of memory for integral-flux tables. 
+	 Table bins include  48 DAYs. 
+	 Table bins include   6 FILTERs. 
+	 Table bins include 384 SEDs. 
+	 Table bins include 101 log10(Z): 0.00975 <= Z <= 1.00247 .
+		 ZTABLE[  1] =  0.00975   (LOGZ=-2.0109)
+		 ZTABLE[  2] =  0.01022   (LOGZ=-1.9907)
+		 ZTABLE[  3] =  0.01070   (LOGZ=-1.9706)
+		 ZTABLE[ 98] =  0.87239   (LOGZ=-0.0593)
+		 ZTABLE[ 99] =  0.91376   (LOGZ=-0.0392)
+		 ZTABLE[100] =  0.95709   (LOGZ=-0.0190)
+		 ZTABLE[101] =  1.00247   (LOGZ=0.0011)
+		 Zero entire SEDMODEL flux table (13469610 entries). 
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=1/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-0_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 0.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.50 to 150.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=2/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-0_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=3/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-0_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=4/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-0_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=5/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-0_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=6/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-0_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=7/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-0_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=8/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-0_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=9/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-1_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.50 to 149.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=10/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-1_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=11/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-1_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=12/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-1_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=13/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-1_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=14/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-1_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=15/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-1_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=16/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-1_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=17/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-2_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.50 to 149.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=18/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-2_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=19/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-2_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=20/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-2_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=21/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-2_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=22/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-2_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=23/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-2_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=24/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-2_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=25/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-3_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.50 to 149.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=26/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-3_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=27/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-3_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=28/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-3_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=29/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-3_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=30/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-3_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=31/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-3_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=32/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-3_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=33/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-4_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.50 to 149.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=34/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-4_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.50 to 150.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=35/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-4_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=36/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-4_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=37/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-4_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=38/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-4_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=39/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-4_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=40/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-4_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=41/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-5_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.50 to 149.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=42/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-5_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.50 to 150.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=43/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-5_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=44/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-5_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=45/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-5_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=46/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-5_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=47/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-5_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=48/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-5_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=49/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-6_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.50 to 149.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=50/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-6_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.50 to 150.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=51/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-6_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=52/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-6_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=53/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-6_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=54/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-6_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=55/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-6_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=56/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-6_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=57/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-7_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.50 to 149.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=58/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-7_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.50 to 150.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=59/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-7_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -0.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.50 to 150.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=60/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-7_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=61/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-7_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=62/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-7_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=63/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-7_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 1.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.50 to 151.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=64/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-0_PC2-7_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=65/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-0_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=66/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-0_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=67/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-0_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=68/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-0_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=69/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-0_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=70/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-0_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=71/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-0_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=72/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-0_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=73/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-1_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=74/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-1_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=75/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-1_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=76/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-1_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=77/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-1_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=78/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-1_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=79/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-1_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=80/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-1_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=81/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-2_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=82/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-2_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=83/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-2_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=84/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-2_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=85/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-2_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=86/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-2_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=87/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-2_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=88/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-2_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=89/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-3_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=90/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-3_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=91/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-3_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=92/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-3_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=93/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-3_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=94/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-3_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=95/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-3_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=96/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-3_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=97/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-4_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=98/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-4_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=99/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-4_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=100/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-4_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=101/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-4_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=102/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-4_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=103/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-4_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=104/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-4_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=105/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-5_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=106/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-5_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=107/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-5_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=108/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-5_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=109/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-5_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=110/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-5_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=111/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-5_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=112/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-5_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=113/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-6_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=114/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-6_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=115/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-6_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=116/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-6_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=117/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-6_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=118/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-6_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=119/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-6_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=120/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-6_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=121/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-7_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=122/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-7_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=123/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-7_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=124/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-7_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=125/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-7_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=126/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-7_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=127/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-7_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=128/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-1_PC2-7_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=129/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-0_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=130/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-0_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=131/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-0_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=132/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-0_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=133/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-0_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=134/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-0_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=135/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-0_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=136/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-0_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=137/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-1_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=138/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-1_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=139/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-1_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=140/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-1_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=141/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-1_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=142/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-1_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=143/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-1_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=144/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-1_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=145/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-2_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=146/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-2_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=147/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-2_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=148/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-2_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=149/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-2_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=150/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-2_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=151/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-2_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=152/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-2_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=153/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-3_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=154/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-3_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=155/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-3_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=156/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-3_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=157/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-3_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=158/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-3_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=159/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-3_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=160/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-3_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=161/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-4_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=162/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-4_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=163/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-4_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=164/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-4_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=165/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-4_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=166/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-4_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=167/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-4_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=168/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-4_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=169/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-5_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=170/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-5_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=171/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-5_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=172/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-5_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=173/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-5_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=174/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-5_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=175/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-5_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=176/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-5_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=177/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-6_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=178/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-6_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=179/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-6_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=180/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-6_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=181/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-6_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=182/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-6_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=183/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-6_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=184/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-6_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=185/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-7_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=186/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-7_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=187/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-7_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=188/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-7_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=189/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-7_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=190/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-7_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=191/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-7_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=192/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-2_PC2-7_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=193/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-0_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=194/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-0_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=195/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-0_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=196/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-0_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=197/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-0_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=198/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-0_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=199/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-0_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=200/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-0_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=201/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-1_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=202/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-1_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=203/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-1_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=204/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-1_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=205/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-1_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=206/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-1_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=207/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-1_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=208/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-1_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=209/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-2_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=210/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-2_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=211/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-2_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=212/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-2_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=213/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-2_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=214/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-2_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=215/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-2_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=216/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-2_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=217/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-3_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=218/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-3_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=219/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-3_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=220/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-3_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=221/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-3_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=222/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-3_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=223/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-3_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=224/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-3_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=225/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-4_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=226/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-4_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=227/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-4_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=228/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-4_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=229/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-4_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=230/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-4_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=231/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-4_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=232/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-4_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=233/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-5_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=234/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-5_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=235/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-5_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=236/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-5_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=237/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-5_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=238/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-5_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=239/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-5_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=240/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-5_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=241/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-6_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=242/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-6_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=243/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-6_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=244/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-6_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=245/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-6_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=246/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-6_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=247/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-6_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=248/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-6_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=249/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-7_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=250/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-7_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=251/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-7_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=252/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-7_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=253/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-7_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=254/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-7_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=255/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-7_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=256/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-3_PC2-7_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=257/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-0_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=258/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-0_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=259/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-0_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=260/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-0_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=261/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-0_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=262/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-0_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=263/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-0_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=264/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-0_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=265/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-1_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=266/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-1_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=267/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-1_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=268/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-1_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=269/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-1_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=270/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-1_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=271/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-1_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=272/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-1_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=273/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-2_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=274/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-2_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=275/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-2_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=276/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-2_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=277/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-2_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=278/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-2_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=279/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-2_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=280/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-2_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=281/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-3_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=282/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-3_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=283/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-3_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=284/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-3_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=285/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-3_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=286/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-3_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=287/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-3_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=288/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-3_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=289/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-4_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=290/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-4_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=291/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-4_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=292/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-4_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=293/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-4_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=294/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-4_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=295/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-4_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=296/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-4_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=297/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-5_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=298/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-5_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=299/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-5_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=300/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-5_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=301/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-5_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=302/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-5_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=303/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-5_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=304/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-5_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=305/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-6_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=306/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-6_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=307/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-6_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=308/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-6_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=309/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-6_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=310/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-6_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=311/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-6_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=312/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-6_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=313/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-7_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=314/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-7_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=315/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-7_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=316/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-7_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=317/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-7_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=318/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-7_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=319/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-7_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=320/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-4_PC2-7_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=321/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-0_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=322/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-0_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=323/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-0_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=324/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-0_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=325/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-0_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=326/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-0_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=327/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-0_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=328/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-0_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=329/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-1_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=330/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-1_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=331/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-1_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=332/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-1_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=333/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-1_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=334/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-1_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=335/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-1_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=336/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-1_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=337/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-2_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=338/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-2_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=339/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-2_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=340/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-2_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=341/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-2_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=342/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-2_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=343/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-2_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=344/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-2_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=345/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-3_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=346/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-3_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=347/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-3_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=348/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-3_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=349/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-3_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=350/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-3_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=351/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-3_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=352/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-3_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=353/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-4_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=354/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-4_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=355/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-4_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=356/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-4_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=357/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-4_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=358/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-4_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=359/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-4_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=360/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-4_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=361/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-5_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=362/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-5_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=363/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-5_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=364/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-5_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=365/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-5_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=366/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-5_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=367/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-5_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=368/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-5_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=369/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-6_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=370/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-6_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=371/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-6_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=372/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-6_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=373/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-6_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=374/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-6_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=375/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-6_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=376/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-6_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=377/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-7_PC3-0.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=378/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-7_PC3-1.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=379/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-7_PC3-2.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=380/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-7_PC3-3.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=381/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-7_PC3-4.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=382/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-7_PC3-5.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=383/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-7_PC3-6.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=384/384)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF/IINMF_PC1-5_PC2-7_PC3-7.SED 
+    T0shiftPeak_SEDMODEL: shift DAY-array by 2.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.50 to 152.50     LAMBDA:  1000 to 11490 A 
+
+ Global DAY range: -13.50 to 152.50 
+  init_genmag_SIMSED : Done. 
+	 Load baggage parameter 'II_INDEX' 
+
+ ****************************************************************** 
+   init_modelSmear: init intrinsic SN smearing with model=NONE  
+	 Smear-mode: interpolate from central filter wavelengths.
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=1)  
+
+ ****************************************************************** 
+   clr_VERSION  
+	 LCMERGE Version SNII-NMF_DDF_20251020 does not exist. 
+	 SIM Version SNII-NMF_DDF_20251020 does not exist. 
+	 PHOTOMETRY Version SNII-NMF_DDF_20251020 does not exist. 
+
+ ****************************************************************** 
+   Init SIMGEN_DUMP file   
+	 open /home/mvalenzuela/SNDATA_ROOT/SIM/SNII-NMF_DDF_20251020/SNII-NMF_DDF_20251020.DUMP
+
+ ****************************************************************** 
+   WR_SNFITSIO_INIT  
+
+ ****************************************************************** 
+   set_TIMERS  
+	 CPUTIME_INITIALIZE   = 74.000 second
+
+ ****************************************************************** 
+    Begin Generating Lightcurves.   
+  Found Max dN/dz * wgt = 6.558094e+05 at z =    1.000 
+	 Finished generating        1 of 2000 (CID=1) 
+	 Finished generating      100 of 2000 (CID=100) 
+	 Finished generating      200 of 2000 (CID=200) 
+	 Finished generating      300 of 2000 (CID=300) 
+	 Finished generating      400 of 2000 (CID=400) 
+	 Finished generating      500 of 2000 (CID=500) 
+	 Finished generating      600 of 2000 (CID=600) 
+	 Finished generating      700 of 2000 (CID=700) 
+	 Finished generating      800 of 2000 (CID=800) 
+	 Finished generating      900 of 2000 (CID=899) 
+	 Finished generating     1000 of 2000 (CID=999) GenRate=9/sec
+	 Finished generating     1100 of 2000 (CID=1100) 
+	 Finished generating     1200 of 2000 (CID=1200) 
+	 Finished generating     1300 of 2000 (CID=1300) 
+	 Finished generating     1400 of 2000 (CID=1400) 
+	 Finished generating     1500 of 2000 (CID=1500) 
+	 Finished generating     1600 of 2000 (CID=1600) 
+	 Finished generating     1700 of 2000 (CID=1700) 
+	 Finished generating     1800 of 2000 (CID=1800) 
+	 Finished generating     1900 of 2000 (CID=1899) GenRate=8/sec
+	 Finished generating     2000 of 2000 (CID=1999) 
+
+ ****************************************************************** 
+    Done generating 2000 SN lightcurves from RANDOM source.  
+	 (2000 lightcurves requested => 370 were written) 
+	 CPUTIME_PROCESS_ALL  = 3.600 minute
+	 CPUTIME_PROCESS_RATE(GEN) = 9.259 evt/second
+	 CPUTIME_PROCESS_RATE(ACC) = 1.713 evt/second
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=2)  
+
+ ****************************************************************** 
+   DUMP README CONTENTS TO SCREEN
+  
+DOCUMENTATION:
+  OVERVIEW:
+    TIME_START:   2025-10-25  20:29  # UT
+    SURVEY:       LSST
+    GENMODEL:     /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF
+    SNIA:         False
+    HOST_MACHINE: sn014
+    USERNAME:     mvalenzuela
+    SNDATA_ROOT:  /home/mvalenzuela/SNDATA_ROOT
+    SNANA_DIR:     /home/lmod/software/SNANA/11.05p
+    SNANA_VERSION: 
+    CWD:   /home/mvalenzuela/DATASIM_LSST_1/DDF/input_files_v6/SNII-NMF
+    INPUT_FILE:
+    - SNII-NMF_20251020.input
+    - /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_SNII-NMF.INPUT
+# 
+  INPUT_KEYS:
+# Output data
+    GENVERSION:              SNII-NMF_DDF_20251020
+    NGENTOT_LC:              2000  
+    FORMAT_MASK:             32  #  += 2,32,16 -> TEXT, FITS, randomCID
+    GENTYPE:                 0  # true type
+    SNTYPE:                  1  101  # spec Type, photID type
+    CIDRAN_MIN:              0  
+    CIDRAN_MAX:              3000000  
+# Source model
+    GENMODEL:                /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.SNII-NMF 
+    SIMSED_USE_BINARY:       0 
+    SIMSED_PARAM:            pc1 
+    GENPEAK_pc1:             0.0854 
+    GENSIGMA_pc1:            0.075 0.075 
+    GENRANGE_pc1:            0.01 0.5 
+    SIMSED_PARAM:            pc2 
+    GENPEAK_pc2:             0.0199 
+    GENSIGMA_pc2:            0.021 0.021 
+    GENRANGE_pc2:            0.001 0.07 
+    SIMSED_PARAM:            pc3 
+    GENPEAK_pc3:             0.0250 
+    GENSIGMA_pc3:            0.017 0.017 
+    GENRANGE_pc3:            0.001 0.07 
+# Cosmology inputs
+    OMEGA_MATTER:            0.3150  
+    OMEGA_LAMBDA:            0.6850  
+    w0_LAMBDA:               -1.0000  
+    wa_LAMBDA:               0  
+    MUSHIFT:                 0  
+# Instrumental inputs
+    GENFILTERS:          ugrizY 
+    KCOR_FILE:           /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+    SIMLIB_FILE:             /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+    SIMLIB_MAXRANSTART:      1000 
+    SIMLIB_MSKOPT:           128 
+    SMEARFLAG_FLUX:      1  # 1->add Poisson noise
+    SMEARFLAG_ZEROPT:    1  # +=1->apply scatter, +=2->add to FLUXERRCAL
+# SEARCHEFF/detections
+    SEARCHEFF_PIPELINE_LOGIC_FILE:  /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+    NEWMJD_DIF:              7.0000e-03  # day-sep if > 1 detections required
+    SEARCHEFF_PIPELINE_EFF_FILE:  /home/mvalenzuela/run_SNANA/LSST_SEARCHEFF_PIPELINE.DAT
+    SEARCHEFF_SPEC_FILE:     NONE
+    SEARCHEFF_zHOST_FILE:    NONE
+    APPLY_SEARCHEFF_OPT:     1  # += 1,2,4 => pipe,spec,zhost
+# Redshift inputs
+    GENRANGE_REDSHIFT:       0.0110  1.0000  
+    GENSIGMA_REDSHIFT:       0  
+    GENSIGMA_VPEC:           0  # true vpec scatter (km/sec)
+    VPEC_ERR:                0  # vpec error after correction (km/sec)
+# Epoch & sky coverage inputs
+    GENRANGE_MJD:            60981.0000  61832.0000  
+    GENRANGE_PEAKMJD:        60900.0000  61900.0000  
+    GENSIGMA_PEAKMJD:        1.0000  
+    GENRANGE_TREST:          -100.0000  400.0000  
+    SOLID_ANGLE:             0.0250  
+# Galactic extinction
+    OPT_MWEBV:        1   
+    OPT_MWCOLORLAW:   99   
+# Population and rate-model params
+    DNDZ:                    CC_S15 
+    DNDZ_ALLSCALE:           0.1620  # dN/dz *= ALLSCALE
+# Misc inputs
+    GENSOURCE:               RANDOM
+    RANSEED:                 64  
+    DEBUG_FLAG:              0  
+    SIMGEN_DUMPALL:          35 CID LIBID SIM_SEARCHEFF_MASK GENTYPE NON1A_INDEX ZCMB ZHELIO ZCMB_SMEAR RA DEC MWEBV GALID GALZPHOT GALZPHOTERR GALSNSEP GALSNDDLR RV AV MU LENSDMU PEAKMJD MJD_DETECT_FIRST MJD_DETECT_LAST DTSEASON_PEAK PEAKMAG_u PEAKMAG_g PEAKMAG_r PEAKMAG_i PEAKMAG_z PEAKMAG_Y SNRMAX SNRMAX2 SNRMAX3 NOBS NOBS_SATURATE 
+# 
+  FILTERS:   # mean wavelength (A)
+    u:  3710.0
+    g:  4805.8
+    r:  6221.5
+    i:  7559.2
+    z:  8680.6
+    Y:  9757.0
+# 
+  INPUT_NOTES:
+  - Poisson noise is ON 
+  - Reported flux-uncertainty includes SKY+GALAXY+SOURCE
+  - SB-dependent flux scatter is OFF
+  -  dN/dz from 1.00 x Strolger15(CANDELS): 
+  -     MODEL_RATE(z=0.01) = 1.050e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.21) = 2.220e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.41) = 3.589e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.61) = 4.619e-05/Mpc^3/yr    
+  -     MODEL_RATE(z=0.81) = 5.079e-05/Mpc^3/yr    
+  -  Calculated Number of EVENTS per season =  2.161e+04 
+  - H0 =  70.00 km/s/Mpc 
+  - Omega_{M,L} =  0.315, 0.685     w0,wa = -1.00,0.000
+  - APPLY_SEARCHEFF_OPT=1 --> Require EFF(PIPELINE) 
+  - PIPELINE requires 2 detections among u+g+r+i+z+Y (MJD dif > 0.0070 days) 
+#
+  GENTYPE_TO_NAME:  # GENTYPE:  [non]Ia   type  
+    0:  nonIa    SNII-NMF
+# 
+  OUTPUT_SUMMARY:
+    RANDOM_SYNC: 
+    - List=1  FIRST=0.662875  LAST=0.285237   AVG(wrap) = 30.5 +_ 42.4 
+    - List=2  FIRST=0.825418  LAST=0.052137   AVG(wrap) = 0.2 +_ 0.1 
+    - List=3  FIRST=0.798618  LAST=0.598965   AVG(wrap) = 0.0 +_ 0.0 
+# 
+    CPU_MINUTES:       3.60  
+    NGENLC_TOT:        2000    # (9/sec)
+    NGENLC_WRITE:      370    # (2/sec)
+    NGENSPEC_WRITE:    0  
+    EFF(SEARCH+CUTS):  0.1850 +-  0.0087
+    NGEN_PER_SEASON:   21609       # NSN(GEN) in GENRANGE(z,MJD,dOmega)
+    NACC_PER_SEASON:   3998 +_ 208  # NSN(ACCEPT) after trigger+cuts
+    NREJECT:  [290,0,0,  1340,0]   # [NEP<1,GENRANGE,PEAKMAG,  SEARCHEFF,CUTWIN] 
+DOCUMENTATION_END:
+
+  AUXILIARY FILES: 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/SNII-NMF_DDF_20251020/SNII-NMF_DDF_20251020.LIST 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/SNII-NMF_DDF_20251020/SNII-NMF_DDF_20251020.README 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/SNII-NMF_DDF_20251020/SNII-NMF_DDF_20251020.DUMP
+ WR_SNFITSIO_END: wrote 370 events and 0 spectra to FITS format
+
+ DONE with snlc_sim.

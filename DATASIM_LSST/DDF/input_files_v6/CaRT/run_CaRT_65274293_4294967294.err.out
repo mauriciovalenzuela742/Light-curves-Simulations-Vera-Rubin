@@ -1,0 +1,1537 @@
+
+ Full command: snlc_sim.exe CaRT_20251020.input 
+
+ SNANA_VERSION: NOT_FROM_GITHUB
+
+
+
+ ****************************************************************** 
+   Begin execution of snlc_sim.exe    
+ SNDATA_ROOT = /home/mvalenzuela/SNDATA_ROOT 
+ SNANA_DIR   = /home/lmod/software/SNANA/11.05p 
+
+
+   sizeof(INPUTS) =   5.043 MB 
+   sizeof(GENLC)  =  10.667 MB 
+
+  init_SNDATA_GLOBAL: 
+ --------------------------------------------------------
+  Initialize NstringMatch for sim-input file
+  Read 83 words from user input file 1: 
+	 CaRT_20251020.input 
+ --------------------------------------------------------
+  Read 28 words from user input file 2: 
+	 /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_CART-MOSFIT.INPUT 
+
+ ****************************************************************** 
+   init_HzFUN_INFO  
+	 H0         = 70.00      # km/s/Mpc 
+	 OM, OL, Ok = 0.31500, 0.68500, 0.00000 
+	 w0, wa     = -1.000,  0.000 
+
+ ****************************************************************** 
+    prep_user_inputs summary   
+	 SIMLIB file        : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB   (start LIBID=0)
+	 Generation Version : CaRT_DDF_20251020 
+	 Generation source  : RANDOM 
+	 Generation model   : SIMSED.CART-MOSFIT 
+	 Number of LC to Generate: 0 
+	 OMEGA_(MATTER,LAMBDA)= 0.315, 0.685,    w0= -1.00   H0= 70.0 
+	 KCOR  file : /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+	 Observer Gen-FILTERS  :  ugrizY  
+	 Random number seed: 19  (NSTREAM=2)
+	 Gen-Range for RA(deg)  : -360.000 to  360.000 
+	 Gen-Range for DEC(deg): -360.000 to  360.000 
+	 Gen-Range for ZCMB :  0.012 to  0.600  (sigma= 0.0000, bias=0.00000) 
+	 Gen-Range for PEAKMJD  :  60900.0 to  61900.0  
+	 Gen-Range for Trest    :   -100.0 to    500.0  days 
+	 Gen-Range for SHAPEPAR  :     -1.0 to      1.0  
+	 Gen-Range for AV  : 0.00 to 3.00  (dN/dAv = exp(-AV/-9.00) 
+	 Gen-Mean  for RV  : 3.10  
+	 Gen-sigma for RV  : 0.00 , 0.00 (lower , upper ) 
+	 Gen-Range for RV  : 3.00 to 3.20 
+	 ZP offsets (ugrizY) :  0.000 0.000 0.000 0.000 0.000 0.000
+	 MODEL mag offsets (ugrizY) :   0.00  0.00  0.00  0.00  0.00  0.00
+
+
+ ****************************************************************** 
+    init_RANDOMsource : CIDOFF=0   
+
+ ****************************************************************** 
+   SIMLIB_readGlobalHeader_TEXT  
+	 Opened : /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+
+ ****************************************************************** 
+   SIMLIB_prepGlobalHeader  
+	 SIMLIB Survey    : LSST 
+	 SIMLIB Field : VOID 
+	 SIMLIB Pixel Saturation: 100000 photoelectrons. 
+	 SIMLIB Filters   : ugrizY 
+	 SIMLIB created by: NONE 
+	 SIMLIB Solid Angle  : 0.025000 steridians 
+	 SIMLIB PSF unit:    PIXEL_SIGMA 
+	 SIMLIB SKYSIG unit: ADU_PER_SQPIXEL 
+
+  Bit-mask options for SIMLIB_MSKOPT = 128 
+	 MASK=   128 -> keep entire SIMLIB season (not just transient range) 
+
+	 SIMLIB MAXRANSTART after  26  LIBIDs  (0 seconds)
+
+ ****************************************************************** 
+   init_RateModel  
+ dN/dz = SFR(MD14,rV= 2.30e-06):  
+    MODEL_RATE(z=0.01) = 2.375e-06/Mpc^3/yr    
+    MODEL_RATE(z=0.21) = 3.846e-06/Mpc^3/yr    
+    MODEL_RATE(z=0.41) = 5.751e-06/Mpc^3/yr    
+ Calculated Number of EVENTS per season =  1007 
+
+ ****************************************************************** 
+   Initialize SEARCH EFFICIENCY for 'LSST' 
+  
+   Read Detection-efficiency curves: 
+	 EFF_DETECT(u) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(g) = 0.463 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(r) = 0.425 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(i) = 0.540 at ABS(SNR) =  5.50 ()
+	 EFF_DETECT(z) = 0.469 at ABS(SNR) =  5.00 ()
+	 EFF_DETECT(Y) = 0.469 at ABS(SNR) =  5.00 ()
+
+   Fetch SOFTWARE SEARCH-LOGIC from : 
+	 /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+	 Logic: 2 MJDs require filters=u+g+r+i+z+Y 
+	 Trigger epoch contains all obs within 0.007 days
+
+
+  Optional SEARCHEFF_SPEC_FILE not specified -> EFF_SPEC=1 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+ ****************************************************************** 
+   READ_CALIB_DRIVER: read calib/filters/kcor  
+	 FILTERS_SURVEY = ugrizY 
+  Opened /home/mvalenzuela/run_SNANA/kcor_LSST.fits
+   read_calib_head 
+		 Read VERSION         = 4  (kcor.exe version) 
+		 Read NPRIM           = 1  primary refs 
+		 Read PRIM001         = AB 
+		 Read NFILTERS        = 6  filters 
+		 Read NKCOR           = 0  K-COR tables 
+		 Read  991 wavelength bins (2100.00 to 12000.00)
+		 Read  106 epoch      bins (-20.00 to 85.00)
+		 Read    1 redshift   bins (0.00 to 0.00)
+		 Read    1 AV         bins (0.00 to 0.00)
+   read_calib_zpoff  
+   read_calib_snsed 
+   read_kcor_tables 
+   read_kcor_mags 
+   read_calib_filters 
+   read_calib_primarysed 
+
+   print_calib_summary 
+	  Primary Spectrum: AB 
+
+  FILTER SUMMARY (RDKCOR) : 
+   internal                   LAM  LAM   rest-lam      primary
+  index name                  AVG  RMS   kcor range    mag   ZP
+ ---------------------------------------------------------------------- 
+    1 LSST-u                 3710  163     0-    0   0.000   0.000
+    2 LSST-g                 4806  431     0-    0   0.000   0.000
+    3 LSST-r                 6221  414     0-    0   0.000   0.000
+    4 LSST-i                 7559  387     0-    0   0.000   0.000
+    5 LSST-z                 8681  311     0-    0   0.000   0.000
+    6 LSST-Y                 9757  345     0-    0   0.000   0.000
+	 NFILTDEF[SURVEY,REST] = 6 0 
+
+ READ_CALIB_DRIVER: Done 
+
+
+
+ ****************************************************************** 
+   init_genmag_SIMSED : Initialize SIMSED Light Curve Model  
+   filtdump_SEDMODEL: Read primary ref 'AB' with 991 lambda bins 
+
+   Defined                                 Lambda           AB     AB 
+   Filter                  <LAMBDA>        Range(step)      mag    ZP 
+   ----------------------------------------------------------------------
+   id=01 (      LSST-u)   ( 3710.0 + 0)   3200- 4100( 10)   0.000  12.652  
+   id=02 (      LSST-g)   ( 4805.8 + 0)   3750- 5770( 10)   0.000  14.689  
+   id=03 (      LSST-r)   ( 6221.5 + 0)   5230- 7150( 10)   0.000  14.560  
+   id=04 (      LSST-i)   ( 7559.2 + 0)   6590- 8450( 10)   0.000  14.379  
+   id=05 (      LSST-z)   ( 8680.6 + 0)   7890- 9470( 10)   0.000  13.993  
+   id=06 (      LSST-Y)   ( 9757.0 + 0)   8970-10990( 10)   0.000  13.017  
+   ----------------------------------------------------------------------
+  Read SIMSED model parameters from 
+     /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT
+
+
+ Read number of SEDs  from 
+  /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/SED.INFO 
+
+ Read list of SEDs and parameters from 
+  /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/SED.INFO 
+	 malloc_METADATA_SEDMODEL for NSED=225 and NPAR=6
+    Found '      Cart_INDEX' with 225 bins from    0.000 to  224.000
+    Found '         Mejecta' with 225 bins from    0.040 to    3.998
+    Found '         Vejecta' with 225 bins from 3011.950 to 9897.952
+    Found '           Fnick' with 225 bins from    0.002 to    0.767
+    Found '      Kappagamma' with 225 bins from    0.105 to  972.482
+    Found '     Temperature' with 225 bins from 1238.733 to 4953.163
+
+ Finished reading parameters for 225 SEDs 
+   SED FLUX_SCALE = 8.358000e-41 
+   SED MAG_ERR    =  0.10 
+   Read Flux errors :  NO 
+   Shift T=0 to time of peak  :  YES 
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  NDAY from largest file  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart24_4.dat 
+  malloc_FLUXTABLE_SEDMODEL : allocate 177.41 Mb of memory for integral-flux tables. 
+	 Table bins include 314 DAYs. 
+	 Table bins include   6 FILTERs. 
+	 Table bins include 225 SEDs. 
+	 Table bins include  88 log10(Z): 0.01075 <= Z <= 0.60197 .
+		 ZTABLE[  1] =  0.01075   (LOGZ=-1.9685)
+		 ZTABLE[  2] =  0.01126   (LOGZ=-1.9484)
+		 ZTABLE[  3] =  0.01179   (LOGZ=-1.9283)
+		 ZTABLE[ 85] =  0.52396   (LOGZ=-0.2807)
+		 ZTABLE[ 86] =  0.54877   (LOGZ=-0.2606)
+		 ZTABLE[ 87] =  0.57476   (LOGZ=-0.2405)
+		 ZTABLE[ 88] =  0.60197   (LOGZ=-0.2204)
+		 Zero entire SEDMODEL flux table (44351370 entries). 
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=1/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart1_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.01 to 493.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=2/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart4_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -23.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -23.02 to 476.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=3/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart7_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.01 to 493.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=4/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart9_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -16.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -15.51 to 483.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=5/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart16_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.50 to 493.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=6/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart17_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.01 to 492.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=7/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart18_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -18.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -17.52 to 481.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=8/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart19_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -27.53 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -27.03 to 472.47     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=9/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart21_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -16.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -15.51 to 483.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=10/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart22_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -10.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.51 to 489.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=11/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart28_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.51 to 492.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=12/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart29_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -19.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.02 to 480.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=13/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart32_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.01 to 491.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=14/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart34_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.50 to 495.00     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=15/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart35_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.01 to 492.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=16/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart38_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -16.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -15.51 to 483.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=17/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart39_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.01 to 488.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=18/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart52_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -18.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -18.02 to 481.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=19/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart54_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -13.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.01 to 486.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=20/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart61_0.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.50 to 495.00     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=21/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart2_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -16.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -16.02 to 483.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=22/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart4_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -10.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.01 to 489.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=23/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart6_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.50 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.00 to 495.50     LAMBDA:  1000 to 11000 A 
+    WARNING(SED-BINARY): Flux(Trestmin)/Flux(peak) = 0.042 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=24/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart9_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.01 to 490.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=25/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart10_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.50 to 496.00     LAMBDA:  1000 to 11000 A 
+    WARNING(SED-BINARY): Flux(Trestmin)/Flux(peak) = 0.058 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=26/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart13_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -10.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.51 to 489.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=27/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart16_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -10.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.01 to 489.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=28/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart18_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.51 to 492.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=29/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart19_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -14.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.51 to 485.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=30/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart21_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -19.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -18.52 to 480.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=31/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart23_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.01 to 493.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=32/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart26_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -12.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.01 to 487.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=33/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart30_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -13.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.51 to 486.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=34/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart33_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -19.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -18.52 to 480.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=35/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart40_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.51 to 488.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=36/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart41_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -34.53 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -34.03 to 465.47     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=37/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart46_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.50 to 496.00     LAMBDA:  1000 to 11000 A 
+    WARNING(SED-BINARY): Flux(Trestmin)/Flux(peak) = 0.059 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=38/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart47_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.00 to 494.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=39/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart49_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -22.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -21.52 to 477.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=40/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart52_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -16.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -16.02 to 483.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=41/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart57_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -26.03 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -25.52 to 473.97     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=42/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart63_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -14.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.51 to 485.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=43/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart65_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.51 to 491.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=44/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart67_1.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -13.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.01 to 486.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=45/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart3_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.50 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.00 to 495.50     LAMBDA:  1000 to 11000 A 
+    WARNING(SED-BINARY): Flux(Trestmin)/Flux(peak) = 0.040 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=46/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart4_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -18.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -17.52 to 481.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=47/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart5_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.51 to 488.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=48/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart6_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.01 to 490.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=49/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart7_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -18.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -17.52 to 481.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=50/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart8_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -22.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -21.52 to 477.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=51/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart15_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -12.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.01 to 487.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=52/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart16_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -17.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -17.02 to 482.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=53/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart20_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.51 to 488.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=54/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart26_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -29.03 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -28.53 to 470.97     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=55/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart29_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.51 to 491.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=56/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart31_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -17.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -16.52 to 482.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=57/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart32_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.51 to 491.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=58/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart38_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.50 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.00 to 495.50     LAMBDA:  1000 to 11000 A 
+    WARNING(SED-BINARY): Flux(Trestmin)/Flux(peak) = 0.044 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=59/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart39_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -17.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -16.52 to 482.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=60/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart42_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.50 to 493.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=61/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart43_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -14.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.51 to 485.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=62/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart46_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -14.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -14.01 to 485.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=63/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart54_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -15.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -15.02 to 484.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=64/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart58_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.01 to 488.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=65/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart59_2.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.51 to 490.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=66/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart1_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -15.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -14.51 to 484.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=67/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart4_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -10.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.01 to 489.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=68/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart6_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.51 to 492.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=69/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart7_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.50 to 493.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=70/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart10_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -20.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.52 to 479.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=71/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart13_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.01 to 488.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=72/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart14_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -13.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.01 to 486.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=73/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart15_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.00 to 494.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=74/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart18_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -14.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.51 to 485.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=75/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart19_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -24.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -23.52 to 475.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=76/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart21_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.51 to 491.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=77/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart22_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -12.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.01 to 487.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=78/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart25_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -22.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -22.02 to 477.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=79/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart27_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.01 to 490.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=80/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart32_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.01 to 491.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=81/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart34_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.50 to 496.00     LAMBDA:  1000 to 11000 A 
+    WARNING(SED-BINARY): Flux(Trestmin)/Flux(peak) = 0.050 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=82/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart43_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.51 to 490.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=83/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart45_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.50 to 496.00     LAMBDA:  1000 to 11000 A 
+    WARNING(SED-BINARY): Flux(Trestmin)/Flux(peak) = 0.053 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=84/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart53_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.51 to 490.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=85/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart56_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -13.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.51 to 486.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=86/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart57_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -14.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -14.01 to 485.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=87/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart59_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.50 to 493.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=88/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart60_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -20.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.02 to 479.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=89/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart64_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -18.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -17.52 to 481.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=90/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart65_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -19.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -18.52 to 480.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=91/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart66_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.51 to 491.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=92/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart67_3.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.51 to 490.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=93/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart5_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.01 to 493.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=94/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart6_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.01 to 491.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=95/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart11_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.50 to 493.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=96/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart15_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -22.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -21.52 to 477.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=97/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart24_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.50 to 495.00     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=98/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart25_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.01 to 490.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=99/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart27_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.50 to 496.00     LAMBDA:  1000 to 11000 A 
+    WARNING(SED-BINARY): Flux(Trestmin)/Flux(peak) = 0.049 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=100/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart29_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.50 to 493.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=101/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart31_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.01 to 488.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=102/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart32_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -10.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.51 to 489.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=103/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart33_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -15.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -14.51 to 484.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=104/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart34_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -13.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.51 to 486.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=105/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart36_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -22.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -22.02 to 477.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=106/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart44_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.51 to 488.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=107/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart50_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.01 to 492.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=108/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart57_4.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -23.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -23.02 to 476.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=109/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart4_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -28.03 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -27.53 to 471.97     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=110/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart6_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.01 to 492.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=111/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart11_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -10.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.51 to 489.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=112/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart12_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -27.53 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -27.03 to 472.47     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=113/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart13_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -16.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -15.51 to 483.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=114/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart16_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -14.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.51 to 485.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=115/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart17_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.51 to 488.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=116/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart18_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -20.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.52 to 479.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=117/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart20_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.01 to 492.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=118/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart22_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -17.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -16.52 to 482.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=119/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart24_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.50 to 493.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=120/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart27_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.51 to 488.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=121/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart32_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.01 to 493.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=122/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart34_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.00 to 494.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=123/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart39_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.01 to 490.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=124/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart47_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.01 to 491.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=125/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart52_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.01 to 488.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=126/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart55_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.50 to 493.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=127/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart56_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -12.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.51 to 487.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=128/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart59_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -17.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -16.52 to 482.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=129/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart62_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.01 to 491.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=130/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart66_5.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -21.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -21.02 to 478.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=131/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart2_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.50 to 493.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=132/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart3_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.51 to 492.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=133/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart4_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -25.53 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -25.02 to 474.47     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=134/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart7_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.00 to 494.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=135/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart10_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.01 to 491.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=136/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart16_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.01 to 492.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=137/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart17_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.01 to 490.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=138/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart21_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -13.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.51 to 486.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=139/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart24_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -10.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.51 to 489.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=140/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart26_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -26.53 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -26.03 to 473.47     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=141/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart31_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.51 to 492.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=142/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart33_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -13.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.51 to 486.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=143/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart34_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -17.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -17.02 to 482.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=144/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart37_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -10.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.51 to 489.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=145/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart39_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.00 to 494.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=146/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart41_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.01 to 488.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=147/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart43_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.51 to 492.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=148/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart47_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -15.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -15.02 to 484.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=149/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart52_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -25.53 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -25.02 to 474.47     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=150/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart53_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.50 to 495.00     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=151/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart54_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -10.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.01 to 489.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=152/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart55_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -10.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.51 to 489.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=153/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart57_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -16.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -15.51 to 483.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=154/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart58_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -16.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -16.02 to 483.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=155/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart60_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -13.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.01 to 486.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=156/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart61_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.01 to 488.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=157/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart63_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -14.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -14.01 to 485.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=158/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart64_6.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.51 to 492.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=159/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart1_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -15.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -14.51 to 484.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=160/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart6_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -13.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.01 to 486.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=161/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart10_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -16.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -16.02 to 483.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=162/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart13_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.50 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.00 to 495.50     LAMBDA:  1000 to 11000 A 
+    WARNING(SED-BINARY): Flux(Trestmin)/Flux(peak) = 0.045 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=163/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart14_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.51 to 492.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=164/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart20_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -16.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -16.02 to 483.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=165/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart21_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.01 to 492.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=166/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart23_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.51 to 490.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=167/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart26_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -12.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.51 to 487.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=168/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart28_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.00 to 494.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=169/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart29_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.01 to 491.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=170/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart30_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -18.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -17.52 to 481.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=171/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart35_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.01 to 488.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=172/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart39_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.01 to 491.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=173/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart42_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -16.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -15.51 to 483.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=174/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart44_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -14.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -14.01 to 485.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=175/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart45_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -20.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.52 to 479.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=176/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart46_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.50 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.00 to 495.50     LAMBDA:  1000 to 11000 A 
+    WARNING(SED-BINARY): Flux(Trestmin)/Flux(peak) = 0.048 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=177/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart47_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.51 to 490.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=178/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart48_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.50 to 495.00     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=179/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart51_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -24.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -24.02 to 475.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=180/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart53_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.00 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.50 to 495.00     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=181/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart58_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -12.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.51 to 487.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=182/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart59_7.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -7.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.01 to 492.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=183/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart4_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -19.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.02 to 480.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=184/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart5_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -20.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.52 to 479.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=185/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart7_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -10.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.51 to 489.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=186/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart8_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.01 to 488.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=187/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart10_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -33.03 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -32.53 to 466.97     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=188/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart14_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.51 to 491.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=189/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart15_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.51 to 491.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=190/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart19_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -5.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.00 to 494.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=191/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart29_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -6.01 to 493.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=192/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart32_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.01 to 490.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=193/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart39_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -10.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.01 to 489.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=194/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart40_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -3.50 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -3.00 to 496.50     LAMBDA:  1000 to 11000 A 
+    WARNING(SED-BINARY): Flux(Trestmin)/Flux(peak) = 0.065 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=195/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart42_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.01 to 490.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=196/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart43_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.01 to 488.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=197/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart45_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -22.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -22.02 to 477.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=198/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart46_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.01 to 491.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=199/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart47_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.50 to 493.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=200/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart48_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -20.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -20.02 to 479.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=201/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart52_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -6.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -5.50 to 493.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=202/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart53_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -13.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.51 to 486.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=203/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart57_8.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -9.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.51 to 490.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=204/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart9_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.01 to 491.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=205/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart11_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -17.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -17.02 to 482.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=206/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart12_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -33.53 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -33.03 to 466.47     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=207/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart17_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -17.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -17.02 to 482.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=208/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart19_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -7.51 to 491.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=209/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart20_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -14.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.51 to 485.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=210/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart21_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -14.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -13.51 to 485.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=211/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart23_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -23.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -23.02 to 476.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=212/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart24_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -34.53 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -34.03 to 465.47     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=213/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart31_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.01 to 491.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=214/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart33_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -11.01 to 488.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=215/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart34_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -17.02 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -16.52 to 482.98     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=216/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart37_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -11.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -10.51 to 488.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=217/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart38_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -10.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -9.51 to 489.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=218/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart39_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -12.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.01 to 487.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=219/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart42_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -27.53 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -27.03 to 472.47     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=220/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart43_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -19.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -19.02 to 480.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=221/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart46_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -4.50 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -4.00 to 495.50     LAMBDA:  1000 to 11000 A 
+    WARNING(SED-BINARY): Flux(Trestmin)/Flux(peak) = 0.046 -> beware of extrapolation
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=222/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart47_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -13.01 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -12.51 to 486.99     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=223/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart51_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -8.51 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY):  -8.01 to 491.49     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=224/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart53_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -18.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -18.02 to 481.48     LAMBDA:  1000 to 11000 A 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+  Read  (ised=225/225)  SED  from : 
+    /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT/cart58_9.dat 
+    T0shiftPeak_SEDMODEL: shift DAY-array by -14.52 days so that maxFlux is at DAY=0
+    Trest(SED-BINARY): -14.01 to 485.49     LAMBDA:  1000 to 11000 A 
+
+ Global DAY range: -34.03 to 496.50 
+  init_genmag_SIMSED : Done. 
+	 Load baggage parameter 'Mejecta' 
+	 Load baggage parameter 'Vejecta' 
+	 Load baggage parameter 'Fnick' 
+	 Load baggage parameter 'Kappagamma' 
+	 Load baggage parameter 'Temperature' 
+
+ ****************************************************************** 
+   init_modelSmear: init intrinsic SN smearing with model=NONE  
+	 Smear-mode: interpolate from central filter wavelengths.
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=1)  
+
+ ****************************************************************** 
+   clr_VERSION  
+	 LCMERGE Version CaRT_DDF_20251020 does not exist. 
+	 SIM Version CaRT_DDF_20251020 does not exist. 
+	 PHOTOMETRY Version CaRT_DDF_20251020 does not exist. 
+
+ ****************************************************************** 
+   Init SIMGEN_DUMP file   
+	 open /home/mvalenzuela/SNDATA_ROOT/SIM/CaRT_DDF_20251020/CaRT_DDF_20251020.DUMP
+
+ ****************************************************************** 
+   WR_SNFITSIO_INIT  
+
+ ****************************************************************** 
+   set_TIMERS  
+	 CPUTIME_INITIALIZE   = 164.000 second
+
+ ****************************************************************** 
+    Begin Generating Lightcurves.   
+  Found Max dN/dz * wgt = 7.254835e+04 at z =    0.600 
+	 Finished generating        1 of 2000 (CID=1) 
+	 Finished generating      100 of 2000 (CID=100) 
+	 Finished generating      200 of 2000 (CID=199) 
+	 Finished generating      300 of 2000 (CID=300) 
+	 Finished generating      400 of 2000 (CID=400) 
+	 Finished generating      500 of 2000 (CID=500) 
+	 Finished generating      600 of 2000 (CID=600) 
+	 Finished generating      700 of 2000 (CID=700) 
+	 Finished generating      800 of 2000 (CID=800) 
+	 Finished generating      900 of 2000 (CID=900) 
+	 Finished generating     1000 of 2000 (CID=999) 
+	 Finished generating     1100 of 2000 (CID=1100) 
+	 Finished generating     1200 of 2000 (CID=1199) 
+	 Finished generating     1300 of 2000 (CID=1300) 
+	 Finished generating     1400 of 2000 (CID=1400) 
+	 Finished generating     1500 of 2000 (CID=1500) 
+	 Finished generating     1600 of 2000 (CID=1600) 
+	 Finished generating     1700 of 2000 (CID=1700) 
+	 Finished generating     1800 of 2000 (CID=1800) GenRate=17/sec
+	 Finished generating     1900 of 2000 (CID=1900) 
+	 Finished generating     2000 of 2000 (CID=1999) 
+
+ ****************************************************************** 
+    Done generating 2000 SN lightcurves from RANDOM source.  
+	 (2000 lightcurves requested => 185 were written) 
+	 CPUTIME_PROCESS_ALL  = 1.850 minute
+	 CPUTIME_PROCESS_RATE(GEN) = 18.018 evt/second
+	 CPUTIME_PROCESS_RATE(ACC) = 1.667 evt/second
+
+ ****************************************************************** 
+   README_DOCANA_DRIVER: Prepare README content (iflag=2)  
+
+ ****************************************************************** 
+   DUMP README CONTENTS TO SCREEN
+  
+DOCUMENTATION:
+  OVERVIEW:
+    TIME_START:   2025-10-25  20:28  # UT
+    SURVEY:       LSST
+    GENMODEL:     /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT
+    SNIA:         False
+    HOST_MACHINE: sn027
+    USERNAME:     mvalenzuela
+    SNDATA_ROOT:  /home/mvalenzuela/SNDATA_ROOT
+    SNANA_DIR:     /home/lmod/software/SNANA/11.05p
+    SNANA_VERSION: 
+    CWD:   /home/mvalenzuela/DATASIM_LSST_1/DDF/input_files_v6/CaRT
+    INPUT_FILE:
+    - CaRT_20251020.input
+    - /home/mvalenzuela/run_SNANA/model_config/SIMGEN_INCLUDE_CART-MOSFIT.INPUT
+# 
+  INPUT_KEYS:
+# Output data
+    GENVERSION:              CaRT_DDF_20251020
+    NGENTOT_LC:              2000  
+    FORMAT_MASK:             32  #  += 2,32,16 -> TEXT, FITS, randomCID
+    GENTYPE:                 0  # true type
+    SNTYPE:                  1  101  # spec Type, photID type
+    CIDRAN_MIN:              0  
+    CIDRAN_MAX:              3000000  
+# Source model
+    GENMODEL:                /home/mvalenzuela/run_SNANA/plasticc_models/SIMSED.CART-MOSFIT 
+    SIMSED_USE_BINARY:       0 
+    SIMSED_GRIDONLY:         Cart_INDEX 
+# Cosmology inputs
+    OMEGA_MATTER:            0.3150  
+    OMEGA_LAMBDA:            0.6850  
+    w0_LAMBDA:               -1.0000  
+    wa_LAMBDA:               0  
+    MUSHIFT:                 0  
+# Instrumental inputs
+    GENFILTERS:          ugrizY 
+    KCOR_FILE:           /home/mvalenzuela/run_SNANA/kcor_LSST.fits 
+    SIMLIB_FILE:             /home/mvalenzuela/SIMLIBv5/DD_SIMLIBv5.SIMLIB 
+    SIMLIB_MAXRANSTART:      1000 
+    SIMLIB_MSKOPT:           128 
+    SMEARFLAG_FLUX:      1  # 1->add Poisson noise
+    SMEARFLAG_ZEROPT:    1  # +=1->apply scatter, +=2->add to FLUXERRCAL
+# SEARCHEFF/detections
+    SEARCHEFF_PIPELINE_LOGIC_FILE:  /home/mvalenzuela/run_SNANA/LSST_PIPELINE_LOGIC.DAT
+    NEWMJD_DIF:              7.0000e-03  # day-sep if > 1 detections required
+    SEARCHEFF_PIPELINE_EFF_FILE:  /home/mvalenzuela/run_SNANA/LSST_SEARCHEFF_PIPELINE.DAT
+    SEARCHEFF_SPEC_FILE:     NONE
+    SEARCHEFF_zHOST_FILE:    NONE
+    APPLY_SEARCHEFF_OPT:     1  # += 1,2,4 => pipe,spec,zhost
+# Redshift inputs
+    GENRANGE_REDSHIFT:       0.0120  0.6000  
+    GENSIGMA_REDSHIFT:       0  
+    GENSIGMA_VPEC:           0  # true vpec scatter (km/sec)
+    VPEC_ERR:                0  # vpec error after correction (km/sec)
+# Epoch & sky coverage inputs
+    GENRANGE_MJD:            60981.0000  61832.0000  
+    GENRANGE_PEAKMJD:        60900.0000  61900.0000  
+    GENSIGMA_PEAKMJD:        1.0000  
+    GENRANGE_TREST:          -100.0000  500.0000  
+    SOLID_ANGLE:             0.0250  
+# Galactic extinction
+    OPT_MWEBV:        1   
+    OPT_MWCOLORLAW:   99   
+# Population and rate-model params
+    GENAV_WV07:  1 
+    GENRANGE_AV:             0  3.0000  
+    GENPEAK_RV:              3.1000  
+    GENSIGMA_RV:             0  0  
+    GENRANGE_RV:             3.0000  3.2000  
+    DNDZ:                    MD14 2.3E-6 
+# Misc inputs
+    GENSOURCE:               RANDOM
+    RANSEED:                 19  
+    DEBUG_FLAG:              0  
+    SIMGEN_DUMPALL:          35 CID LIBID SIM_SEARCHEFF_MASK GENTYPE NON1A_INDEX ZCMB ZHELIO ZCMB_SMEAR RA DEC MWEBV GALID GALZPHOT GALZPHOTERR GALSNSEP GALSNDDLR RV AV MU LENSDMU PEAKMJD MJD_DETECT_FIRST MJD_DETECT_LAST DTSEASON_PEAK PEAKMAG_u PEAKMAG_g PEAKMAG_r PEAKMAG_i PEAKMAG_z PEAKMAG_Y SNRMAX SNRMAX2 SNRMAX3 NOBS NOBS_SATURATE 
+# 
+  FILTERS:   # mean wavelength (A)
+    u:  3710.0
+    g:  4805.8
+    r:  6221.5
+    i:  7559.2
+    z:  8680.6
+    Y:  9757.0
+# 
+  INPUT_NOTES:
+  - Poisson noise is ON 
+  - Reported flux-uncertainty includes SKY+GALAXY+SOURCE
+  - SB-dependent flux scatter is OFF
+  -  dN/dz = SFR(MD14,rV= 2.30e-06):  
+  -     MODEL_RATE(z=0.01) = 2.375e-06/Mpc^3/yr    
+  -     MODEL_RATE(z=0.21) = 3.846e-06/Mpc^3/yr    
+  -     MODEL_RATE(z=0.41) = 5.751e-06/Mpc^3/yr    
+  -  Calculated Number of EVENTS per season =  1007 
+  - H0 =  70.00 km/s/Mpc 
+  - Omega_{M,L} =  0.315, 0.685     w0,wa = -1.00,0.000
+  - APPLY_SEARCHEFF_OPT=1 --> Require EFF(PIPELINE) 
+  - PIPELINE requires 2 detections among u+g+r+i+z+Y (MJD dif > 0.0070 days) 
+#
+  GENTYPE_TO_NAME:  # GENTYPE:  [non]Ia   type  
+    0:  nonIa    CART-MOSFIT
+# 
+  OUTPUT_SUMMARY:
+    RANDOM_SYNC: 
+    - List=1  FIRST=0.862702  LAST=0.793553   AVG(wrap) = 31.3 +_ 43.8 
+    - List=2  FIRST=0.220423  LAST=0.045742   AVG(wrap) = 0.2 +_ 0.1 
+    - List=3  FIRST=0.697161  LAST=0.143116   AVG(wrap) = 0.0 +_ 0.0 
+# 
+    CPU_MINUTES:       1.85  
+    NGENLC_TOT:        2000    # (18/sec)
+    NGENLC_WRITE:      185    # (2/sec)
+    NGENSPEC_WRITE:    0  
+    EFF(SEARCH+CUTS):  0.0925 +-  0.0065
+    NGEN_PER_SEASON:   1007       # NSN(GEN) in GENRANGE(z,MJD,dOmega)
+    NACC_PER_SEASON:   93 +_ 7  # NSN(ACCEPT) after trigger+cuts
+    NREJECT:  [290,0,0,  1525,0]   # [NEP<1,GENRANGE,PEAKMAG,  SEARCHEFF,CUTWIN] 
+DOCUMENTATION_END:
+
+  AUXILIARY FILES: 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/CaRT_DDF_20251020/CaRT_DDF_20251020.LIST 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/CaRT_DDF_20251020/CaRT_DDF_20251020.README 
+  /home/mvalenzuela/SNDATA_ROOT/SIM/CaRT_DDF_20251020/CaRT_DDF_20251020.DUMP
+ WR_SNFITSIO_END: wrote 185 events and 0 spectra to FITS format
+
+ DONE with snlc_sim.
