@@ -16,12 +16,14 @@ Current training datasets are heavily biased toward Type Ia supernovae and lack 
 
 ## 2. Survey Strategies: WFD and DDF
 
-Simulations are based on the **baseline_v5.0** family of LSST OpSim/ObSim runs (October 2025), which encode realistic survey execution over 10 years, including cadence, depth, and observing constraints.
+Simulations are based on the **baseline_v5.0** (https://usdf-maf.slac.stanford.edu/) family of LSST OpSim/ObSim runs (October 2025), which encode realistic survey execution over 10 years, including cadence, depth, and observing constraints.
 
 * **WFD (Wide-Fast-Deep):** Moderate cadence over a large fraction of the sky.
 * **DDF (Deep Drilling Fields):** High-cadence, high-depth observations over a small number of fields, following the v5.0 “Ocean” strategy.
 
 SIMLIB files derived from these OpSim runs are used by SNANA to reproduce the exact survey cadence and depth.
+
+
 
 ---
 
