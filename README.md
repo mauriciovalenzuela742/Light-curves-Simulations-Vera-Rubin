@@ -61,9 +61,10 @@ All classes are simulated under both WFD and DDF strategies when physically appr
 
 ```text
 Light-curves-Simulations-Vera-Rubin/
+├── DATASIM_LSST/       # Reference LSST simulation inputs and SLURM submission scripts 
 ├── run_SNANA/          # SNANA configs, models, and inputs
 ├── SIMLIB/             # LSST WFD and DDF SIMLIB files
-└── DATASIM_LSST/       # Reference LSST simulation inputs and SLURM submission scripts
+└── OTMODEL_NON1ASED    #The models developed, still confidential
 ```
 
 The **DDF and WFD directory trees are structurally identical**, differing only in the SIMLIBs and input files used.
