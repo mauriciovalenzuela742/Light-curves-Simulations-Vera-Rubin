@@ -62,7 +62,8 @@ All classes are simulated under both WFD and DDF strategies when physically appr
 ```text
 Light-curves-Simulations-Vera-Rubin/
 ├── DATASIM_LSST/       # Reference LSST simulation inputs and SLURM submission scripts 
-├── run_SNANA/          # SNANA configs, models, and inputs
+├── run_SNANA/          # SNANA configs and inputs
+├── model_config        # models configuration, the model libraries of elasticc can found it in https://portal.nersc.gov/cfs/lsst/DESC_TD_PUBLIC/
 ├── SIMLIB/             # LSST WFD and DDF SIMLIB files
 └── OTMODEL_NON1ASED    #The models developed, still confidential
 ```
