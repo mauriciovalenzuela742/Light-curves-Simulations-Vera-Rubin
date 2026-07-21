@@ -22,4 +22,3 @@ sbatch run_[CLASE]_DDF_20260720.sh
 ## Contacto
 maosvalenzuela@gmail.com
 
-Las versiones son: 
