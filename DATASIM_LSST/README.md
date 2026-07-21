@@ -9,14 +9,24 @@ Esta carpeta contiene los archivos de configuración `.INPUT` y scripts SLURM pa
 ```
 DATASIM_LSST/
 ├── WFD/
-│   └── input_filesv7/
+│   └── input_files_v6/
+│       ├── AGN/
+│       ├── EB/
+│       ├── ... (38 clases)
+│       └── uLens-Single-PyLIMA/
+|   └── input_files_v7/
 │       ├── AGN/
 │       ├── EB/
 │       ├── ... (38 clases)
 │       └── uLens-Single-PyLIMA/
 │
 └── DDF/
-    └── input_filesv7/
+    └── input_files_v6/
+       ├── AGN/
+       ├── EB/
+       ├── ... (38 clases)
+       └── uLens-Single-PyLIMA/
+    └── input_files_v7/
         ├── AGN/
         ├── EB/
         ├── ... (38 clases)
@@ -27,8 +37,8 @@ DATASIM_LSST/
 
 ### input_files_v6
 - **Fecha de generación**: 2025-10-20
-- **Fecha configurada**: 2020720
-- **SIMLIB versión**: 5.3
+- **Fecha configurada**: 20251020
+- **SIMLIB versión**: 5.0
 - **Estado**: Estable, lista para producción
 
 ### input_files_v7
@@ -37,7 +47,7 @@ DATASIM_LSST/
 - **SIMLIB versión**: 5.3
 - **Estado**: Estable, lista para producción
 
-## Planes de Observación
+## Planes de Observación (solo cambia el numero de la version en los directorios)
 
 ### WFD (Wide Field Deep)
 - Simulaciones para el programa de campo ancho profundo
@@ -71,6 +81,7 @@ tail -f run_AGN_*.err.out
 
 | Versión | Fecha | Cambios |
 |---------|-------|---------|
+| v6 | 2025-10-20 | SIMLIBv5.3, fecha 20251020 |
 | v7 | 2026-07-20 | SIMLIBv5.3, fecha 20260720 |
 
 ## Contacto
